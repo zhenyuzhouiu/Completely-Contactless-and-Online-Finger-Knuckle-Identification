@@ -1,33 +1,31 @@
-\section{Back Propagation of Image Translation and Rotation}
+\section{Whole Image Translated and Rotated Triplet Loss Function}
 
-\textcolor{red}{}
-
-Because I just add rotation on the feature maps based on the soft shifted triplet loss function \cite{liu2020contactless}. So my back propagation process is similar with it.
+\textcolor{red}{Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used translated and rotated triplet loss function (TRTLoss) as loss function to update convolutional kernel of our models. When we match two finger knuckle in the contactless scenario, they will not only translate but also will rotate with local deformable transformation. For solving it, we add rotation based on translation to compose a more robust transformation. As for the TRTLoss function, we rotate feature maps while translate feature maps based on the Soft-Shifted Triplet Loss Function \cite{liu2020contactless}.}
 
 \vspace{10pt}
 
-Because the loss is still use the triplet loss function, so the loss equation can be written as Equation \ref{sumloss}.
-
+\textcolor{red}{In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the number of triplet during training iteration, and $F(I^{a})$ is the output feature map of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away.}
 \begin{equation}
 	\begin{aligned}
-		Loss = \frac{1}{N}\sum_{i}^{N}[L(F(I_{i}^{a}),F(I_{i}^{p}))-L(F(I_{i}^{a}),F(I_{i}^{m})) + m]_{+}
+		TRTLoss = \frac{1}{N}\sum_{i}^{N}[L(F(I_{i}^{a}),F(I_{i}^{p}))-L(F(I_{i}^{a}),F(I_{i}^{n})) + m]_{+}
 	\end{aligned}
-	\label{sumloss}
+	\label{Tripletloss}
 \end{equation}
 
-As for the $L()$ function, it is used to calculate the minimal value after shifting and rotating.
+\textcolor{red}{We add translation and rotation transformation to deal with local deformable of finger knuckle. In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(F_1, F_2)$ will get the minimal distance of two feature maps $D_{w,h,\theta}(F_1, F_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$. Meanwhile, the distance $D_{w,h,\theta}(F_1, F_2)$ calculates the pixel-wise MSE value when feature map is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.}
 \begin{equation}
 	\begin{aligned}
-		L(F_1, F_2) = \mathop{min}\limits_{-Ws{\leq}w{\leq}Ws, -Hs{\leq}h{\leq}Hs, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(F_1, F_2)}
+		L(F_1, F_2) = \mathop{min}\limits_{-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(F_1, F_2)}
 	\end{aligned}
 \end{equation}
-And the $D()$ is to calculate the MSE of two input feature maps, just as show as below.
 \begin{equation}
 	\begin{aligned}
 		D_{w,h,\theta}(F_1, F_2) = \frac{1}{|C_{w,h,\theta}|}\sum_{(x,y){\in}C_{w,h,\theta}}(F_1^{(w,h,\theta)}[x,y] - F_2[x,y])^2
 	\end{aligned}
+	\label{Distance}
 \end{equation}
-In terms of $C_{w,h,\theta}$, it represents the common region between two feature maps after shifting along x-axis with w, shifting along y-axis with h, and rotating with a. In this kind of situation, we assume that we shift and rotate anchor $w_{ap}, h_{ap}, \theta_{ap}$ with positive sample, and shift and rotate anchor $w_{an}, h_{an}, \theta_{an}$ with negative sample can get minimal MSE. Then the partial differentiation of the loss function with respect to each variable can be written as follows: 
+
+In terms of $C_{w,h,\theta}$, it represents the common region between two feature maps after shifting along x-axis with w, shifting along y-axis with h, and rotating with $\theta$. In this kind of situation, we assume that we shift and rotate anchor $w_{ap}, h_{ap}, \theta_{ap}$ with positive sample, and shift and rotate anchor $w_{an}, h_{an}, \theta_{an}$ with negative sample can get minimal MSE. Then the partial differentiation of the loss function with respect to each variable can be written as follows:
 \begin{equation}
 	\begin{aligned}
 		\frac{\partial{Loss}}{\partial{F_i^p}}=

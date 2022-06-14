@@ -2344,13 +2344,15 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="2">kumar2020contactless</bcf:citekey>
-    <bcf:citekey order="3">kumar2019toward</bcf:citekey>
-    <bcf:citekey order="4">kumar2020contactless</bcf:citekey>
-    <bcf:citekey order="5">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="6">kumar2020contactless</bcf:citekey>
-    <bcf:citekey order="7">kumar2019toward</bcf:citekey>
+    <bcf:citekey order="1">schroff2015facenet</bcf:citekey>
+    <bcf:citekey order="2">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="3">kumar2020contactless</bcf:citekey>
+    <bcf:citekey order="4">kumar2019toward</bcf:citekey>
+    <bcf:citekey order="5">kumar2020contactless</bcf:citekey>
+    <bcf:citekey order="6">schroff2015facenet</bcf:citekey>
+    <bcf:citekey order="7">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="8">kumar2020contactless</bcf:citekey>
+    <bcf:citekey order="9">kumar2019toward</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
