@@ -1,10 +1,10 @@
 \section{Whole Image Translated and Rotated Triplet Loss Function}
 
-\textcolor{red}{Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used translated and rotated triplet loss function (TRTLoss) as loss function to update convolutional kernel of our models. When we match two finger knuckle in the contactless scenario, they will not only translate but also will rotate with local deformable transformation. For solving it, we add rotation based on translation to compose a more robust transformation. As for the TRTLoss function, we rotate feature maps while translate feature maps based on the Soft-Shifted Triplet Loss Function \cite{liu2020contactless}.}
+Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used translated and rotated triplet loss function (TRTLoss) as loss function to update convolutional kernel of our models. When we match two finger knuckle in the contactless scenario, they will not only translate but also will rotate with local deformable transformation. For solving it, we add rotation based on translation to compose a more robust transformation. As for the TRTLoss function, we rotate feature maps while translate feature maps based on the Soft-Shifted Triplet Loss Function \cite{liu2020contactless}.
 
 \vspace{10pt}
 
-\textcolor{red}{In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the number of triplet during training iteration, and $F(I^{a})$ is the output feature map of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away.}
+In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the number of triplet during training iteration, and $F(I^{a})$ is the output feature map of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away.
 \begin{equation}
 	\begin{aligned}
 		TRTLoss = \frac{1}{N}\sum_{i}^{N}[L(F(I_{i}^{a}),F(I_{i}^{p}))-L(F(I_{i}^{a}),F(I_{i}^{n})) + m]_{+}
@@ -12,7 +12,7 @@
 	\label{Tripletloss}
 \end{equation}
 
-\textcolor{red}{We add translation and rotation transformation to deal with local deformable of finger knuckle. In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(F_1, F_2)$ will get the minimal distance of two feature maps $D_{w,h,\theta}(F_1, F_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$. Meanwhile, the distance $D_{w,h,\theta}(F_1, F_2)$ calculates the pixel-wise MSE value when feature map is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.}
+We add translation and rotation transformation to deal with local deformable of finger knuckle. In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(F_1, F_2)$ will get the minimal distance of two feature maps $D_{w,h,\theta}(F_1, F_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$. Meanwhile, the distance $D_{w,h,\theta}(F_1, F_2)$ calculates the pixel-wise MSE value when feature map is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
 \begin{equation}
 	\begin{aligned}
 		L(F_1, F_2) = \mathop{min}\limits_{-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(F_1, F_2)}
@@ -25,7 +25,7 @@
 	\label{Distance}
 \end{equation}
 
-In terms of $C_{w,h,\theta}$, it represents the common region between two feature maps after one feature map shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$.\textcolor{red}{ As for the $(F_a, F_p)$ pair, we can assume when the $F_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(F_a, F_p)$, then $L(F_a, F_p) = D_{w_{ap},h_{ap},\theta_{ap}}(F_a, F_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(F_a, F_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(F_a, F_m)$.}
+In terms of $C_{w,h,\theta}$, it represents the common region between two feature maps after one feature map shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$. As for the $(F_a, F_p)$ pair, we can assume when the $F_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(F_a, F_p)$, then $L(F_a, F_p) = D_{w_{ap},h_{ap},\theta_{ap}}(F_a, F_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(F_a, F_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(F_a, F_m)$.
 \begin{equation}
 	\begin{aligned}
 		\frac{\partial{Loss}}{\partial{F_i^p}}=
