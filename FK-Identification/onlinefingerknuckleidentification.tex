@@ -1,0 +1,559 @@
+% \section{Online Finger Knuckle Identification}
+% \subsection{Finger Knuckle Detection}
+% \subsection{Finger Knuckle Dataset for Training and Detection}
+% \subsection{Performance Evaluation}
+
+\section{Online Contactless Finger Knuckle Identification}
+With TRTL loss, the RFNet \cite{liu2020contactless} can outperform state-of-the-art methods. In the previous section, we have estimated its verification and identification performance on different public finger knuckle database, including within-db and cross-db experiments. As for a completely contactless and online finger knuckle identification, the finger knuckle detector is a very important module for automatically detect and segment finger knuckle region. A suitable ROI segmentation method can improve efficiency and accuracy of the matching algorithm. There is an important point is the angle of the finger knuckle,
+
+
+
+
+the target object has an angular rotation problem, the matching process generally requires simultaneous matching in multiple angular ranges, and the number of pixels to be computed increases exponentially. If the algorithm of ROI segmentation is accurate enough and the accuracy of the rotation is also high enough, this will naturally improve the detection efficiency. For the problem of improving the matching accuracy, if the accuracy of the region of interest is high enough, the background interference information extracted will be correspondingly more petite, and the pixel signal of the target object obtained is enough, the signal-to-noise ratio will be high, and the matching accuracy will be improved accordingly.
+
+However, most of the current finger knuckle segmentation approaches are based on contact finger knuckle segmentation. Even for the contactless finger knuckle segmentation problem, their \cite{kumar2019toward}, \cite{cheng2012contactless} approach is to fix the finger knuckle position in the image when taking the finger knuckle data, and if the finger appears in the image in a different position or if there are multiple fingers, the problem of not detecting the finger knuckle or missing the finger knuckle is likely to occur. This segmentation is prone to errors, and this is not the only problem. Most importantly, the traditional segmentation algorithm cannot correctly segment the finger knuckles in the presence of complex background interference, multiple finger knuckles in the same field of view, obscured finger knuckles or bent finger knuckles. Since the subsequent operations of the finger knuckle recognition algorithm are based on the segmented image, the segmentation of finger knuckles affects the accuracy of finger knuckle recognition. It is vital to improving the efficiency of segmenting the finger knuckle region in any scenario.
+
+\subsection{Contactless Finger Knuckle Detection}
+This paper studies the finger knuckle region and uses the corresponding finger knuckle crease patterns as features of the finger knuckles. So the region of interest to be extracted is the part that can represent the skin crease patterns on the back of the finger. As mentioned in Section 3.1, it is difficult to use traditional object segmentation methods to automatically segment finger knuckles for applications such as in the wild. Even though there have been corresponding conventional algorithms implemented to automatically segment the finger knuckle region independent of the finger knuckle position pose \cite{kumar2019toward}, the method used in this paper requires fixing the position of the finger knuckles appearing in the image and is a Fixed ROI extraction. 
+
+In order to solve the problem of finger knuckle detection in the real world, this paper chooses to use neural network models instead of traditional segmentation algorithms. Models of neural network models for object detection have achieved great success, whether it is the sliding window detection algorithm, the 2-stage series of R-CNN models \cite{girshick2014rich}, \cite{girshick2015fast}, \cite{ren2015faster}, or the 1-stage YOLO series \cite{redmon2016you}, \cite{redmon2017yolo9000}, \cite{redmon2018yolov3}, \cite{bochkovskiy2020yolov4} and SSD models \cite{liu2016ssd} up to the current position, and even the anchor-free based object detection algorithm \cite{xin2021pafnet} as well. Each of these models has its advantages. For the 2-stage model, the object detection accuracy is guaranteed, the 1-stage based model is a speedup based on the positive accuracy, and the anchor-free is a further improvement in the detection speed. In this paper, the latest version of the YOLO model series, YOLOv5 \cite{YOLOv5}, is used as the network model for finger knuckle detection because the YOLO series is famous for its fast detection speed and high accuracy. The module adopts various latest network modules, and the YOLOv5 model has a variety of model structures to meet different accuracy and speed requirements. For the YOLOv5 model, the number of layers of each submodule is varied to cope with different speed and accuracy requirements, while the overall structural component modules remain unchanged. The YOLOv5 neural network model used as a finger knuckle detection has good results in the wild, the prediction bounding boxes of YOLOv5 are based on a horizontal bounding box for regression. 
+
+Although the results have been good for finger knuckle detection, they are not sufficient for the segmentation operation of finger knuckles. There are two main problems for rotating finger knuckles segmentation. The first problem is that when the horizontal bounding box is used to predict the object, the size of the bounding box is a minimum external horizontal rectangle for the size of the object. In such a case, when there is a rotation of the object, which is not horizontal for the picture, the horizontal box will have much more background for the detected object, and in the case that the target object is crowded, it is easy to eliminate the neighbouring of the horizontal bounding boxes are eliminated. As shown in Figure \ref{HBB Problems} (a), due to the rotation of the finger and the density of the finger, the prediction bounding box of the middle finger knuckle and the major finger knuckle of the ring finger have overlapped, so it is easy to be deleted during the non-max suppressing process, even if CIOU \cite{zheng2020distance} or DCOU \cite{zheng2021enhancing} is used. As shown in Figure \ref{HBB Problems} (b), after changing the threshold of IOU in the non-max suppressing process, the major finger knuckle of the ring finger is not detected.
+
+The second problem is that for the segmentation operation if the horizontal box is used directly to carry out the segmentation operation, it is the same as shown in Figure \ref{HBB Problems} (c)-(i), which is the region of interest of the finger knuckle corresponding to the segmentation in Figure \ref{HBB Problems} (a). However, the segmentation to the background interference has a lot, and it is not considered a good finger knuckle segmentation operation. In order to solve the above problem, a rotated prediction bounding box was then used to deal with the background region minimally while predicting the target object's position, and the rotated bounding box could be used as the orientation detection finger knuckle. The subsequent finger knuckle matching process also needs to use the finger knuckle orientation information for the correction operation.
+
+
+\section{Orientation Bounding Box Prediction Based on YOLOv5}
+\subsection{Rotated Bounding Box Prediction}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Figures/OBB/opencv.png}
+        \caption{Five-parameter method with $90^{\circ}$ angular range.}        
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Figures/OBB/180degree.png}
+        \caption{Five-parameter method with $180^{\circ}$ angular range.}        
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+        \includegraphics[width=\linewidth]{Figures/OBB/fourpoints.png}
+        \caption{Ordered quadrilateral representation.}        
+    \end{subfigure}
+    \caption{Three definition of orientation bounding boxes. \cite{yang2020csl}}
+    \label{OBB definition}
+\end{figure}
+
+There are many representations of defining a rotation bounding box, but here are only a few common ways to define an arbitrary angle box. This is because the other definition methods are all the same. The three methods of defining the rotation rectangle are listed in Figure 3.3. The angle definition method in Figure \ref{OBB definition} (a) is the definition method used by OpenCV. The angle is the acute angle formed by the rectangle and the x-axis, and the side forming the acute angle with the x-axis is defined as the rectangle's width, and the other side is defined as the length. The angle orientation is $[-90^{\circ}, 0^{\circ})$. The definition method of Figure \ref{OBB definition} (b) is also called the long side definition method, and the angle is the angle between the x-axis and the long side of the box, so the angle range is $[-90^{\circ}, 90^{\circ})$, and Figure \ref{OBB definition} (c) is listed as the ordered quadrilateral definition method, where the leftmost point is the starting point and is ordered counterclockwise. If the box itself is horizontal, the top left corner is taken as the starting point. As analyzed in this paper \cite{yang2020csl}, since the prediction box of the YOLO series is regressed from the horizontal anchor, for the rotated box defined by OpenCV, there is the problem of angular periodicity and the exchangeability of the edges of the box, which leads to a relatively large loss value. While the loss of the long side definition is slightly more straightforward and only comes from the periodicity with the angle. So this paper also uses the long side representation to represent the rotated rectangle, and the data is labelled by the roLabelImg \cite{roLabelImg} tool. However, the difference is the angle x-axis of roLabelImg \cite{roLabelImg} and the clockwise angle of the long edge, ranging from $[0^{\circ}, 180^{\circ})$.
+
+
+
+The existence of angular periodicity and the exchangeability of edges in the angle regression leads to loss function values becoming large. To solve this problem, consider using classifying the angles as the categories are finite. Since there is no edge exchangeability as a loss value using the long side definition and the rotated box labelled by roLabelImg is also defined using the angle definition of $[0^{\circ}, 180^{\circ})$, we can classify the angles into 180 categories. Generally, for the classification problem, we can use one-hot hard coding to solve it. Usually, if the angle of ground truth is $0^{\circ}$, then the loss values predicted to be $1^{\circ}$ and $179^{\circ}$ should be approximately equal and not too much different. However, for one-hot, a prediction of $1^{\circ}$ and $179^{\circ}$ lead to a large loss. A periodic coding method should be used to compensate for the large difference between the loss values of $0^{\circ}$ and $179^{\circ}$. This can be solved by using the Circular Smooth Label (CSL) \cite{yang2020csl} soft coding.
+
+\begin{equation}
+    CSL(x)=
+    \begin{cases}
+        g(x), &\theta-r<x<r+\theta \\
+        0   , &\text{otherwise}
+    \end{cases}
+    \label{CSL Function}
+\end{equation}
+
+Formula \ref{CSL Function} $g(x)$ is the window function, $r$ is a window function of the radius. For the window function, in general, to have four properties, the first point is the periodicity, the second point is the symmetry, the third point is the maximum value to $g(\theta) = 1$, the fourth point also needs to be in the window function on the left side of the symmetry axis is an increasing function, in the right side of the symmetry axis is a decreasing function. Furthermore, in this paper, we used the Gaussian function for the Equation \ref{CSL Function} window function, a commonly available function, and used a window radius of 6 to smooth the labels when used.
+
+
+\subsection{Oriented Bounding Boxes Based on YOLOv5}
+\noindent\textbf{Output tensor channels}
+
+
+\noindent{As used in the CSL method, the angles are classified into 180 categories using smoothing labels. For the output head of YOLOv5, the number of channels corresponding to each output tensor should be increased by 180, which becomes $3*(4+1+2+180)=561$ channels. For the class number, the task of this paper is to detect two classes of major and minor finger knuckle, so the $2$ in the equation represents two classes. The output head of YOLOv5 is three tensors with different scaling, so the final output is 561 channels. If the input image is $608*608*3$ dimension tensor, which is downsampled by $1/32$ to get $19*19*561$ dimension tensor, $1/16$ to get $38*38*561$ dimension tensor, and $1/8$ to get $76*76*561$ dimension tensor.}
+
+
+\noindent\textbf{Loss function}
+
+\noindent{After the output uses the loss function to calculate the loss for network training, the original YOLOv5 loss function can have three components. The formula can be simply written as $Loss = CIOU\_Loss + Loss_{conf} + Loss_{class}$. Since the oriented bounding box is based on the modification of YOLOv5, only the angle classification is added more. For the multi-classification problem, the loss function is generally written using Cross-Entropy to calculate the loss so that for a prediction bounding box, only one classification can exist. However, there may be more than one target object falling inside a bounding box simultaneously, only the angles are different, so a lattice has to predict multiple classification problems, so Binary Cross Entropy (BCE) is used as the loss function here. So the total loss function is as expressed in Equation \ref{Loss}, with the addition of $Loss_{angle}$ to YOlov5. Loss can now be divided into four parts. For the bounding box used $CIOU\_Loss$, the remaining three parts of the loss are based on the loss of BCE to enter the calculation.}
+
+\begin{equation}
+    Loss = CIOU\_Loss + Loss_{conf} + Loss_{class} + Loss_{angle}
+    \label{Loss}
+\end{equation}
+
+For the regression process of the bounding box, the CIOU loss used \cite{zheng2020distance}, CIOU is an excellent solution to the regression problem of the bounding box, increasing the aspect contrast of the bounding box, as expressed in Equation \ref{CIOU_Loss}, where $\rho()$ is the Euclidean distance between the centre point of two bounding boxes, and $c$ is the diagonal length of the minimum outside the rectangle of the two bounding boxes. Moreover, the $\alpha$ parameter is the weight parameter, and the calculation formula is derived from that shown in Equation \ref{alphaandnu}, and the $\nu$ parameter is the length-width contrast coefficient of the bounding box performed.
+
+
+\begin{equation}
+    CIOU\_Loss = 1-(IOU - \frac{\rho^2(b,b^{gt})}{c^2} - \alpha\nu)
+    \label{CIOU_Loss}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \nu &= \frac{4}{\pi^2}(arctan\frac{w^{gt}}{h^{gt}} - arctan\frac{w^{p}}{h^{p}})^2 \\
+        \alpha &= \frac{\nu}{(1- IOU)+\nu}
+    \end{aligned}
+    \label{alphaandnu}
+\end{equation}
+
+The confidence level indicates whether there is a target object with detection in each small cell of the feature map output by the output head of YOLOv5. As listed in Equation \ref{Loss_conf}, the BCE loss function is also used for the loss calculation of confidence Because each feature map needs to be traversed for each grid, $S$ represents the size of the feature map, it is necessary to traverse $S^2$ times, and each grid corresponds to $B$ anchors. Inside the Equation \ref{Loss_conf}, the $I_{ij}^{obj}$ and $I_{ij}^{noobj}$ that for the i row j column of the grid inside whether there is a bounding box.
+
+\begin{equation}
+    \begin{aligned}
+        Loss_{conf} = \sum_{i=0}^{S^2}\sum_{j=0}^{B}I_{ij}^{obj}[\hat{C_i}log(C_i) + (1-\hat{C_i})log(1-C_i)] - \\
+        \lambda_{noobj}\sum_{i=0}^{S^2}\sum_{j=0}^{B}I_{ij}^{noobj}[\hat{C_i}log(C_i) + (1-\hat{C_i})log(1-C_i)]
+    \end{aligned}
+    \label{Loss_conf}
+\end{equation}
+
+The formula for calculating the category loss for angles is the same as for categories of classes, as listed in Equation \ref{Loss_class} and \ref{Loss_angle}.The difference is that for the class loss calculation, $c$ needs to iterate over the number of predicted categories (here twice, since major and minor finger knuckle are detected), while $a$ needs to iterate 180 times (180 categories for the angle classification).
+
+\begin{equation}
+    \begin{aligned}
+        Loss_{class} = \sum_{i=0}^{S^2}I_{ij}^{obj}\sum_{c{\in}classes}[\hat{P_i(c)}log(P_i(c)) + \\
+        (1-\hat{P_i(c)})log(1-P_i(c))]
+    \end{aligned}
+    \label{Loss_class}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        Loss_{angle} = \sum_{i=0}^{S^2}I_{ij}^{obj}\sum_{a{\in}[0,180)}[\hat{P_i(a)}log(P_i(a)) + \\
+        (1-\hat{P_i(a)})log(1-P_i(a))]
+    \end{aligned}
+    \label{Loss_angle}
+\end{equation}
+
+
+
+\noindent\textbf{Non-Maximize Suppressing for Oriented Bounding Box}
+
+\noindent{Since the prediction process of the rotating bounding box frame is based on the horizontal bounding box with an extra angle prediction, it is separated into two parts, one part is the regression process of the horizontal bounding box, and the other is the rotation angle prediction process. A serious problem will arise if the source code is used directly for non-maximal suppression based on the horizontal bounding box IOU. Because the IOU values of the two rotated bounding boxes are shallow, the IOU values of their corresponding two horizontal bounding boxes are enormous, so the correct rotated bounding boxes are eliminated in the process of non-maximum suppression. So in the prediction for the rotated boxes, the horizontal and angular information needs to be fused to form a true rotated rectangle. This process can be converted by OpenCV, which will transform the rotated rectangle expressed by five parameters to get the coordinates of four vertices of the rotated rectangle, which are the first vertices starting from the lowest point in the far right, and then rotating clockwise to get the remaining three vertices. After getting the coordinates of the four vertices of the rotated rectangle, we can use OpenCV to calculate the area size of the intersection of the two rotated rectangles so that we can use the IOU of the rotated rectangle for non-maximum suppression.As shown in Figure \ref{NMS}, after using the non-maximum suppression of the rotating bounding box, the detection of 86 major finger knuckles and 22 minor finger knuckles was reduced to the final 14 major finger knuckles and 6 minor finger knuckles, respectively.}
+
+The rotated bounding box's final prediction result is the finger knuckle's prediction result, and the ROI extraction of the finger knuckle region can be performed using this rotated bounding box. Since it is a rotated rectangle, the background part is much less than the original horizontal bounding box, and the finger knuckle feature area can be increased accordingly. It is possible to achieve a high level of fully automatic ROI extraction model. Moreover, because it is a rotating rectangle, the current direction of the target object can be known, and the ROI area can be mounted using this direction angle, which prepares sufficient conditions for subsequent feature extraction and feature matching.
+
+
+\section{Experiments and Results}
+
+\noindent\textbf{Finger Knuckle Detection Accuracy}
+
+\noindent
+The CSL is integrated into the YOLOv5 model to smooth the angular classification, called YOLOv5-CSL model, and the BCE is used to calculate the angular classification prediction loss. YOLOv5 has multiple sub-models, mainly by increasing the number of censored convolutional layers and residual layer modules, but the overall model framework does not change to cope with different hardware, accuracy requirements, and detection speed requirements. From the official data given, we can see the performance difference between these variations of the YOLOv5 model from the Table \ref{YOLOv5modeloffical}. If speed is pursued, then the lightest YOLOv5n can be used. Conversely, if accuracy is pursued, then YOLOv5x can be used.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+        \hline
+        Model & \makecell[c]{Inference \\ Time/ms\\ (1024x1024)} & \makecell[c]{Number \\of Layers} & \makecell[c]{${mAP}^{val}$\\0.5} & \makecell[c]{AP of\\ Major \\FK} & \makecell[c]{AP of\\ Minor \\FK}\\
+        \hline
+        YOLOv5x-CSL & 41.395 & 407 & \textbf{89.9} &\textbf{89.6} & \textbf{90.1} \\
+        YOLOv5m-CSL & 36.252 & 263 & 85.7 & 88.9 & 80.4 \\
+        YOLOv5s-CSL & 32.683 & 213 & 39.6 & 43.9 & 35.4 \\
+        YOLOv4 & 25.992 & 161 & 70.7 & 83.6 & 57.7 \\
+        \hline
+    \end{tabular}
+    \caption{Comparison of the accuracy of the different models of the YOLO series for the detection of the finger knuckle.The calculated values of mAP were measured at a detection threshold of 0.4 as well as an IOU threshold of 0.5.}
+    \label{mAP of different model}
+\end{table}
+
+This paper uses these YOLOv5s, YOLOv5m, YOLOv5x and YOLOv4 models to train the labelled data. The YOLOv4 model is a regression on the horizontal bounding box, while the remaining YOLOv5 model is a regression on the rotated bounding box, called YOLOv5-CSL. The data are obtained using a crawler dataset and partly from a publicly available dataset, with 2580 training images. Among them, 100 images were randomly selected to form the test image set. For these 2580 training images, 2347 images are obtained from the crawler and the rest from the public dataset. For the remaining 233 images, there are 169 images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0} and 64 images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb}. A total of 1842 of these 2580 images contain knuckles, and the remaining 738 images do not contain knuckles. According to Table \ref{mAP of different model}, we can see the mAP performance of these models on the testing set after training. The mAP is calculated here with IOU equal to 0.5. Furthermore, the predicted bounding box is obtained from a confidence threshold of 0.4 and non-maximum suppression with IOU equal to 0.5. The mAP is the average of the AP values for each category. YOLOv5x-CSL has the highest accuracy with an mAP of 89.6 due to its strong learning capability. mAP for model YOLOv5s-CSL is low mainly because the model has not been sufficiently trained, and the loss has not yet reached a local minimum. Because minor finger knuckle has fewer features and smaller targets than major finger knuckle, it is more difficult to detect, as can be seen from the AP values for minor finger knuckle, which is lower than those for major finger knuckle.
+
+
+\noindent\textbf{Finger Knuckle Segmentaion Accuracy}
+
+\noindent
+Because both YOLOv5x-CSL and YOLOv5m-CSL models have mAP values above 85, they can be said to be a good finger knuckle detection model in terms of my testing data. Although the mAP of the YOLOv4 model is also good, the regression is a horizontal bounding box. Finally, both YOLOv5x-CSL and YOLOv5m-CSL models were used to test the precision and recall rate of finger knuckle segmentation. The testing procedure was performed on three publicly available collection of finger knuckle databases \cite{fingerknuckledbv1.0}, \cite{fingerknuckledbv3.0}, \cite{ContactlessHnadDorsaldb}. For the precision in these Table \ref{Handdorsaldatabase}, \ref{FingerKnuckle}, \ref{FingerKnuckle3.0}, \ref{PublicSegmentationPrecision}, the calculation formula is based on Equation \ref{precision}, for the recall, the calculation formula is based on Equation \ref{recal}. For the Equation \ref{recal}, the GroundTruthSegmentation are the same as the Figure \ref{segmentationgt} shows.
+
+
+\begin{equation}
+    Precision = \frac{TrueSegmentation}{AllSegmentation}
+    \label{precision}
+\end{equation}
+\begin{equation}
+    Recal = \frac{TrueSegmentation}{GroundTruthSegmentation}
+    \label{recal}
+\end{equation}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[b]{0.25\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[width=\linewidth,angle=90]{Figures/groundtruth/6.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[width=\linewidth]{Figures/groundtruth/6.png}
+        \end{subfigure}
+        \caption{}
+    \end{subfigure}
+    \hspace{32pt}
+    \begin{subfigure}[b]{0.25\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[width=\linewidth, angle=90]{Figures/groundtruth/1.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[width=\linewidth]{Figures/groundtruth/1.png}
+        \end{subfigure}
+        \caption{}
+    \end{subfigure}
+    \caption{For the HKPolyU Finger Knuckle (V-3.0) \cite{fingerknuckledbv3.0} finger knuckle segmentation groundtruth image is shown. The groundtruth segmentation images are provided by the database.}
+    \label{segmentationgt}
+\end{figure}
+
+Precision indicates the percentage of correctly segmented finger knuckles out of all segmented finger knuckles by YOLOv5-CSL model, while recall indicates the percentage of all finger knuckles on these databases to be segmented that were segmented. For Table \ref{Handdorsaldatabase}, the finger knuckle segmentation is performed on the dorsal hand of 502-712 subjects in the HKPolyU Hand Doarsal Image Database \cite{ContactlessHnadDorsaldb}, with four fingers in each test image and a total of 5368 major finger knuckles and 5368 minor finger knuckles on the 502-712 subjects' doarsal images. In Table \ref{FingerKnuckle}, the finger knuckle segmentation test is performed on the HKPolyU Finger Knuckle Database (V-1.0) \cite{fingerknuckledbv1.0}, each image has only one finger that has one major finger knuckle and one minor finger knuckle, and there are 2515 major finger knuckles and minor finger knuckles on the database. For Table \ref{FingerKnuckle3.0}, the finger knuckle segmentation is tested on the HKPolyU Finger Knuckle Database \cite{fingerknuckledbv3.0}. This data is more complex compared to the first two datasets because each subject provides six sample data, but these six finger images were sampled at different angles, even with the finger knuckle bent to an angle of 90 degrees.
+
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccccccc}
+    \hline
+    \multirow{2}{*}{Model}                                                                          & \multirow{2}{*}{Object}                                                 & \multicolumn{1}{c|}{\multirow{2}{*}{Index}}               & \multicolumn{5}{c}{Confidence Threshold}                \\ \cline{4-8} 
+                                                                                                    &                                                                         & \multicolumn{1}{c|}{}                                     & 0.2            & 0.3            & 0.4   & 0.5   & 0.6   \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5m\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (5368)\end{tabular} & 5437           & 5392           & 5357  & 5312  & 5219  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & 0.983          & 0.988          & 0.990 & 0.991 & 0.994 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & 0.996          & 0.993          & 0.988 & 0.981 & 0.967 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (5368)\end{tabular} & 5450           & 5286           & 5216  & 5152  & 4982  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & 0.969          & 0.992          & 0.998 & 0.999 & 0.999 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & 0.984          & 0.977          & 0.970 & 0.959 & 0.928 \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5x\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (5368)\end{tabular} & \textbf{5292}  & \textbf{5245}  & 5176  & 5032  & 4602  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & \textbf{0.999} & \textbf{0.999} & 1.000 & 1.000 & 1.000 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & \textbf{0.985} & \textbf{0.977} & 0.964 & 0.937 & 0.857 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (5368)\end{tabular} & \textbf{5245}  & \textbf{5158}  & 5019  & 4758  & 4253  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & \textbf{1.000} & \textbf{1.000} & 1.000 & 1.000 & 1.000 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & \textbf{0.977} & \textbf{0.961} & 0.935 & 0.886 & 0.792 \\ \hline
+    \end{tabular}
+    \caption{The accuracy of finger knuckle segmentation under different thresholds was tested using YOLOv5-CSL's model in hand dorsal dataset \cite{ContactlessHnadDorsaldb}. Just use 502-712 dorsal hand images for testing segmentation accuracy.}
+    \label{Handdorsaldatabase}
+\end{table}
+
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{cccccccc}
+    \hline
+    \multirow{2}{*}{Model}                                                                          & \multirow{2}{*}{Object}                                                 & \multicolumn{1}{c|}{\multirow{2}{*}{Index}}               & \multicolumn{5}{c}{Confidence Threshold}                \\ \cline{4-8} 
+                                                                                                    &                                                                         & \multicolumn{1}{c|}{}                                     & 0.2            & 0.3            & 0.4   & 0.5   & 0.6   \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5m\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (2515)\end{tabular} & 2424           & 2409           & 2368  & 2279  & 2065  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & 1.000              & 1.000              & 1.000     & 1.000     & 1.000     \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & 0.964          & 0.958          & 0.942 & 0.906 & 0.821 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (2515)\end{tabular} & 2509           & 2502           & 2494  & 2460  & 2335  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & 1.000              & 1.000              & 1.000     & 1.000     & 1.000     \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & 0.998          & 0.995          & 0.992 & 0.978 & 0.928 \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5x\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (2515)\end{tabular} & \textbf{2503}  & \textbf{2487}  & 2423  & 2263  & 1694  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & \textbf{1.000}     & \textbf{1.000}     & 1.000     & 1.000     & 1.000     \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & \textbf{0.995} & \textbf{0.989} & 0.963 & 0.9   & 0.674 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (2515)\end{tabular} & \textbf{2512}  & \textbf{2509}  & 2506  & 2498  & 2414  \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                 & \textbf{1.000}     & \textbf{1.000}     & 1.000     & 1.000     & 1.000     \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                     & \textbf{0.999} & \textbf{0.998} & 0.996 & 0.993 & 0.96  \\ \hline
+    \end{tabular}
+    \caption{The accuracy of finger knuckle segmentation under different thresholds was tested using YOLOv5-CSL's model in finger knuckle dataset \cite{fingerknuckledbv1.0}.}
+    \label{FingerKnuckle}
+\end{table}
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{cccccccc}
+    \hline
+    \multirow{2}{*}{Model}                                                                          & \multirow{2}{*}{Object}                                                 & \multicolumn{1}{c|}{\multirow{2}{*}{Index}}                  & \multicolumn{5}{c}{Confidence Threshold}                \\ \cline{4-8} 
+                                                                                                    &                                                                         & \multicolumn{1}{c|}{}                                        & 0.2            & 0.3            & 0.4   & 0.5   & 0.6   \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5m\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (1326)\end{tabular}    & 1377           & 1249           & 1167  & 1075  & 975   \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                    & 0.895          & 0.939          & 0.956 & 0.970 & 0.990 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                        & 0.929          & 0.885          & 0.842 & 0.787 & 0.728 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (Unknown)\end{tabular} & 828            & 765            & 722   & 662   & 552   \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                    & 0.989          & 0.993          & 1.000 & 1.000 & 1.000 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                        & -              & -              & -     & -     & -     \\ \hline
+    \multicolumn{1}{c|}{\multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}Yolov5x\\    -CSL\end{tabular}}} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Major\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (1326)\end{tabular}    & \textbf{1234}  & \textbf{1146}  & 1053  & 989   & 708   \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                    & \textbf{0.964} & \textbf{0.990} & 0.991 & 0.990 & 0.993 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                        & \textbf{0.897} & \textbf{0.855} & 0.787 & 0.738 & 0.530 \\ \cline{2-8} 
+    \multicolumn{1}{c|}{}                                                                           & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Minor\\    FKP\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Total\\    (Unknown)\end{tabular} & \textbf{626}   & \textbf{576}   & 531   & 467   & 355   \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Precision                                                    & \textbf{0.998} & \textbf{1.000} & 1.000 & 1.000 & 1.000 \\
+    \multicolumn{1}{c|}{}                                                                           &                                                                         & Recal                                                        & \textbf{-}     & \textbf{-}     & -     & -     & -     \\ \hline
+    \end{tabular}
+    \caption{The accuracy of finger knuckle segmentation under different thresholds was tested using YOLOv5-CSL's model in finger knuckle dataset \cite{fingerknuckledbv3.0}. Since the fingers are bent at different angles, the total number of minor finger knuckles cannot be estimated because they may not appear in these images on the database.}
+    \label{FingerKnuckle3.0}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{1\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_1.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_2.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_3.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_1.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_2.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_3.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/117_rlh_117_1/117_rlh_117_1.jpg}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\textwidth}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_1.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_2.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_3.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_1.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_2.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.2\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_3.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/180_rlh_180_1/180_rlh_180_1.jpg}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+    \end{subfigure}
+    \caption{Some examples of finger knuckle segmentation using rotated YOLOv5x-CSL in the dorsal hand database \cite{ContactlessHnadDorsaldb}.Figure (a)-(b) are images of the dorsal hands of different subjects. As for each subfigure, the first row it the major finger knuckle, and the second row is the minor finger knuckle.}
+    \label{Segmentationtestondorsalhand}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{1\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/0_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/1.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/1_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/2.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/2_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/3.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{1\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/3_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/4.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/4_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/5.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/5_0.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation/6.png}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+    \end{subfigure}
+    \caption{One subject's finger knuckle segmentation using rotated YOLOv5x-CSL
+     in the finger knuckle database \cite{fingerknuckledbv3.0}.
+     Figure (a)-(f) are images of the finger knuckle with different angle.}
+    \label{Segmentationfingerknuckle3.0}
+\end{figure}
+
+The results of the test were performed using different confidence thresholds for finger knuckle segmentation by using YOLOv5m-CSL and YOLOv5x-CSL. From Table \ref{Handdorsaldatabase}, \ref{FingerKnuckle}, \ref{FingerKnuckle3.0}, for the precision and recall values, they can hit above 0.95. Even for dataset \cite{fingerknuckledbv1.0}, not only minor finger knuckle and major finger knuckle segmentation precision was $100\%$ as shown in Table \ref{FingerKnuckle}, which means that all segmented finger knuckle ROI by my model were correct. This is because in Table \ref{FingerKnuckle} and \ref{Handdorsaldatabase}, the test databases \cite{fingerknuckledbv1.0}, \cite{ContactlessHnadDorsaldb} used are both relatively less challenging. Both databases are sampled with fixed background interference and with the fingers extended, in which case the finger knuckle features are relatively well displayed. So the segmented precision and recall values can even reach 0.999. However, as shown in Table \ref{FingerKnuckle3.0}, the magnitude of the values of precision and recall in the HKPolyU Finger Knuckle Database (V-3.0) \cite{fingerknuckledbv3.0} is smaller than that of both precision and recall in the HKPolyU Finger Knuckle Database (V-1.0) \cite{fingerknuckledbv1.0} and the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb}. This shows that the segmentation model is not ideal in this dataset as in the other two datasets. However, the values of precision and recall can probably still be maintained above $90\%$. The analysis of the HKPolyU Finger Knuckle Database V-3.0 \cite{fingerknuckledbv3.0} shows that the finger knuckles are sampled under a more complex scene with different angles of deformation problems, which leads to a decrease in segmentation accuracy. Because for both precision and recall, one increases, the other has to decrease. It can also be seen from the experimental results that when the confidence threshold was raised, the precision also increased, and when the confidence threshold went above 0.4, the finger segmentation precision of these data sets was above 0.95, and the recall also decreased. This indicates that the accuracy of finger knuckle segmentation increases while more and more finger knuckles are not segmented. For YOLOv5x-CSL, the model achieves a high mAP, which is also confirmed for the segmentation test. YOLOv5x-CSL has higher precision and recall than YOLOv5m-CSL. Even for thresholds 0.2 and 0.3, recall is kept no lower than 0.85, and precision reaches 0.999. 
+
+The Figure \ref{Segmentationtestondorsalhand} show the dorsal hand images of tow different individuals in the HKPolyU Hand Dorsal Image Database \cite{ContactlessHnadDorsaldb}, using YOLOv5-CSL oriented bounding boxes for finger knuckle prediction and segmentation operations. The first row of each subfigure is the segmentation of the major finger knuckle, the second row is the segmentation of the minor finger knuckle, and the third row is the original image, as shown in Figure \ref{Segmentationtestondorsalhand}. In the same way, the Figure \ref{Segmentationfingerknuckle3.0} shows a sample of a segmentation test on HKPolyU Finger Knuckle Database (3.0) \cite{fingerknuckledbv3.0}. The background interference after segmentation of each finger knuckle in the image is relatively small and absent. There is now a significant improvement compared with the background interference obtained by direct segmentation using the horizontal bounding box in Figure \ref{HBB Problems}. Because these finger knuckles have some 3D angular rotation, some background information is still segmented during the segmentation.The experiment proves that the YOLOv5x-CSL and YOLOv5m-CSL model can be fully capable of performing finger knuckle segmentation as a fully automated finger knuckle segmentation model fast in the wild case, providing high efficiency for subsequent finger knuckle recognition.
+
+\noindent\textbf{Compare with Earlier Work}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+    \hline
+    Database                                                    & FK       & Precision & Recal & Totall \\ \hline
+    \multicolumn{1}{c|}{\multirow{2}{*}{Finger Knuckle (V1.0) \cite{fingerknuckledbv1.0}}} & Major FK & 0.982  &0.982    & 2510   \\
+    \multicolumn{1}{c|}{}                                       & Minor FK & 0.991  &0.991   & 2510   \\ \hline
+    \multicolumn{1}{c|}{\multirow{2}{*}{Dorsal Hand \cite{ContactlessHnadDorsaldb}}}           & Major FK & 0.985   &0.985   & 4220   \\
+    \multicolumn{1}{c|}{}                                       & Minor FK & 0.985  &0.985   & 4220   \\ \hline
+    \multicolumn{1}{c|}{\multirow{2}{*}{Finger Knuckle (V3.0) \cite{fingerknuckledbv3.0}}} & Major FK & 0.998  &0.998   & 1326   \\
+    \multicolumn{1}{c|}{}                                       & MinorFK  & -    &-     & -      \\ \hline
+    \end{tabular}
+    \caption{The segmentation precision provided by these public database. Finger Knuckle (v3.0) \cite{fingerknuckledbv3.0} does not provide segmentation images of minor finger knuckle.}
+    \label{PublicSegmentationPrecision}
+\end{table}
+
+The segmented finger knuckles given in the three public datasets were counted, and the corresponding segmentation precision and recall values were obtained and listed in the Table \ref{PublicSegmentationPrecision}. Since all three databases have segmented the corresponding finger knuckle images, there is no so-called missed segmentation, so the corresponding precision and recall values are the same. For the first database listed in the Table \ref{PublicSegmentationPrecision}, the major finger knuckle segmentation accuracy is 0.982, and the minor finger knuckle segmentation accuracy is 0.991 for the finger knuckle v1.0 database \cite{fingerknuckledbv1.0}, and the corresponding recall values are both equal. For the dorsal hand database \cite{ContactlessHnadDorsaldb}, the precision of the major finger knuckle is 0.985, and the minor finger knuckle is 0.98. According to the precision and recall values obtained from the segmentation using our model in Table \ref{FingerKnuckle} and Table \ref{Handdorsaldatabase}, in the case of the confidence threshold of 0.2 and 0.3, the precision and recall values obtained using the YOLOv5x-CSL model are higher than the precision and recall values of the segmented images provided by the database. Even when calculating the accuracy of the finger knuckle segmentation provided by the database, many images with misaligned segmentation positions were not determined as wrongly segmented regions. For both databases, our model's segmentation accuracy is higher, but also the segmented finger knuckle regions are more accurate, which can bring more useful information for subsequent finger knuckle feature extraction. The Figure \ref{FingerKnuckleV1.0segmentationcompare} and Figure \ref{Handdorsalsegmentationcompare} shows some wrong segmentation in the corresponding public dataset and the examples that we can segment correctly. From these two figures, we can find that our segmentation model can not only segment the location of the knuckles correctly but also segment the background area well.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{1\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/194_4_o.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation-compare/194_4_my.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[angle=90, width=\linewidth]{Figures/segmentation-compare/194_4.jpg}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\textwidth}
+            \centering
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[angle=90, width=\linewidth]{Figures/segmentation-compare/473_1_o.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{0.3\linewidth}
+                \includegraphics[width=\linewidth]{Figures/segmentation-compare/473_1_my.jpg}
+            \end{subfigure}
+            \begin{subfigure}[b]{1\linewidth}
+                \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/473_1.jpg}
+            \end{subfigure}
+            \caption{}
+        \end{subfigure}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[angle=90, width=\linewidth]{Figures/segmentation-compare/321_5_o.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/321_5_my.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/321_5.jpg}
+        \end{subfigure}
+        \caption{}
+    \end{subfigure}
+    \caption{Comparison of some wrong finger knuckle segmentation images in the HKPolyU Finger Knuckle (V1.0) database \cite{fingerknuckledbv1.0} and the segmentation using our model. The left side of the first row of each subplot shows the incorrect segmentation in the database and the right side shows the correct segmentation by YOLOv5-CSL model.}
+    \label{FingerKnuckleV1.0segmentationcompare}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\linewidth}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/700_1_index.JPG}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/700_1_middle.JPG}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/700_1_ring.JPG}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/700_1_little.JPG}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/major-1.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/major-6.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/major-7.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/major-8.jpg}
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/700_IMG_7014.JPG}
+        \end{subfigure}
+    \end{subfigure}
+    \caption{Comparison of some wrong finger knuckle segmentation images in the HKPolyU Dorsal Hand database \cite{ContactlessHnadDorsaldb} and the segmentation using our model. The first row shows the incorrect segmentation in the database and the second row shows the correct segmentation by YOLOv5-CSL model.}
+    \label{Handdorsalsegmentationcompare}
+\end{figure}
+
+However, for the Finger Knuckle V3.0 database \cite{fingerknuckledbv3.0}, although the finger knuckles are sampled at different angles, the position of the finger knuckles in the image is relatively fixed. The database segmentation accuracy listed in Table \ref{PublicSegmentationPrecision} yields a major finger knuckle of 0.998. However, from Table \ref{FingerKnuckle3.0}, we get a segmentation precision of 0.990, but the corresponding recall is only 0.855, which means our method has many missed segmentation. Therefore, the segmentation accuracy obtained by using the fixed position segmentation method provided in the article \cite{kumar2019toward} is very high, regardless of the precision or recall values being higher than our model's accuracy for testing. This is because the corresponding finger knuckles are sampled at different degrees of curvature, and the background interference varies. The segmentation accuracy of our model is not very high for this database because few training images contain bent finger knuckles in the training set when the model is trained. The Figure \ref{FingerKnucklev3.0segmentationcompare} shows the finger knuckle regions when our model performs segmentation and the segmentation regions provided in the database. It can be seen that our model is relatively more accurate for the key region of the finger knuckle, i.e., the location of the segmented finger knuckle.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/34_5_o.jpg}            
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/34_5_my.jpg}            
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/34_5.jpg}         
+        \end{subfigure}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[angle=90,width=\linewidth]{Figures/segmentation-compare/211_6_o.jpg}            
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/211_6_my.jpg}            
+        \end{subfigure}
+        \begin{subfigure}[b]{1\linewidth}
+            \includegraphics[width=\linewidth]{Figures/segmentation-compare/211_6.jpg}         
+        \end{subfigure}
+        \caption{}
+    \end{subfigure}
+    \caption{Comparison of some wrong finger knuckle segmentation images in the HKPolyU Finger Knuckle (V3.0) database \cite{fingerknuckledbv3.0} and the segmentation using our model. The left side of the first row of each subplot shows the incorrect segmentation in the database and the right side shows the correct segmentation by YOLOv5-CSL model.}
+    \label{FingerKnucklev3.0segmentationcompare}
+\end{figure}
+
+The results shown in Table \ref{FingerKnuckle}, \ref{Handdorsaldatabase}, \ref{FingerKnuckle3.0}, \ref{PublicSegmentationPrecision} use the detected images made available in respective publicly available databases as the ground truth or reference. However, many of these reference images themselves may not be very accurate and therefore the numbers shown in these tables can be subjective to such interpretation. From the above comparison, for both HKPolyU Finger Knuckle (V1.0) \cite{fingerknuckledbv1.0} and HKPolyU Dorsal Hand \cite{ContactlessHnadDorsaldb}, the accuracy of our model segmentation is higher in terms of the success rate of segmentation and the correct rate of segmentation. Even comparing the segmented images \ref{FingerKnuckleV1.0segmentationcompare}, \ref{Handdorsalsegmentationcompare}, the finger knuckle positions segmented by our model are more accurate and contain more information about the finger knuckles, which is helpful to improve the accuracy of the subsequent finger knuckle recognition. Although for the more challenging HKPolyU Finger Knuckle (V3.0) \cite{fingerknuckledbv3.0}, the precision and recall of our model's segmentation are lower than those of the segmented images already provided in the public dataset. However, from comparing the segmented images \ref{FingerKnucklev3.0segmentationcompare}, we can also obtain similar conclusions as above that our segmented finger knuckle ROI contains richer finger knuckle feature regions and less background after segmentation. Since the model training contains fewer bending finger knuckle, the segmentation accuracy is not very good for the bent finger knuckles, and the subsequent model fine-tune may achieve better results. Our model has achieved a good result for the segmentation of the finger knuckle region, both in terms of accuracy and the signal-to-noise ratio of the segmented region of interest.
