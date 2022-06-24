@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.5.4)  23 JUN 2022 19:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.5.4)  24 JUN 2022 21:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -745,11 +745,18 @@ File: Figures/crosshd-cmc_compare_new.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
+File: Figures/crosshd-middle-roc_compare_new.eps Graphic file (type eps)
+<Figures/crosshd-middle-roc_compare_new.eps>
+File: Figures/crosshd-middle-cmc_compare_new.eps Graphic file (type eps)
+<Figures/crosshd-middle-cmc_compare_new.eps>
 File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
-) (./FK-Identification/3dof3dfingerknuckle.tex [6]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]) (./FK-Identification/3dof3dfingerknuckle.tex
 File: Figures/3dod3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dod3d-roc_compare_new.eps>
 File: Figures/3dod3d-cmc_compare_new.eps Graphic file (type eps)
@@ -759,6 +766,10 @@ Overfull \hbox (16.65967pt too wide) in paragraph at lines 1--1
 []\TU/TimesNewRoman(0)/b/n/17.28 Compare Performance on Yolov5 Segment and Dataset Offter
  []
 
+
+Underfull \vbox (badness 3128) has occurred while \output is active []
+
+ [7]
 File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -767,280 +778,51 @@ File: Figures/yolov5vsdatabase/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-cmc_compare_new.eps>
+) (./FK-Identification/onlinefingerknuckleidentification.tex [8] [9] [10]
+File: Figures/knuckle-00269.jpg Graphic file (type bmp)
+<Figures/knuckle-00269.jpg>
+File: Figures/knuckle-00491.jpg Graphic file (type bmp)
+<Figures/knuckle-00491.jpg>
+File: Figures/knuckle-00462.jpg Graphic file (type bmp)
+<Figures/knuckle-00462.jpg>
+File: Figures/knuckle-00768.jpg Graphic file (type bmp)
+<Figures/knuckle-00768.jpg>
+ [11]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `YOLOv5modeloffical' on page 12 undefined on input line 105.
 
- [7]) (./FK-Identification/onlinefingerknuckleidentification.tex [8]
-
-LaTeX Warning: Reference `HBB Problems' on page 9 undefined on input line 21.
-
-
-LaTeX Warning: Reference `HBB Problems' on page 9 undefined on input line 21.
-
-[9]
-
-LaTeX Warning: Reference `HBB Problems' on page 10 undefined on input line 23.
-
-
-LaTeX Warning: Reference `HBB Problems' on page 10 undefined on input line 23.
-
-File: Figures/OBB/opencv.png Graphic file (type bmp)
-<Figures/OBB/opencv.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--33
-[]\TU/TimesNewRoman(0)/m/n/10.95 (a) |Five-parameter method
- []
-
-File: Figures/OBB/180degree.png Graphic file (type bmp)
-<Figures/OBB/180degree.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--37
-[]\TU/TimesNewRoman(0)/m/n/10.95 (b) |Five-parameter method
- []
-
-File: Figures/OBB/fourpoints.png Graphic file (type bmp)
-<Figures/OBB/fourpoints.png>
-[10] [11] [12]
-
-LaTeX Warning: Reference `NMS' on page 13 undefined on input line 129.
-
-
-LaTeX Warning: Reference `YOLOv5modeloffical' on page 13 undefined on input line 139.
-
-[13]
-Underfull \vbox (badness 1803) has occurred while \output is active []
-
- [14]
-File: Figures/groundtruth/6.jpg Graphic file (type bmp)
-<Figures/groundtruth/6.jpg>
-
-Overfull \hbox (1.52893pt too wide) in paragraph at lines 180--181
-[][] 
- []
-
-File: Figures/groundtruth/6.png Graphic file (type bmp)
-<Figures/groundtruth/6.png>
-File: Figures/groundtruth/1.jpg Graphic file (type bmp)
-<Figures/groundtruth/1.jpg>
-
-Overfull \hbox (12.91019pt too wide) in paragraph at lines 191--192
-[][] 
- []
-
-File: Figures/groundtruth/1.png Graphic file (type bmp)
-<Figures/groundtruth/1.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-File: Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_0.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_0.jpg>
-File: Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_1.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_1.jpg>
-File: Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_2.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_2.jpg>
-File: Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_3.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/main/117_rlh_117_7_3.jpg>
-File: Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_0.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_0.jpg>
-File: Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_1.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_1.jpg>
-File: Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_2.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_2.jpg>
-File: Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_3.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/minor/117_rlh_117_1_3.jpg>
-File: Figures/segmentation/117_rlh_117_1/117_rlh_117_1.jpg Graphic file (type bmp)
-<Figures/segmentation/117_rlh_117_1/117_rlh_117_1.jpg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--308
-[][] [] [] []
+[12]) (./references.tex
+Overfull \hbox (3.43402pt too wide) in paragraph at lines 3--3
+[]\TU/TimesNewRoman(0)/m/n/12 Kim Ui Jin. \TU/TimesNewRoman(0)/m/it/12 Unsplash Finger Knuckle\TU/TimesNewRoman(0)/m/n/12 . []$[][][][][] [] [] [] [][][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][][][][][][]$[]. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--308
-[] [] [] []
- []
-
-File: Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_0.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_0.jpg>
-File: Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_1.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_1.jpg>
-File: Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_2.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_2.jpg>
-File: Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_3.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/main/180_rlh_180_1_3.jpg>
-File: Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_0.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_0.jpg>
-File: Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_1.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_1.jpg>
-File: Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_2.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_2.jpg>
-File: Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_3.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/minor/180_rlh_180_1_3.jpg>
-File: Figures/segmentation/180_rlh_180_1/180_rlh_180_1.jpg Graphic file (type bmp)
-<Figures/segmentation/180_rlh_180_1/180_rlh_180_1.jpg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--338
-[][] [] [] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--338
-[] [] [] []
- []
-
-
-Underfull \vbox (badness 6825) has occurred while \output is active []
-
- [16]
-File: Figures/segmentation/0_0.jpg Graphic file (type bmp)
-<Figures/segmentation/0_0.jpg>
-File: Figures/segmentation/1.png Graphic file (type bmp)
-<Figures/segmentation/1.png>
-File: Figures/segmentation/1_0.jpg Graphic file (type bmp)
-<Figures/segmentation/1_0.jpg>
-File: Figures/segmentation/2.png Graphic file (type bmp)
-<Figures/segmentation/2.png>
-File: Figures/segmentation/2_0.jpg Graphic file (type bmp)
-<Figures/segmentation/2_0.jpg>
-File: Figures/segmentation/3.png Graphic file (type bmp)
-<Figures/segmentation/3.png>
-File: Figures/segmentation/3_0.jpg Graphic file (type bmp)
-<Figures/segmentation/3_0.jpg>
-File: Figures/segmentation/4.png Graphic file (type bmp)
-<Figures/segmentation/4.png>
-File: Figures/segmentation/4_0.jpg Graphic file (type bmp)
-<Figures/segmentation/4_0.jpg>
-File: Figures/segmentation/5.png Graphic file (type bmp)
-<Figures/segmentation/5.png>
-File: Figures/segmentation/5_0.jpg Graphic file (type bmp)
-<Figures/segmentation/5_0.jpg>
-File: Figures/segmentation/6.png Graphic file (type bmp)
-<Figures/segmentation/6.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-
-LaTeX Warning: Reference `HBB Problems' on page 18 undefined on input line 422.
-
-[18]
-File: Figures/segmentation-compare/194_4_o.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/194_4_o.jpg>
-File: Figures/segmentation-compare/194_4_my.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/194_4_my.jpg>
-File: Figures/segmentation-compare/194_4.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/194_4.jpg>
-File: Figures/segmentation-compare/473_1_o.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/473_1_o.jpg>
-File: Figures/segmentation-compare/473_1_my.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/473_1_my.jpg>
-File: Figures/segmentation-compare/473_1.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/473_1.jpg>
-File: Figures/segmentation-compare/321_5_o.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/321_5_o.jpg>
-File: Figures/segmentation-compare/321_5_my.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/321_5_my.jpg>
-File: Figures/segmentation-compare/321_5.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/321_5.jpg>
-
-Underfull \vbox (badness 3514) has occurred while \output is active []
-
- [19]
-File: Figures/segmentation-compare/700_1_index.JPG Graphic file (type bmp)
-<Figures/segmentation-compare/700_1_index.JPG>
-File: Figures/segmentation-compare/700_1_middle.JPG Graphic file (type bmp)
-<Figures/segmentation-compare/700_1_middle.JPG>
-File: Figures/segmentation-compare/700_1_ring.JPG Graphic file (type bmp)
-<Figures/segmentation-compare/700_1_ring.JPG>
-File: Figures/segmentation-compare/700_1_little.JPG Graphic file (type bmp)
-<Figures/segmentation-compare/700_1_little.JPG>
-File: Figures/segmentation-compare/major-1.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/major-1.jpg>
-File: Figures/segmentation-compare/major-6.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/major-6.jpg>
-File: Figures/segmentation-compare/major-7.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/major-7.jpg>
-File: Figures/segmentation-compare/major-8.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/major-8.jpg>
-File: Figures/segmentation-compare/700_IMG_7014.JPG Graphic file (type bmp)
-<Figures/segmentation-compare/700_IMG_7014.JPG>
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--522
-[][] [] [] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--522
-[] [] [] []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-File: Figures/segmentation-compare/34_5_o.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/34_5_o.jpg>
-File: Figures/segmentation-compare/34_5_my.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/34_5_my.jpg>
-File: Figures/segmentation-compare/34_5.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/34_5.jpg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--541
-[][] []
- []
-
-File: Figures/segmentation-compare/211_6_o.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/211_6_o.jpg>
-File: Figures/segmentation-compare/211_6_my.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/211_6_my.jpg>
-File: Figures/segmentation-compare/211_6.jpg Graphic file (type bmp)
-<Figures/segmentation-compare/211_6.jpg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 544--553
-[][] []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]) (./references.tex
-Overfull \hbox (0.31264pt too wide) in paragraph at lines 3--3
-[]\TU/TimesNewRoman(0)/m/n/12 KamYuen Cheng and Ajay Kumar. “Contactless finger knuckle identification using smart-
- []
-
-[22]
 Overfull \hbox (0.60951pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Ajay Kumar. “Contactless finger knuckle authentication under severe pose deformations”.
  []
 
-
+[13]
 Overfull \hbox (10.36765pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Joseph Redmon and Ali Farhadi. “Yolov3: An incremental improvement”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint
  []
 
-[23]
-Overfull \hbox (4.65356pt too wide) in paragraph at lines 3--3
-\TU/TimesNewRoman(0)/m/n/12 object detection and instance segmentation”. In: \TU/TimesNewRoman(0)/m/it/12 IEEE Transactions on Cybernetics \TU/TimesNewRoman(0)/m/n/12 (2021). 
- []
-
-) [24] (./Finger-Knuckle.aux)
+) [14] (./Finger-Knuckle.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Finger-Knuckle.out' has not changed.
-(rerunfilecheck)             Checksum: B6056D0CCE5CFC049412CB677053AD24;4674.
+(rerunfilecheck)             Checksum: 1C803A872A08BBCDFAB46E02A61854F6;4851.
 Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 \openout1 = `Finger-Knuckle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21479 strings out of 476191
- 441852 string characters out of 5812073
- 1221152 words of memory out of 5000000
- 41873 multiletter control sequences out of 15000+600000
- 475741 words of font info for 76 fonts, out of 8000000 for 9000
+ 21014 strings out of 476191
+ 422185 string characters out of 5812073
+ 1198457 words of memory out of 5000000
+ 41467 multiletter control sequences out of 15000+600000
+ 474601 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,19n,77p,2762b,4819s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,19n,77p,1970b,4824s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (24 pages, 550064 bytes).
+Output written on Finger-Knuckle.xdv (14 pages, 315892 bytes).

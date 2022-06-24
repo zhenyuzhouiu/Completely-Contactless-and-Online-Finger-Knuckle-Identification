@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{FingerKnuckle6}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a5205fccd38f06ae7e838564ef57c2f4}{%
+           family={BANERJEE},
+           familyi={B\bibinitperiod},
+           given={SOHAM},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \strng{fullhash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \strng{bibnamehash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \strng{authorbibnamehash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \strng{authornamehash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \strng{authorfullhash}{a5205fccd38f06ae7e838564ef57c2f4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://unsplash.com/photos/9BjwWnY3W_4}}
+      \field{title}{Unsplash Finger Knuckle}
+    \endentry
     \entry{bochkovskiy2020yolov4}{article}{}
       \name{author}{3}{}{%
         {{hash=c0b2fdc20c37a4bd8d817822d374f809}{%
@@ -50,61 +71,6 @@
       \field{journaltitle}{arXiv preprint arXiv:2004.10934}
       \field{title}{Yolov4: Optimal speed and accuracy of object detection}
       \field{year}{2020}
-    \endentry
-    \entry{roLabelImg}{misc}{}
-      \name{author}{2}{}{%
-        {{hash=4c7b0d261c54bef9b61dae2119247979}{%
-           family={Cgvict},
-           familyi={C\bibinitperiod}}}%
-        {{hash=9638b8628ba8eba31ed0685db5069538}{%
-           family={Wkkmike},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{77139a658aa10b9af8626749f7773ed1}
-      \strng{fullhash}{77139a658aa10b9af8626749f7773ed1}
-      \strng{bibnamehash}{77139a658aa10b9af8626749f7773ed1}
-      \strng{authorbibnamehash}{77139a658aa10b9af8626749f7773ed1}
-      \strng{authornamehash}{77139a658aa10b9af8626749f7773ed1}
-      \strng{authorfullhash}{77139a658aa10b9af8626749f7773ed1}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://github.com/cgvict/roLabelImg}}
-      \field{title}{roLabelImg}
-      \field{year}{7 July 2017}
-    \endentry
-    \entry{cheng2012contactless}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=483c15375d52d88aa512c69138348b57}{%
-           family={Cheng},
-           familyi={C\bibinitperiod},
-           given={KamYuen},
-           giveni={K\bibinitperiod}}}%
-        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
-           family={Kumar},
-           familyi={K\bibinitperiod},
-           given={Ajay},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \strng{fullhash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \strng{bibnamehash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \strng{authorbibnamehash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \strng{authornamehash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \strng{authorfullhash}{2bd5af5b1a530f12cf2ff478902efe0b}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2012 BIOSIG-Proceedings of the International Conference of Biometrics Special Interest Group (BIOSIG)}
-      \field{title}{Contactless finger knuckle identification using smartphones}
-      \field{year}{2012}
-      \field{pages}{1\bibrangedash 6}
-      \range{pages}{6}
     \endentry
     \entry{girshick2015fast}{inproceedings}{}
       \name{author}{1}{}{%
@@ -169,6 +135,108 @@
       \field{pages}{580\bibrangedash 587}
       \range{pages}{8}
     \endentry
+    \entry{he2017mask}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6e67eba235a8cccf3a69b746a53d5722}{%
+           family={Gkioxari},
+           familyi={G\bibinitperiod},
+           given={Georgia},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ecd149fdcb3e0503881d49e545744c3d}{%
+           family={Dollár},
+           familyi={D\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{25317aa10282a4a31c271050ed66c455}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{25317aa10282a4a31c271050ed66c455}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
+      \field{title}{Mask r-cnn}
+      \field{year}{2017}
+      \field{pages}{2961\bibrangedash 2969}
+      \range{pages}{9}
+    \endentry
+    \entry{FingerKnuckle4}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f402542e7c702b6efca6124701040952}{%
+           family={Humphries},
+           familyi={H\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f402542e7c702b6efca6124701040952}
+      \strng{fullhash}{f402542e7c702b6efca6124701040952}
+      \strng{bibnamehash}{f402542e7c702b6efca6124701040952}
+      \strng{authorbibnamehash}{f402542e7c702b6efca6124701040952}
+      \strng{authornamehash}{f402542e7c702b6efca6124701040952}
+      \strng{authorfullhash}{f402542e7c702b6efca6124701040952}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://unsplash.com/photos/8I8G_Rw9lRw}}
+      \field{title}{Unsplash Finger Knuckle}
+    \endentry
+    \entry{FingerKnuckle3}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=297743df7f1bbd034a10ba839ada4b82}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Kim\bibnamedelima Ui},
+           giveni={K\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+      }
+      \strng{namehash}{297743df7f1bbd034a10ba839ada4b82}
+      \strng{fullhash}{297743df7f1bbd034a10ba839ada4b82}
+      \strng{bibnamehash}{297743df7f1bbd034a10ba839ada4b82}
+      \strng{authorbibnamehash}{297743df7f1bbd034a10ba839ada4b82}
+      \strng{authornamehash}{297743df7f1bbd034a10ba839ada4b82}
+      \strng{authorfullhash}{297743df7f1bbd034a10ba839ada4b82}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://unsplash.com/photos/p8ciYQDJUpE}}
+      \field{title}{Unsplash Finger Knuckle}
+    \endentry
+    \entry{FingerKnuckle1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=164ea7f187184da32f1dbda40fe2c626}{%
+           family={Kapur},
+           familyi={K\bibinitperiod},
+           given={Maheima},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{164ea7f187184da32f1dbda40fe2c626}
+      \strng{fullhash}{164ea7f187184da32f1dbda40fe2c626}
+      \strng{bibnamehash}{164ea7f187184da32f1dbda40fe2c626}
+      \strng{authorbibnamehash}{164ea7f187184da32f1dbda40fe2c626}
+      \strng{authornamehash}{164ea7f187184da32f1dbda40fe2c626}
+      \strng{authorfullhash}{164ea7f187184da32f1dbda40fe2c626}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://unsplash.com/photos/A_0tNTbbviQ}}
+      \field{title}{Unsplash Finger Knuckle}
+    \endentry
     \entry{kumar2020contactless}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
@@ -226,63 +294,6 @@
       \field{year}{2019}
       \field{pages}{201\bibrangedash 209}
       \range{pages}{9}
-    \endentry
-    \entry{liu2016ssd}{inproceedings}{}
-      \name{author}{7}{}{%
-        {{hash=c0e0d23e2d09e45e6f51cc2bcea6d9f9}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Wei},
-           giveni={W\bibinitperiod}}}%
-        {{hash=c1826f3465579186aff299a9b0e16ed7}{%
-           family={Anguelov},
-           familyi={A\bibinitperiod},
-           given={Dragomir},
-           giveni={D\bibinitperiod}}}%
-        {{hash=8bbc4c5d96f205bada839e74e0202146}{%
-           family={Erhan},
-           familyi={E\bibinitperiod},
-           given={Dumitru},
-           giveni={D\bibinitperiod}}}%
-        {{hash=ed568d9c3bb059e6bf22899fbf170f86}{%
-           family={Szegedy},
-           familyi={S\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=698ee61a2f3fa29734204496d2d36aef}{%
-           family={Reed},
-           familyi={R\bibinitperiod},
-           given={Scott},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ec820780d594e36d11c6e30c7a2614e0}{%
-           family={Fu},
-           familyi={F\bibinitperiod},
-           given={Cheng-Yang},
-           giveni={C\bibinithyphendelim Y\bibinitperiod}}}%
-        {{hash=963e9b2526a7150c418b4e9e9d19a82f}{%
-           family={Berg},
-           familyi={B\bibinitperiod},
-           given={Alexander\bibnamedelima C},
-           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{623b50f45b666c1e9b84e5228e255810}
-      \strng{fullhash}{d5e1ac3dfe6687980f91e701611520ad}
-      \strng{bibnamehash}{623b50f45b666c1e9b84e5228e255810}
-      \strng{authorbibnamehash}{623b50f45b666c1e9b84e5228e255810}
-      \strng{authornamehash}{623b50f45b666c1e9b84e5228e255810}
-      \strng{authorfullhash}{d5e1ac3dfe6687980f91e701611520ad}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{European conference on computer vision}
-      \field{title}{Ssd: Single shot multibox detector}
-      \field{year}{2016}
-      \field{pages}{21\bibrangedash 37}
-      \range{pages}{17}
     \endentry
     \entry{liu2020contactless}{article}{}
       \name{author}{2}{}{%
@@ -496,13 +507,6 @@
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/fn1.htm}}
       \field{title}{The HKPolyU Contactless Finger Knuckle Images Database (V-1.0):}
     \endentry
-    \entry{fingerknuckledbv3.0}{misc}{}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www4.comp.polyu.edu.hk/~csajaykr/fn2.htm}}
-      \field{title}{The HKPolyU Contactless Finger Knuckle Images Database (Version 3.0) :}
-    \endentry
     \entry{ContactlessHnadDorsaldb}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -530,62 +534,67 @@
       \field{title}{YOLOv5}
       \field{year}{18 May 2020}
     \endentry
-    \entry{xin2021pafnet}{article}{}
-      \name{author}{8}{}{%
-        {{hash=293456a936b81614948e0a7ff024b38f}{%
-           family={Xin},
-           familyi={X\bibinitperiod},
-           given={Ying},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=61c83935c5db8545f0d25d074f8e34d1}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Guanzhong},
-           giveni={G\bibinitperiod}}}%
-        {{hash=00a55734898ca1242892c08c8542d73e}{%
-           family={Mao},
-           familyi={M\bibinitperiod},
-           given={Mingyuan},
-           giveni={M\bibinitperiod}}}%
-        {{hash=255212d23fce1d52114ec90391dc964d}{%
-           family={Feng},
-           familyi={F\bibinitperiod},
-           given={Yuan},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=2ce95337f93907a139813f02c93ba30b}{%
-           family={Dang},
-           familyi={D\bibinitperiod},
-           given={Qingqing},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=3aa7464c4564bd1e282f90cd1029470a}{%
-           family={Ma},
-           familyi={M\bibinitperiod},
-           given={Yanjun},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=515f5244812213e3026ec84432c70b0a}{%
-           family={Ding},
-           familyi={D\bibinitperiod},
-           given={Errui},
-           giveni={E\bibinitperiod}}}%
-        {{hash=3af1e459a4641fd9d6e444b972193956}{%
-           family={Han},
-           familyi={H\bibinitperiod},
-           given={Shumin},
-           giveni={S\bibinitperiod}}}%
+    \entry{Unsplash}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dff358ae83e3ef09735ced244fd41554}{%
+           family={Unsplash},
+           familyi={U\bibinitperiod}}}%
       }
-      \strng{namehash}{44e122ea0bef6060f29bb4ee5b6b6724}
-      \strng{fullhash}{d0aa450a65d62d58168e12925fef06a5}
-      \strng{bibnamehash}{44e122ea0bef6060f29bb4ee5b6b6724}
-      \strng{authorbibnamehash}{44e122ea0bef6060f29bb4ee5b6b6724}
-      \strng{authornamehash}{44e122ea0bef6060f29bb4ee5b6b6724}
-      \strng{authorfullhash}{d0aa450a65d62d58168e12925fef06a5}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \strng{namehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{fullhash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{bibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorbibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authornamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorfullhash}{dff358ae83e3ef09735ced244fd41554}
+      \field{extraname}{1}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:2104.13534}
-      \field{title}{PAFNet: An Efficient Anchor-Free Object Detector Guidance}
-      \field{year}{2021}
+      \field{howpublished}{\url{https://unsplash.com/}}
+      \field{title}{Unsplash}
+    \endentry
+    \entry{unsplashstats}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dff358ae83e3ef09735ced244fd41554}{%
+           family={Unsplash},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{fullhash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{bibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorbibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authornamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorfullhash}{dff358ae83e3ef09735ced244fd41554}
+      \field{extraname}{2}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\href{https://unsplash.com/stats}{"Stats"}}
+      \field{title}{Unsplash.com}
+      \field{year}{Retrieved 26 September 2021}
+    \endentry
+    \entry{unsplashlicense}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dff358ae83e3ef09735ced244fd41554}{%
+           family={Unsplash},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{fullhash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{bibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorbibnamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authornamehash}{dff358ae83e3ef09735ced244fd41554}
+      \strng{authorfullhash}{dff358ae83e3ef09735ced244fd41554}
+      \field{extraname}{3}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\href{https://unsplash.com/license}{"Unsplash License"}}
+      \field{title}{Unsplash.com}
+      \field{year}{Retrieved 11 January 2017}
     \endentry
     \entry{yang2020csl}{inproceedings}{}
       \name{author}{2}{}{%
@@ -618,114 +627,6 @@
       \field{year}{2020}
       \field{pages}{677\bibrangedash 694}
       \range{pages}{18}
-    \endentry
-    \entry{zheng2020distance}{inproceedings}{}
-      \name{author}{6}{}{%
-        {{hash=465aa227c6b12a8f1bb127a663fec604}{%
-           family={Zheng},
-           familyi={Z\bibinitperiod},
-           given={Zhaohui},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=2053a78b8c7e674d28eabbe236f2f077}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Ping},
-           giveni={P\bibinitperiod}}}%
-        {{hash=c0e0d23e2d09e45e6f51cc2bcea6d9f9}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Wei},
-           giveni={W\bibinitperiod}}}%
-        {{hash=2f4467e79a16980d474b470bdb487834}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Jinze},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b1c47c0e24e44165fe8ea7bd61cd0bca}{%
-           family={Ye},
-           familyi={Y\bibinitperiod},
-           given={Rongguang},
-           giveni={R\bibinitperiod}}}%
-        {{hash=191f560d65911e84b3b730982bea0d6e}{%
-           family={Ren},
-           familyi={R\bibinitperiod},
-           given={Dongwei},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{fullhash}{bfc82f551906d6d5438e219e4586f120}
-      \strng{bibnamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authorbibnamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authornamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authorfullhash}{bfc82f551906d6d5438e219e4586f120}
-      \field{extraname}{1}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
-      \field{number}{07}
-      \field{title}{Distance-IoU loss: Faster and better learning for bounding box regression}
-      \field{volume}{34}
-      \field{year}{2020}
-      \field{pages}{12993\bibrangedash 13000}
-      \range{pages}{8}
-    \endentry
-    \entry{zheng2021enhancing}{article}{}
-      \name{author}{7}{}{%
-        {{hash=465aa227c6b12a8f1bb127a663fec604}{%
-           family={Zheng},
-           familyi={Z\bibinitperiod},
-           given={Zhaohui},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=2053a78b8c7e674d28eabbe236f2f077}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Ping},
-           giveni={P\bibinitperiod}}}%
-        {{hash=191f560d65911e84b3b730982bea0d6e}{%
-           family={Ren},
-           familyi={R\bibinitperiod},
-           given={Dongwei},
-           giveni={D\bibinitperiod}}}%
-        {{hash=c0e0d23e2d09e45e6f51cc2bcea6d9f9}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Wei},
-           giveni={W\bibinitperiod}}}%
-        {{hash=b1c47c0e24e44165fe8ea7bd61cd0bca}{%
-           family={Ye},
-           familyi={Y\bibinitperiod},
-           given={Rongguang},
-           giveni={R\bibinitperiod}}}%
-        {{hash=b8a0fb91ee1e348c1963577d64c2b566}{%
-           family={Hu},
-           familyi={H\bibinitperiod},
-           given={Qinghua},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=509ab736fbc2f1e10f41c1bddb2531ed}{%
-           family={Zuo},
-           familyi={Z\bibinitperiod},
-           given={Wangmeng},
-           giveni={W\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{fullhash}{11bacf6af3e056bbc7b9fc3872014989}
-      \strng{bibnamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authorbibnamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authornamehash}{f4dcf982a7a9d7f03dd27533dd5b892d}
-      \strng{authorfullhash}{11bacf6af3e056bbc7b9fc3872014989}
-      \field{extraname}{2}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Cybernetics}
-      \field{title}{Enhancing geometric factors in model learning and inference for object detection and instance segmentation}
-      \field{year}{2021}
     \endentry
   \enddatalist
 \endrefsection

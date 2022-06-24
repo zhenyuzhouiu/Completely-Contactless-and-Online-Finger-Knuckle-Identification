@@ -16,6 +16,17 @@ I firstly pre-trained my models on the Finger Knuckle V1 Database, and then fine
 
 The database totally has 712 subjects, and each subject has 5 samples. Therefore, it will have $712*5$ genuine matching scores and $712*711*5$ imposter matching scores. From the cure, the performance of RFN-WS and RFN-WRS is similar, and the RFN-WS is slightly better than RFN-WRS while using the same training samples. Updated ROC Curve and CMC Curve with RFNet, EfficientNet and DeConvRFNet. For the ROC curve, I add EfficientNetV2-S model performance.
 
+\subsubsection{Middle Finger Knuckle of Hand Dorsal Image}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/crosshd-middle-roc_compare_new.eps}
+	\end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/crosshd-middle-cmc_compare_new.eps}
+	\end{subfigure}
+\end{figure}
+
 
 \subsubsection{Tsinghua Finger Knuckle Database}
 \begin{figure}[H]
@@ -29,3 +40,6 @@ The database totally has 712 subjects, and each subject has 5 samples. Therefore
 \end{figure}
 
 The database has 610 subjects, and each subject can offer 4 samples. Then as the cross database experiment, it will have $610*4$ genuine matching scores and $610*609*4$ imposter matching scores. In this database, all models can get very high matching performance from the table and figure.
+
+\subsection{Discussion}
+
