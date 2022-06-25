@@ -1,1 +1,13 @@
 TRTLoss
+FKNet
+FLOPs
+mAP
+FK
+Zhenyu
+RFNet-STTL
+DeConvRFNet-STTL
+DeConvRFNet-TRTL
+RFNet-TRTL
+RFNet
+Tsinghua
+DeConvRFNet

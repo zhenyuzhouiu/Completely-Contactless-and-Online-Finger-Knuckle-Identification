@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -44,12 +44,45 @@
       \strng{authornamehash}{cf5dc5f8f26df49f548c03581fb80644}
       \strng{authorfullhash}{cf5dc5f8f26df49f548c03581fb80644}
       \field{sortinit}{B}
-      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2004.10934}
       \field{title}{Yolov4: Optimal speed and accuracy of object detection}
       \field{year}{2020}
+    \endentry
+    \entry{cheng2020deep}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9b801d5975d95e5a7213f608de6b2468}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Kevin\bibnamedelima HM},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{fullhash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{bibnamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authorbibnamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authornamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authorfullhash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{title}{Deep feature collaboration for challenging 3D finger knuckle identification}
+      \field{volume}{16}
+      \field{year}{2020}
+      \field{pages}{1158\bibrangedash 1173}
+      \range{pages}{16}
     \endentry
     \entry{girshick2015fast}{inproceedings}{}
       \name{author}{1}{}{%
@@ -66,7 +99,7 @@
       \strng{authornamehash}{bd5dadbe57bedc5957c19a3154c4d424}
       \strng{authorfullhash}{bd5dadbe57bedc5957c19a3154c4d424}
       \field{sortinit}{G}
-      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
@@ -105,7 +138,7 @@
       \strng{authornamehash}{5aa9f085e8eccf547d1eb54a05cb1beb}
       \strng{authorfullhash}{9147daa2f6a058d5b8880ff5cf38abd6}
       \field{sortinit}{G}
-      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
@@ -127,7 +160,7 @@
            given={Georgia},
            giveni={G\bibinitperiod}}}%
         {{hash=ecd149fdcb3e0503881d49e545744c3d}{%
-           family={Doll{á}r},
+           family={Dollár},
            familyi={D\bibinitperiod},
            given={Piotr},
            giveni={P\bibinitperiod}}}%
@@ -144,7 +177,7 @@
       \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authorfullhash}{25317aa10282a4a31c271050ed66c455}
       \field{sortinit}{H}
-      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
@@ -172,7 +205,7 @@
       \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \field{extraname}{1}
       \field{sortinit}{K}
-      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2020 8th International Workshop on Biometrics and Forensics (IWBF)}
@@ -200,7 +233,7 @@
       \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \field{extraname}{2}
       \field{sortinit}{K}
-      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Biometrics, Behavior, and Identity Science}
@@ -234,7 +267,7 @@
       \strng{authornamehash}{35a8a9ba3ef5184d82f3165da03ffa5f}
       \strng{authorfullhash}{35a8a9ba3ef5184d82f3165da03ffa5f}
       \field{sortinit}{L}
-      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Biometrics, Behavior, and Identity Science}
@@ -266,7 +299,7 @@
       \strng{authorfullhash}{e3b480c56f52be95ad68ce67e9708174}
       \field{extraname}{1}
       \field{sortinit}{R}
-      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
@@ -296,7 +329,7 @@
       \strng{authorfullhash}{e3b480c56f52be95ad68ce67e9708174}
       \field{extraname}{2}
       \field{sortinit}{R}
-      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1804.02767}
@@ -333,7 +366,7 @@
       \strng{authornamehash}{e1203a0044715040adeb8c5079ee645a}
       \strng{authorfullhash}{b5530443e433a4da53dbe3cf155225b4}
       \field{sortinit}{R}
-      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
@@ -372,7 +405,7 @@
       \strng{authornamehash}{f086ca4da3e532e8a41cb758ea461825}
       \strng{authorfullhash}{008a132af3e2d4ff15eb01a8fb4b005c}
       \field{sortinit}{R}
-      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in neural information processing systems}
@@ -407,7 +440,7 @@
       \strng{authornamehash}{474363fec59aa6cdd11f5b6b8275a8f2}
       \strng{authorfullhash}{474363fec59aa6cdd11f5b6b8275a8f2}
       \field{sortinit}{S}
-      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
@@ -416,16 +449,48 @@
       \field{pages}{815\bibrangedash 823}
       \range{pages}{9}
     \endentry
+    \entry{tan2021efficientnetv2}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Mingxing},
+           giveni={M\bibinitperiod}}}%
+        {{hash=841a83a4bb5e622d6e1bde4818879016}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{fullhash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{bibnamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authorbibnamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authornamehash}{3c6ed03914c0610af0050fb8a809b599}
+      \strng{authorfullhash}{3c6ed03914c0610af0050fb8a809b599}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Machine Learning}
+      \field{title}{Efficientnetv2: Smaller models and faster training}
+      \field{year}{2021}
+      \field{pages}{10096\bibrangedash 10106}
+      \range{pages}{11}
+    \endentry
     \entry{fingerknuckledbv1.0}{misc}{}
       \field{sortinit}{T}
-      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/fn1.htm}}
       \field{title}{The HKPolyU Contactless Finger Knuckle Images Database (V-1.0):}
     \endentry
     \entry{ContactlessHnadDorsaldb}{misc}{}
       \field{sortinit}{T}
-      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/knuckleV2.htm}}
       \field{title}{The HKPolyU Contactless Hand Dorsal Images Database:}
@@ -443,7 +508,7 @@
       \strng{authornamehash}{88f069848482a556e416f713d2819905}
       \strng{authorfullhash}{88f069848482a556e416f713d2819905}
       \field{sortinit}{U}
-      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/ultralytics/yolov5}}
@@ -464,7 +529,7 @@
       \strng{authorfullhash}{dff358ae83e3ef09735ced244fd41554}
       \field{extraname}{1}
       \field{sortinit}{U}
-      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://unsplash.com/}}
@@ -484,7 +549,7 @@
       \strng{authorfullhash}{dff358ae83e3ef09735ced244fd41554}
       \field{extraname}{2}
       \field{sortinit}{U}
-      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\href{https://unsplash.com/license}{"Unsplash License"}}
@@ -514,7 +579,7 @@
       \strng{authornamehash}{fc37cc6fd34703832dfa1db3ec40d39c}
       \strng{authorfullhash}{fc37cc6fd34703832dfa1db3ec40d39c}
       \field{sortinit}{Y}
-      \field{sortinithash}{6ae2ff5458ff901249c2745238c951b7}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{European Conference on Computer Vision}
