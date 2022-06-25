@@ -8,6 +8,7 @@ With TRTL loss, the RFNet \cite{liu2020contactless} can outperform state-of-the-
 Meanwhile, as for neural network, the current based on YOLO \cite{redmon2016you}, \cite{redmon2017yolo9000}, \cite{redmon2018yolov3}, \cite{bochkovskiy2020yolov4}, \cite{YOLOv5} and R-CNN \cite{girshick2014rich}, \cite{girshick2015fast}, \cite{ren2015faster}, \cite{he2017mask} series object detection and segmentation approaches cannot simultaneously obtain the angle of finger knuckle and the segmentation with high precision. Especially, the angle of the finger knuckle is a vital factor for identification. If we can get the angle of finger knuckle, we can use angle information to align two feature maps for increasing matching accuracy and efficiency. For solving above problems, we propose rotated bounding box detection based on YOLOv5 model for segmenting and getting angle information.
 
 \subsection{Contactless Finger Knuckle Detection}
+\subsubsection{ Rotated Bounding Box Based on YOLOv5}
 In order to solve the problem of finger knuckle detection in the real world, we choose to use YOLOv5 model because the YOLO series is famous for its fast detection speed and high accuracy. Especially, the YOLOv5's \cite{YOLOv5} speed can meet our online detection requirements.
 
 \noindent\textbf{Rotated Bounding Box}
@@ -44,65 +45,15 @@ Furthermore, in this paper, we used the Gaussian function for the Equation \ref{
 \end{equation}
 
 
-\subsection{Contactless Finger Knuckle Dataset}
-\subsection{Limitation of Current Public Database}
-Our task is to detect finger knuckles by contactless and online method, but by understanding current public finger knuckle database, their data are collected at specific conditions such as certain angle, certain light. In this kind of situation, this kind of data cannot represent 
+\subsubsection{Contactless Finger Knuckle Dataset}
+Our task is to detect finger knuckles in the contactless and online scenario, but by understanding current public finger knuckle database, their data are collected at specific conditions such as certain angle, certain light. In this kind of situation, this kind of data cannot represent real images of finger knuckle in real world. In order to address the shortcomings of current public finger knuckle dataset for contactless detection, we use a web crawler to get images from the Unsplash \cite{Unsplash} where the keywords are finger knuckles. The Unsplash is an image site that offers uploads and downloads, and uses a copyright license that allows users to download and use them for free or even for commercial use \cite{unsplashlicense}. We have downloaded 2347 images, there are 738 images without knuckles, and these images can be used as background training, and the rest 1609 images that contain at least one finger knuckle are the positive samples for the network model. In the network training process, we use crawled images, 169 finger knuckle images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0}, and 64 finger knuckles images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb} as for the training set. And we use the rest data as testing set to evaluate performance. The most important part is the data augmentaion which conatains flip, rotation, resize, translate and mosaic.
 
-Real-world differences in natural light, occlusion problems, and the degree of finger knuckle flexion vary. There is also an important influence that size of the finger knuckle in a single image is fixed, and the number of finger knuckles present in each image is also fixed. If such a dataset is used to train the neural network model directly, the generalization ability of the network model is definitely low. This is because the data set does not represent the actual distribution of finger knuckles.
+\subsubsection{Contactless Finger Knuckle Detection}
 
-However, we can increase the data set by resizing operations, changing the size of the image to change the target object's size, and increasing the number of target objects to be detected in a single image by using data enhancement operations such as mosaic. Although the above methods increase the data set, the finger knuckle features of these data sets are inherently stable. On the contrary, in the wild scenario, the finger knuckle features can vary more than that, with complex background interference, even with objects with the same features, and with the influence of complex natural light, even at night. However, the application in this paper is for a daily use scenario that is in the wild instead of in the lab. Because the above finger knuckle public datasets sample high-quality data, using these datasets may result in high measurement accuracy in the corresponding test data set. However, if such a model performs real-world finger knuckle detection, the corresponding correct target detection rate will be shallow.
-
-\subsection{Web Crawler for Finger Knuckle Image}
-In order to address the shortcomings of the above dataset, it is necessary to obtain a dataset that can address the above shortcomings. These data need to satisfy that the amount of data is sufficient, the clarity of the finger knuckle data needs to be satisfied, and most importantly, the in the wild scenario needs to be satisfied. Therefore, the corresponding finger knuckle data set needs to satisfy that the finger knuckles need to be under different illumination, have different occlusion problems, have complex background interference, have different degrees of curvature, and have multiple finger knuckles appearing in a uniform image at the same time.
-
-Due to the development of the web, the web data is now so immense that we can search for any resource we want, so we decide to use a web crawler to get images from the web where the keywords are finger knuckles. However, there is a massive amount of data on the web, and how to know that the image is crawled is a picture of a finger knuckle and not some other image. We targeted Unsplash \cite{Unsplash}, an image site that offers uploads and downloads. It is one of the largest image sites and currently has over a 3.2million images \cite{unsplashstats}. Not only that, this site uses a copyright license that allows users to download and use them for free or even for commercial use \cite{unsplashlicense}. The finger knuckle images can be obtained directly by using keywords. Once the target website is available, the web crawler can be used to crawl the website data. 
-
-First of all, we need to analyze the attributes of the target website. Generally speaking, websites use HTML language to display web pages, so we need to analyze the HTML structure of the target website. After getting the HTML structure, we need to know which HTML attribute the image is under and get the value of the corresponding attribute of the image to get the URL address of the image. Because there is a domain name and a series of suffix paths when accessing the data through the URL, the domain name can be converted to the IP address of the target server through the DNS domain name system so that accessing the data using the HTTP protocol or HTTPS protocol will return the corresponding data packet. The REQUESTS package can perform these steps to obtain the corresponding image data for downloading and saving locally. In order to obtain a sufficient amount of data, we do not simply crawl a few images but thousands of images. The MULTIPROCESSING package efficiently bypasses global interpreter locks by using multiple processes instead of multiple threads. This package uses a POOL class, making it easy to run the same function in parallel to cope with multiple inputs, thus allowing multiple threads to be used for downloading images. From table \ref{Multiprocessing}, we can see that the download speed using multiple processes is about 1/2.5 of the single process download time, and accordingly, we can see that the download speed can be increased by 2.5 times.
-% By comparing the i7-10875H CPU @2.30Hz and downloading the same number of 2000 images, it ran 1853s without multiprocessing and 744s with multiprocessing, which is about twice as fast.
-
-\begin{table}[ht!]
-    \centering
-    \begin{tabular}{c c c c}
-        \hline
-        Method & Download Time/s & Image number & Average Resolution \\
-        \hline
-        Multiple processes & 744 & 2000 & 4440x4222 \\
-        % \hline
-        One process& 1853 & 2000 & 4440x4222 \\
-        \hline
-    \end{tabular}
-    \caption{Download speed of finger knuckle images comparison between using multiple processes and single process based on the CPU (Intel® Core™ i7-10875H CPU @ 2.30GHz × 16) environment.}
-    \label{Multiprocessing}
-
-\end{table}
-With the python crawler script written, we downloaded a total of 2347 different publicly accessible images with human hands that have multiple visible finger knuckle. The images are download from the Unsplash \cite{Unsplash} website, each image containing a different number of finger knuckles. In these 2347 downloaded images, there are 738 images without knuckles, and these images can be used as background training, and the rest 1609 images that contain at least one finger knuckle are the positive samples for the network model. The negative samples can be used to solve the overfitting of the model to some extent, and the positive samples can be used to train the loss values of the model to make the model fit well.  The figure \ref{Finger Knuckle database} shows four samples from the downloaded finger knuckle dataset by a web crawler from the website Unsplash \cite{Unsplash}. Just from these showed images on the figure \ref{Finger Knuckle database}, we can see that the finger knuckle dataset is more near the actual word.  The finger knuckle dataset downloaded from the Unsplash \cite{Unsplash} website is a good representation of the distribution of finger knuckles in the wild, with various bends, occlusions, and under different lighting conditions. In the network training process, these finger knuckle images crawled from the website, and we also took 169 finger joint images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0} and 64 finger joint images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb} as for model training to improve the generalization of the model finger knuckle detection from the aspect of a dataset. 
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.4\linewidth}
-        \includegraphics[width=\linewidth]{Figures/knuckle-00269.jpg}
-        \caption{Sample A. \cite{FingerKnuckle1}}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\linewidth}
-        \includegraphics[width=\linewidth]{Figures/knuckle-00491.jpg}
-        \caption{Sample B. \cite{FingerKnuckle3}}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\linewidth}
-        \includegraphics[width=\linewidth]{Figures/knuckle-00462.jpg}
-        \caption{Sample C. \cite{FingerKnuckle4}}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\linewidth}
-        \includegraphics[width=\linewidth]{Figures/knuckle-00768.jpg}
-        \caption{Sample D. \cite{FingerKnuckle6}}
-    \end{subfigure}
-    \caption{Finger Knuckle images from crawling Unsplash \cite{Unsplash} website. Sample A-D are samples of the downloaded database, and it shows these finger knuckle that are exposed on different background and ambient light.}
-    \label{Finger Knuckle database}
-\end{figure}
-
-\noindent\textbf{Finger Knuckle Detection Accuracy}
+\noindent\textbf{Detection Performance}
 
 \noindent
-The CSL is integrated into the YOLOv5 model to smooth the angular classification, called YOLOv5-CSL model, and the BCE is used to calculate the angular classification prediction loss. YOLOv5 has multiple sub-models, mainly by increasing the number of censored convolutional layers and residual layer modules, but the overall model framework does not change to cope with different hardware, accuracy requirements, and detection speed requirements. From the official data given, we can see the performance difference between these variations of the YOLOv5 model from the Table \ref{YOLOv5modeloffical}. If speed is pursued, then the lightest YOLOv5n can be used. Conversely, if accuracy is pursued, then YOLOv5x can be used.
+The YOLOv4 model predict horizontal bounding box, while the remaining YOLOv5 model predict rotated bounding box with CSL classification, called YOLOv5-CSL. We can see the performance difference between these variations of the YOLOv5 model from the Table \ref{mAP of different model}. Among the downloaded 2580 images, 100 images were randomly selected as the testing set.
 
 \begin{table}[H]
     \centering
@@ -112,7 +63,6 @@ The CSL is integrated into the YOLOv5 model to smooth the angular classification
         \hline
         YOLOv5x-CSL & 41.395 & 407 & \textbf{89.9} &\textbf{89.6} & \textbf{90.1} \\
         YOLOv5m-CSL & 36.252 & 263 & 85.7 & 88.9 & 80.4 \\
-        YOLOv5s-CSL & 32.683 & 213 & 39.6 & 43.9 & 35.4 \\
         YOLOv4 & 25.992 & 161 & 70.7 & 83.6 & 57.7 \\
         \hline
     \end{tabular}
@@ -120,9 +70,35 @@ The CSL is integrated into the YOLOv5 model to smooth the angular classification
     \label{mAP of different model}
 \end{table}
 
-This paper uses these YOLOv5s, YOLOv5m, YOLOv5x and YOLOv4 models to train the labelled data. The YOLOv4 model is a regression on the horizontal bounding box, while the remaining YOLOv5 model is a regression on the rotated bounding box, called YOLOv5-CSL. The data are obtained using a crawler dataset and partly from a publicly available dataset, with 2580 training images. Among them, 100 images were randomly selected to form the test image set. For these 2580 training images, 2347 images are obtained from the crawler and the rest from the public dataset. For the remaining 233 images, there are 169 images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0} and 64 images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb}. A total of 1842 of these 2580 images contain knuckles, and the remaining 738 images do not contain knuckles. According to Table \ref{mAP of different model}, we can see the mAP performance of these models on the testing set after training. The mAP is calculated here with IOU equal to 0.5. Furthermore, the predicted bounding box is obtained from a confidence threshold of 0.4 and non-maximum suppression with IOU equal to 0.5. The mAP is the average of the AP values for each category. YOLOv5x-CSL has the highest accuracy with an mAP of 89.6 due to its strong learning capability. mAP for model YOLOv5s-CSL is low mainly because the model has not been sufficiently trained, and the loss has not yet reached a local minimum. Because minor finger knuckle has fewer features and smaller targets than major finger knuckle, it is more difficult to detect, as can be seen from the AP values for minor finger knuckle, which is lower than those for major finger knuckle.
+\textbf{Segmentation Performance}
+
+This section aim to compare quality of finger knuckle between YOLOv5-CSL segmented and dataset offered. Because the segmented finger knuckle on the 3D Finger Knuckle Dataset already have high quality, I mainly test on the Index Finger Knuckle of Hand Dorsal Dataset and the Finger Knuckle Dataset V3 (with deformable).
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps}
+	\end{subfigure}
+	\caption{Compare performance on the Finger Knucle V3 Dataset (with deformable)}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/yolov5vsdatabase/hd-roc_compare_new.eps}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/yolov5vsdatabase/hd-cmc_compare_new.eps}
+	\end{subfigure}
+	\caption{Compare performance on the Index Finger of the Hand Dorsal Image Database.}
+\end{figure}
+
+From the above figures, we can clearly get the conclusion that quality of segmented finger knuckle of YOLOv5 is better than the segmented finger knuckle of dataset through the ROC curve and CMC curve. Especially on the Hand Dorsal Image Database, the EER value can drop from $6.51\%$ to $1.33\%$. 
 
 
-\noindent\textbf{Finger Knuckle Segmentation Accuracy}
 
-\noindent
+ \subsection{Online Contactless Finger Knuckle Identification Performance}
+ .............

@@ -42,4 +42,8 @@ The database totally has 712 subjects, and each subject has 5 samples. Therefore
 The database has 610 subjects, and each subject can offer 4 samples. Then as the cross database experiment, it will have $610*4$ genuine matching scores and $610*609*4$ imposter matching scores. In this database, all models can get very high matching performance from the table and figure.
 
 \subsection{Discussion}
+From these experiment results, we can see that EfficientV2-S model is better than FKNet in some dataset. Becuase EfficientNetV2 model use MBConv as a block unit for replacing residual block. As for MBConv block, it use depthwise convolutions to decrease training weights and use Squeeze-Excited block as channel tranfomer. Meanwhile, the depth of EfficientNetV2-S is deeper than the FKNet.
 
+There is another conclusion is that TRTL generalization ablity is lower thant STTL loss from the cross database experiment. But in the within database experiment, these model with TRTL loss is better thant STTL loss.
+
+..............

@@ -29,3 +29,5 @@ As for the two-session protocol on the database. I should fine-tune my model on 
 \end{figure}
 
 The two-session protocol will use the session1 as the probe and use the session2 as the enrollment. As for the genuine matching scores, each sample of a subject will choose the minimal matching score when compare to the rest samples. In this kind of situation, it will have $104x6$ genuine matching scores. Meanwhile, as for the imposter matching scores, it will also choose the minimal value result in $104*103*6$ imposter matching scores on the confusion matrix.
+
+With Yolov5-CSL segmented finger knuckle, the RFNet performance is slightly higer than the local feature descriptors based on key points matching \cite{kumar2020contactless}, and performance higher than the paper \cite{kumar2019toward}. If we want to compare different method performance, I think we should use same dataset. In this kind of situation, the method of \cite{kumar2020contactless} maybe will ger higer performance on the segmented finger knuckle by YOLOV5.
