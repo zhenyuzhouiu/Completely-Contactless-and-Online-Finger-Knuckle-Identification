@@ -14,7 +14,7 @@ I firstly pre-trained my models on the Finger Knuckle V1 Database, and then fine
 	\end{subfigure}
 \end{figure}
 
-The database totally has 712 subjects, and each subject has 5 samples. Therefore, it will have $712*5$ genuine matching scores and $712*711*5$ imposter matching scores. From the cure, the performance of RFN-SSTL and RFN-TRTL is similar, and the RFN-WS is slightly better than RFN-WRS while using the same training samples. Updated ROC Curve and CMC Curve with RFNet, EfficientNet and DeConvRFNet. For the ROC curve, I add EfficientNetV2-S model performance.
+The database totally has 712 subjects, and each subject has 5 samples. Therefore, it will have $712*5$ genuine matching scores and $712*711*5$ imposter matching scores. From the cure, the performance of RFNet-SSTL and RFNet-TRTL is similar, and the RFNet-SSTL is slightly better than RFNet-TRTL while using the same training samples.
 
 \subsubsection{Middle Finger Knuckle of Hand Dorsal Image}
 \begin{figure}[H]
@@ -42,8 +42,8 @@ The database totally has 712 subjects, and each subject has 5 samples. Therefore
 The database has 610 subjects, and each subject can offer 4 samples. Then as the cross database experiment, it will have $610*4$ genuine matching scores and $610*609*4$ imposter matching scores. In this database, all models can get very high matching performance from the table and figure.
 
 \subsection{Discussion}
-From these experiment results, we can see that EfficientV2-S model is better than FKNet in some dataset. Becuase EfficientNetV2 model use MBConv as a block unit for replacing residual block. As for MBConv block, it use depthwise convolutions to decrease training weights and use Squeeze-Excited block as channel tranfomer. Meanwhile, the depth of EfficientNetV2-S is deeper than the FKNet.
+From these experiment results, we can see that EfficientV2-S model is better than FKNet in some dataset. Because EfficientNetV2 model use MBConv as a block unit for replacing residual block. As for MBConv block, it uses depth-wise convolutions to decrease training weights and use Squeeze-Excited block as channel transformer. Meanwhile, the depth of EfficientNetV2-S is deeper than the FKNet.
 
-There is another conclusion is that TRTL generalization ablity is lower thant STTL loss from the cross database experiment. But in the within database experiment, these model with TRTL loss is better thant STTL loss.
+There is another conclusion is that TRTL generalization ability is lower than STTL loss from the cross database experiment. But in the within database experiment, these model with TRTL loss is better than STTL loss.
 
 ..............

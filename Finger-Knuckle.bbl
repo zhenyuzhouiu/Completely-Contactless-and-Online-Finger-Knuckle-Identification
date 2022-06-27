@@ -588,6 +588,72 @@
       \field{pages}{677\bibrangedash 694}
       \range{pages}{18}
     \endentry
+    \entry{yu2015multi}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7d644ffcde545cbf48ce06126689b74c}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Fisher},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9025300f43a193cfed8e10e924f2a117}{%
+           family={Koltun},
+           familyi={K\bibinitperiod},
+           given={Vladlen},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{723184be63eb1c52693b14d9d6b96182}
+      \strng{fullhash}{723184be63eb1c52693b14d9d6b96182}
+      \strng{bibnamehash}{723184be63eb1c52693b14d9d6b96182}
+      \strng{authorbibnamehash}{723184be63eb1c52693b14d9d6b96182}
+      \strng{authornamehash}{723184be63eb1c52693b14d9d6b96182}
+      \strng{authorfullhash}{723184be63eb1c52693b14d9d6b96182}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1511.07122}
+      \field{title}{Multi-scale context aggregation by dilated convolutions}
+      \field{year}{2015}
+    \endentry
+    \entry{zhu2019deformable}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=19309053ea27cb5af23921c399ac27f8}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xizhou},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f19295c2c8bee05248e05cdbfd48b247}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Han},
+           giveni={H\bibinitperiod}}}%
+        {{hash=eb40fa909f02eebf8c76aedeab111038}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c80dbb87ee6058c0b81ab8ee017f1170}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Jifeng},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{354e86af5a55a7cef98751ff74813a3c}
+      \strng{fullhash}{a5dc3a1711694df5dec34fecb887d51a}
+      \strng{bibnamehash}{354e86af5a55a7cef98751ff74813a3c}
+      \strng{authorbibnamehash}{354e86af5a55a7cef98751ff74813a3c}
+      \strng{authornamehash}{354e86af5a55a7cef98751ff74813a3c}
+      \strng{authorfullhash}{a5dc3a1711694df5dec34fecb887d51a}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}
+      \field{title}{Deformable convnets v2: More deformable, better results}
+      \field{year}{2019}
+      \field{pages}{9308\bibrangedash 9316}
+      \range{pages}{9}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

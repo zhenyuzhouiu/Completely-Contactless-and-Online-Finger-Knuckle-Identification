@@ -1,0 +1,58 @@
+\section{Matching Contactless Finger Knuckle}
+One of our contributions is the online finger knuckle identification. In this kind of situation, we choose the RFNet \cite{liu2020contactless} as our feature extraction backbone, because the model not only is lightweight enough, but it achieves state-of-the-art performance on the palmprint dataset. Meanwhile, the paper \cite{liu2020contactless} uses the soft-shifted triplet loss function, called SSTL to train the model and matching two features for dealing with translation problem. However, in generally, feature maps of the same class will not only just shift along two axes, but also will have local deformable transformation. For solving it, we propose a new loss and also a new matching method, called translation and rotation triplet loss function (TRTL). With the TRTL, the feature maps can be translated along the x-axis and y-axis, and can be rotated clockwise and counterclockwise. Then we will get the minimal value after translation and rotation as the similarity scores.
+
+\subsection{Translated and Rotated Triplet Loss Function}
+
+As for a new loss function, the most important point is whether it can be differentiable. With a differentiable loss, the back propagation process can proceed smoothly, and the learnable parameters can be updated to get the minimal loss. In this section, we will discuss the derivation of the TRTL loss function. Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used TRTL as loss function to update convolutional kernel of our models.
+
+In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the batch size during training iteration, and $T(I^{a})$ is the output template of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away during training process.
+
+\begin{equation}
+	\begin{aligned}
+		TRTL = \frac{1}{N}\sum_{i}^{N}[L(T(I_{i}^{a}),T(I_{i}^{p}))-L(T(I_{i}^{a}),T(I_{i}^{n})) + m]_{+}
+	\end{aligned}
+	\label{Tripletloss}
+\end{equation}
+
+In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$. Meanwhile, the distance $D_{w,h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
+\begin{equation}
+	\begin{aligned}
+		L(T_1, T_2) = \mathop{min}\limits_{-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(T_1, T_2)}
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		D_{w,h,\theta}(T_1, T_2) = \frac{1}{|C_{w,h,\theta}|}\sum_{(x,y){\in}C_{w,h,\theta}}(T_1^{(w,h,\theta)}[x,y] - T_2[x,y])^2
+	\end{aligned}
+	\label{Distance}
+\end{equation}
+
+In terms of $C_{w,h,\theta}$, it represents the common region between two templates after one template shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$. As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(T_a, T_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(T_a, T_m)$.
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial{Loss}}{\partial{T_i^p}}=
+		\begin{cases}
+			0, if (x,y) \notin {C_{w_{ap}, h_{ap}, \theta_{ap}}}{\ }or{\ }Loss = 0 \\
+			\frac{-2(T_i^a[[x_{w_{ap}}, y_{h_{ap}}]*M(\theta_{ap})]-T_i^p[x,y])}{N|C_{w_{ap},h_{ap},\theta_{ap}}|},otherwise
+		\end{cases}
+	\end{aligned}
+\end{equation}
+The $M(\theta_{ap})$ is the rotation matrix.
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial{Loss}}{\partial{T_i^n}}=
+		\begin{cases}
+			0, if (x,y) \notin {C_{w_{an}, h_{an}, \theta_{an}}}{\ }or{\ }Loss = 0 \\
+			\frac{-2(T_i^a[[x_{w_{an}}, y_{h_{an}}]*M(\theta_{an})]-T_i^n[x,y])}{N|C_{w_{an},h_{an},a_{an}}|}, otherwise
+		\end{cases}
+	\end{aligned}
+\end{equation}
+
+As for the $T_i^a[x,y]$ derivation, because we shift and rotate the anchor in the above formula, we can inversely shift and rotate the positive and negative input feature.
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial{Loss}}{\partial{T_i^a[x,y]}} = -\frac{\partial{Loss}}{\partial{T_i^p[[x-w_{ap}, y-h_{ap}]*M(-\theta_{ap})]}} + \\
+		 \frac{\partial{Loss}}{\partial{T_i^n[[x-w_{an}, y-h_{an}]*M(-\theta_{an})]}}
+	\end{aligned}
+\end{equation}

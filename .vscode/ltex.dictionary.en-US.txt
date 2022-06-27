@@ -11,3 +11,7 @@ RFNet-TRTL
 RFNet
 Tsinghua
 DeConvRFNet
+RFNet-SSTL
+MBConv
+palmprint
+ResNet
