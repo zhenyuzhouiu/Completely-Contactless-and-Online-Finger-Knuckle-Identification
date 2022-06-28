@@ -51,6 +51,41 @@
       \field{title}{Yolov4: Optimal speed and accuracy of object detection}
       \field{year}{2020}
     \endentry
+    \entry{cheng2019contactless}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9b801d5975d95e5a7213f608de6b2468}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Kevin\bibnamedelima HM},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{fullhash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{bibnamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authorbibnamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authornamehash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \strng{authorfullhash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{8}
+      \field{title}{Contactless biometric identification using 3D finger knuckle patterns}
+      \field{volume}{42}
+      \field{year}{2019}
+      \field{pages}{1868\bibrangedash 1883}
+      \range{pages}{16}
+    \endentry
     \entry{cheng2020deep}{article}{}
       \name{author}{2}{}{%
         {{hash=9b801d5975d95e5a7213f608de6b2468}{%
@@ -73,6 +108,7 @@
       \strng{authorbibnamehash}{10d7c8ee5b3983195daf7d339e74f80c}
       \strng{authornamehash}{10d7c8ee5b3983195daf7d339e74f80c}
       \strng{authorfullhash}{10d7c8ee5b3983195daf7d339e74f80c}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -147,6 +183,46 @@
       \field{pages}{580\bibrangedash 587}
       \range{pages}{8}
     \endentry
+    \entry{he2016deep}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+      \field{title}{Deep residual learning for image recognition}
+      \field{year}{2016}
+      \field{pages}{770\bibrangedash 778}
+      \range{pages}{9}
+    \endentry
     \entry{he2017mask}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
@@ -176,6 +252,7 @@
       \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authorfullhash}{25317aa10282a4a31c271050ed66c455}
+      \field{extraname}{2}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -186,63 +263,183 @@
       \field{pages}{2961\bibrangedash 2969}
       \range{pages}{9}
     \endentry
-    \entry{kumar2020contactless}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
-           family={Kumar},
+    \entry{hu2018squeeze}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=346b88b16d5e70356b573f350a9165aa}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f1625e69dd01e4d86402e9815bebb102}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7c01a1c103bd601c5a256e9f1425f9d8}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Gang},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{9bec677974ec98229fc30290681f1fea}
+      \strng{fullhash}{9bec677974ec98229fc30290681f1fea}
+      \strng{bibnamehash}{9bec677974ec98229fc30290681f1fea}
+      \strng{authorbibnamehash}{9bec677974ec98229fc30290681f1fea}
+      \strng{authornamehash}{9bec677974ec98229fc30290681f1fea}
+      \strng{authorfullhash}{9bec677974ec98229fc30290681f1fea}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+      \field{title}{Squeeze-and-excitation networks}
+      \field{year}{2018}
+      \field{pages}{7132\bibrangedash 7141}
+      \range{pages}{10}
+    \endentry
+    \entry{huang2017densely}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=0d12f90a1d1945cb1b98f583c9dc9572}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Gao},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f7eda249dc15ce9f452344ec95bbcc67}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zhuang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=a33ababcca5b83a7777452957fb2eef2}{%
+           family={Van\bibnamedelimb Der\bibnamedelima Maaten},
+           familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Laurens},
+           giveni={L\bibinitperiod}}}%
+        {{hash=68a0238356fbd88b34be8886f25938a7}{%
+           family={Weinberger},
+           familyi={W\bibinitperiod},
+           given={Kilian\bibnamedelima Q},
+           giveni={K\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{3dcda21c08021918fcbe6ecf2e003538}
+      \strng{fullhash}{ec6d0d953a00cc76cc77fbf9d9e1ec27}
+      \strng{bibnamehash}{3dcda21c08021918fcbe6ecf2e003538}
+      \strng{authorbibnamehash}{3dcda21c08021918fcbe6ecf2e003538}
+      \strng{authornamehash}{3dcda21c08021918fcbe6ecf2e003538}
+      \strng{authorfullhash}{ec6d0d953a00cc76cc77fbf9d9e1ec27}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+      \field{title}{Densely connected convolutional networks}
+      \field{year}{2017}
+      \field{pages}{4700\bibrangedash 4708}
+      \range{pages}{9}
+    \endentry
+    \entry{jia2008palmprint}{article}{}
+      \name{author}{3}{}{%
+        {{hash=06a3261191e8a8374ae5ea255505437d}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=9174f234e6e6f6ca1d35a398d0a7d5b1}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={De-Shuang},
+           giveni={D\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=94d314d7b645e07423926dfb8d939dc0}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \strng{fullhash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \strng{bibnamehash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \strng{authorbibnamehash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \strng{authornamehash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \strng{authorfullhash}{dc1dbd119a7adfc048134646f02a4b6b}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition}
+      \field{number}{5}
+      \field{title}{Palmprint verification based on robust line orientation code}
+      \field{volume}{41}
+      \field{year}{2008}
+      \field{pages}{1504\bibrangedash 1513}
+      \range{pages}{10}
+    \endentry
+    \entry{kong2004competitive}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=ca81f2e031c294a06e19c7c5531f4ae4}{%
+           family={Kong},
            familyi={K\bibinitperiod},
-           given={Ajay},
-           giveni={A\bibinitperiod}}}%
+           given={AW-K},
+           giveni={A\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=94d314d7b645e07423926dfb8d939dc0}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
       }
       \list{organization}{1}{%
         {IEEE}%
       }
-      \strng{namehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{fullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{bibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authorbibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authornamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \field{extraname}{1}
+      \strng{namehash}{722669e6a311bc70c36b029809a8ff0c}
+      \strng{fullhash}{722669e6a311bc70c36b029809a8ff0c}
+      \strng{bibnamehash}{722669e6a311bc70c36b029809a8ff0c}
+      \strng{authorbibnamehash}{722669e6a311bc70c36b029809a8ff0c}
+      \strng{authornamehash}{722669e6a311bc70c36b029809a8ff0c}
+      \strng{authorfullhash}{722669e6a311bc70c36b029809a8ff0c}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2020 8th International Workshop on Biometrics and Forensics (IWBF)}
-      \field{title}{Contactless finger knuckle authentication under severe pose deformations}
-      \field{year}{2020}
-      \field{pages}{1\bibrangedash 6}
-      \range{pages}{6}
-    \endentry
-    \entry{kumar2019toward}{article}{}
-      \name{author}{1}{}{%
-        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
-           family={Kumar},
-           familyi={K\bibinitperiod},
-           given={Ajay},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{fullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{bibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authorbibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authornamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \field{extraname}{2}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Biometrics, Behavior, and Identity Science}
-      \field{number}{3}
-      \field{title}{Toward pose invariant and completely contactless finger knuckle recognition}
+      \field{booktitle}{Proceedings of the 17th International Conference on Pattern Recognition, 2004. ICPR 2004.}
+      \field{title}{Competitive coding scheme for palmprint verification}
       \field{volume}{1}
-      \field{year}{2019}
-      \field{pages}{201\bibrangedash 209}
-      \range{pages}{9}
+      \field{year}{2004}
+      \field{pages}{520\bibrangedash 523}
+      \range{pages}{4}
+    \endentry
+    \entry{krizhevsky2012imagenet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
+           family={Krizhevsky},
+           familyi={K\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=813bd95fe553e6079cd53a567b238287}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{fullhash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{bibnamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authorbibnamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authornamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authorfullhash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Imagenet classification with deep convolutional neural networks}
+      \field{volume}{25}
+      \field{year}{2012}
     \endentry
     \entry{liu2020contactless}{article}{}
       \name{author}{2}{}{%
@@ -449,6 +646,76 @@
       \field{pages}{815\bibrangedash 823}
       \range{pages}{9}
     \endentry
+    \entry{simonyan2014very}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9d16b7284df92c9adaee86c37ab992df}{%
+           family={Simonyan},
+           familyi={S\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{fullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{bibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorbibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authornamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorfullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1409.1556}
+      \field{title}{Very deep convolutional networks for large-scale image recognition}
+      \field{year}{2014}
+    \endentry
+    \entry{sun2005ordinal}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=2eedab9d633e73625f45d8c367d30401}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Zhenan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=116ce38201da138f399dde04290058b8}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Tieniu},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9f46e20757906016ae602d292fc665ed}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yunhong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bdcfe781c06e01fe86f42230e738c1b4}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Stan\bibnamedelima Z},
+           giveni={S\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{fc2cd1786715805e92f2be15fa4ecc44}
+      \strng{fullhash}{7ffea58b13ac8529c7dffa4325a47185}
+      \strng{bibnamehash}{fc2cd1786715805e92f2be15fa4ecc44}
+      \strng{authorbibnamehash}{fc2cd1786715805e92f2be15fa4ecc44}
+      \strng{authornamehash}{fc2cd1786715805e92f2be15fa4ecc44}
+      \strng{authorfullhash}{7ffea58b13ac8529c7dffa4325a47185}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2005 IEEE computer society conference on computer vision and pattern recognition (CVPR'05)}
+      \field{title}{Ordinal palmprint represention for personal identification [represention read representation]}
+      \field{volume}{1}
+      \field{year}{2005}
+      \field{pages}{279\bibrangedash 284}
+      \range{pages}{6}
+    \endentry
     \entry{tan2021efficientnetv2}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=1e7d6abb8225099acc71f672b9ec336e}{%
@@ -487,6 +754,13 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/fn1.htm}}
       \field{title}{The HKPolyU Contactless Finger Knuckle Images Database (V-1.0):}
+    \endentry
+    \entry{fingerknuckledbv3.0}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www4.comp.polyu.edu.hk/~csajaykr/fn2.htm}}
+      \field{title}{The HKPolyU Contactless Finger Knuckle Images Database (Version 3.0) :}
     \endentry
     \entry{ContactlessHnadDorsaldb}{misc}{}
       \field{sortinit}{T}
@@ -612,8 +886,91 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1511.07122}
-      \field{title}{Multi-scale context aggregation by dilated convolutions}
+      \field{title}{Multiscale context aggregation by dilated convolutions}
       \field{year}{2015}
+    \endentry
+    \entry{zhang20143d}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3a1f1a0016bb4e33e52e9bd0f48cfd33}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5fe5800a2c6497dc9b1e0d237e90c577}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cea99e3ed74f7ce08426da7357f37db1}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Hongyu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=afbb97c15f545054b09c1a49b44023b9}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jianwei},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{fullhash}{c6268ccc769157d652e6fb8b547c615a}
+      \strng{bibnamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorbibnamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authornamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorfullhash}{c6268ccc769157d652e6fb8b547c615a}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{8}
+      \field{title}{3D palmprint identification using block-wise features and collaborative representation}
+      \field{volume}{37}
+      \field{year}{2014}
+      \field{pages}{1730\bibrangedash 1736}
+      \range{pages}{7}
+    \endentry
+    \entry{zheng20163d}{article}{}
+      \name{author}{3}{}{%
+        {{hash=655c8621c5377edf52f73fc515517982}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d06cec2df61554e3a9035bc311b868b9}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Gang},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \strng{fullhash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \strng{bibnamehash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \strng{authorbibnamehash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \strng{authornamehash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \strng{authorfullhash}{7284b2ab50de00835acd1fd9fd0dd525}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{6}
+      \field{title}{A 3D feature descriptor recovered from a single 2D palmprint image}
+      \field{volume}{38}
+      \field{year}{2016}
+      \field{pages}{1272\bibrangedash 1279}
+      \range{pages}{8}
     \endentry
     \entry{zhu2019deformable}{inproceedings}{}
       \name{author}{4}{}{%

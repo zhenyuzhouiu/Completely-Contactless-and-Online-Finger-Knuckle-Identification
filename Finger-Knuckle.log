@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.5.4)  27 JUN 2022 19:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.5.4)  28 JUN 2022 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -714,12 +714,7 @@ Package biblatex Info: Reference section=0 on input line 20.
 Package biblatex Info: Reference segment=0 on input line 20.
  (./FK-Identification/abstract.tex) (./FK-Identification/introduction.tex) (./FK-Identification/backpropagationoftrtl.tex [1
 
-]) (./FK-Identification/experiments/experimentsandresults.tex [2]
-Overfull \hbox (33.88347pt too wide) in paragraph at lines 10--11
-\TU/TimesNewRoman(0)/m/n/12 pose EfficientNetV2-S-STTL and EfficientNetV2-S-TRTL model. When trained these EfficientNetV2-
- []
-
-) (./FK-Identification/experiments/withindb.tex [3]
+]) (./FK-Identification/experiments/experimentsandresults.tex [2]) (./FK-Identification/experiments/withindb.tex [3]
 File: Figures/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-roc_compare_new.eps>
 File: Figures/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -733,28 +728,29 @@ File: Figures/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/hd-roc_compare_new.eps>
 File: Figures/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/hd-cmc_compare_new.eps>
+ [5]
 File: Figures/2dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-roc_compare_new.eps>
 File: Figures/2dof3d-cmc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-cmc_compare_new.eps>
-) (./FK-Identification/experiments/crossdb.tex [5]
+) (./FK-Identification/experiments/crossdb.tex
 File: Figures/crosshd-roc_compare_new.eps Graphic file (type eps)
 <Figures/crosshd-roc_compare_new.eps>
 File: Figures/crosshd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crosshd-cmc_compare_new.eps>
-File: Figures/crosshd-middle-roc_compare_new.eps Graphic file (type eps)
-<Figures/crosshd-middle-roc_compare_new.eps>
-File: Figures/crosshd-middle-cmc_compare_new.eps Graphic file (type eps)
-<Figures/crosshd-middle-cmc_compare_new.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
+File: Figures/crosshd-middle-roc_compare_new.eps Graphic file (type eps)
+<Figures/crosshd-middle-roc_compare_new.eps>
+File: Figures/crosshd-middle-cmc_compare_new.eps Graphic file (type eps)
+<Figures/crosshd-middle-cmc_compare_new.eps>
 File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
-) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [7]
+ [7]) (./FK-Identification/experiments/3dof3dfingerknuckle.tex
 File: Figures/3dod3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dod3d-roc_compare_new.eps>
 File: Figures/3dod3d-cmc_compare_new.eps Graphic file (type eps)
@@ -763,42 +759,36 @@ File: Figures/3dod3d-cmc_compare_new.eps Graphic file (type eps)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8] [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
 File: Figures/yolov5vsdatabase/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-cmc_compare_new.eps>
 ) (./references.tex [11]
-Overfull \hbox (0.60951pt too wide) in paragraph at lines 3--3
-[]\TU/TimesNewRoman(0)/m/n/12 Ajay Kumar. “Contactless finger knuckle authentication under severe pose deformations”.
- []
-
-
 Overfull \hbox (10.36765pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Joseph Redmon and Ali Farhadi. “Yolov3: An incremental improvement”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint
  []
 
-) [12] (./Finger-Knuckle.aux)
+[12]) [13] (./Finger-Knuckle.aux)
 Package rerunfilecheck Info: File `Finger-Knuckle.out' has not changed.
-(rerunfilecheck)             Checksum: 4ED3AC07F12D1FB6FFABFE1FF1C99C6A;5498.
+(rerunfilecheck)             Checksum: DAF4AF1F2D4383F3F2074B7EE6E8E7A0;5688.
 Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 \openout1 = `Finger-Knuckle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20973 strings out of 476191
- 421092 string characters out of 5812073
- 1197702 words of memory out of 5000000
- 41433 multiletter control sequences out of 15000+600000
- 474593 words of font info for 71 fonts, out of 8000000 for 9000
+ 21010 strings out of 476191
+ 422685 string characters out of 5812073
+ 1197984 words of memory out of 5000000
+ 41469 multiletter control sequences out of 15000+600000
+ 474601 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,19n,77p,1672b,4815s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,19n,77p,1672b,4817s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (12 pages, 248636 bytes).
+Output written on Finger-Knuckle.xdv (13 pages, 285156 bytes).

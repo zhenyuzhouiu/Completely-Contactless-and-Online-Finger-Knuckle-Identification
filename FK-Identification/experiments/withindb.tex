@@ -1,49 +1,65 @@
-\subsection{Within-Database Experiments}
+\subsection{Within-Database Performance Evaluation}
 
-\subsubsection{Finger Knuckle V3 Database with Deformation}
+\subsubsection{Contactless Finger Knuckle Image Database (Version 3.0)}
 
-The Finger Knuckle V3 Database have 1-104 subjects that have two session samples, and the rest subjects of first session 105-221 just offer one session samples. So as the first experiment, I firstly fine-tuned my model on the second session of 1-104 subjects, and test on the first session 1-104 subjects. So it will have $104*6=624$ genuine matching scores, and have $104*103*6=64272$ imposter matching scores. From the below figure, if the false accept rate is below $10^{-2}$, the RFN-128-WRS is better than the RFN-128-WS. I also use the FKNet to train on this database, and the performance of FKNet is not better than the RFNet depend on the ROC figure. From the CMC and ROC, each model with WRS is better than WS on this dataset. For the ROC curve, I add EfficientNetV2-S model performance.
+The finger knuckle database \cite{fingerknuckledbv3.0} can offer contactless finger knuckle of 221 subjects, but only 104 subjects have second session samples. For each session, each subject can offer 6 samples. It is worth mentioning that the finger knuckle sample provided by this database is more challenging and closer to real world scenarios, because the finger knuckle will bend from 0 to 90 degree result in crease deformation.
 
-\begin{figure}[H]
+\textbf{One-Session Protocol}
+
+As for the one-session protocol, I firstly fine-tuned models on the second session 104 subjects dataset, totally $104 * 6 = 624$ images as the testing set. Then use the first session 221 subjects as the testing set result in $221*6=1326$ genuine matching scores and $221*220*6=291720$ imposter matching scores. From the Figure \ref{fkv3-one-session}, we can easily find the RFNet is the best model not only on the ROC but also on the CMC. In terms of the baseline model RFNet, our loss function TRTL can improve the matching accuracy when compare to the STTL loss function. Although the finger knuckle of the database with deformation while bend from 0 to 90 degree, the EER of the RFNet-TRTL can arrive at $2.21\%$. As for the rest model, EfficientNetV2-S model performance is better than FKNet and DeConvRFNet.
+
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/fkv3-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/fkv3-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless finger knuckle image database \cite{fingerknuckledbv3.0}.}
+	\label{fkv3-one-session}
 \end{figure}
 
+\textbf{Two-Session Protocol}
 
+We fine-tune models on the first session subjects who don't provide second session samples, and use two-session protocol to evaluate my model performance on the first session subjects who can offer two-session data. In totally, it will generate $104*6=624$ genuine scores, and $104*103*6$ imposter scores. Just like said before, the FKNet and EfficientNetV2-S are classification networks, we use output feature vector to calculate MSE as the matching score. Because the degree of deformation vary on the two-session data, the verification and identification scenarios is more complexity than one-session protocol. Due to these factors, the accuracy on the two-session protocol is much lower than the one-session protocol. However, the RFNet is still the best model, even its EER is half of the EER of other models. Meanwhile, our TRTL loss function still work better than the STTL loss function, with $16.65\%$ and $18.35\%$ respectively. From the ROC and CMC Figure \ref{fkv3-two-session}, we can also get that the STTL and TRTL triplet loss function are better than classification task, because the FKNet and EfficientNetV2-S have the lowest accuracy.
 
-As for the two-session protocol on the database. I should fine-tune my model on the 105-221 subjects, and use two-session protocol to evaluate my model performance on the 1-104 subjects dataset. In totally, it will generate $104*6=624$ genuine scores, and $104*103*6$ imposter scores. However, the FKNet is a classification task, and the output number classes should be same when training and testing. So the two session protocol experiment is not fit for FKNet. If the FKNet train on the 105-221 subjects and test on the 1-104 subjects with two sessions, the classes is different.
-
-\begin{figure}[H]
+\begin{figure}[ht!]
     \centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/two-fkv3roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/two-fkv3cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for two-session on the contactless finger knuckle image database \cite{fingerknuckledbv3.0}.}
+	\label{fkv3-two-session}
 \end{figure}
 
-The two-session protocol will use the session1 as the probe and use the session2 as the enrollment. As for the genuine matching scores, each sample of a subject will choose the minimal matching score when compare to the rest samples. In this kind of situation, it will have $104x6$ genuine matching scores. Meanwhile, as for the imposter matching scores, it will also choose the minimal value result in $104*103*6$ imposter matching scores on the confusion matrix.
 
-With Yolov5-CSL segmented finger knuckle, the RFNet performance is slightly higher than the local feature descriptors based on key points matching \cite{kumar2020contactless}, and performance higher than the paper \cite{kumar2019toward}. If we want to compare different method performance, I think we should use same dataset. In this kind of situation, the method of \cite{kumar2020contactless} maybe will get higher performance on the segmented finger knuckle by YOLOV5.
+\subsubsection{Index Finger Knuckle of Contactless Hand Dorsal Image Database}
 
-\subsubsection{Index Finger Knuckle of Hand Dorsal Image Database}
-\begin{figure}[H]
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/hd-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/hd-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless hand dorsal image database \cite{ContactlessHnadDorsaldb}.}
+	\label{hd-one-session}
 \end{figure}
 
-As for the experiment, the dataset totally contains 712 subjects, and I use the segmented Index finger knuckle as my dataset. And I fine-tuned my model on the first sample of each subject, and then use the rest four sample as the testing dataset. At the testing process, it has $712*4=2848$ genuine matching scores, and has $712*711*4=2024928$ imposter matching scores. The performance of RFN-128-WRS and RFN-128-WS is similar, but the RFN-128-WS is slightly better than RFN-128-WRS depend on the EER value. And we can get an information that the RFNet is better than the rest network in the ROC figure, including the FKNet.
+As for the experiment, the dataset \cite{ContactlessHnadDorsaldb} totally contains 712 subjects. And we fine-tuned our models on the first sample of each subject, and then use the rest four sample as the testing dataset. The protocol follow the same protocol of the FKNet \cite{cheng2020deep} 
+
+At the testing process, it has $712*4=2848$ genuine matching scores, and has $712*711*4=2024928$ imposter matching scores. The performance of RFN-128-WRS and RFN-128-WS is similar, but the RFN-128-WS is slightly better than RFN-128-WRS depend on the EER value. And we can get an information that the RFNet is better than the rest network in the ROC figure, including the FKNet.
 
 
 \subsubsection{2D Samples of 3D Finger Knuckle Database}

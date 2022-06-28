@@ -1,15 +1,15 @@
 # Fdb version 3
-["biber Finger-Knuckle"] 1656330349 "Finger-Knuckle.bcf" "Finger-Knuckle.bbl" "Finger-Knuckle" 1656330364
-  "Finger-Knuckle.bcf" 1656330361 110197 ff9de4527ce195fb399f8efb8eae800f "xelatex"
-  "references.bib" 1656319618 18103 81f3edf2a6caaa762a09c9743c053241 ""
+["biber Finger-Knuckle"] 1656421546 "Finger-Knuckle.bcf" "Finger-Knuckle.bbl" "Finger-Knuckle" 1656421547
+  "Finger-Knuckle.bcf" 1656421494 111920 3843195d305063c24ac3adc994cacdff "xelatex"
+  "references.bib" 1656421546 20534 6d1db05c8cb655535927d02a5a63b19e ""
   (generated)
   "Finger-Knuckle.bbl"
   "Finger-Knuckle.blg"
-["xdvipdfmx"] 1656330361 "Finger-Knuckle.xdv" "Finger-Knuckle.pdf" "Finger-Knuckle" 1656330364
-  "Finger-Knuckle.xdv" 1656330361 248636 295c027bf9e42fe95d33355c3ea04d38 "xelatex"
+["xdvipdfmx"] 1656421494 "Finger-Knuckle.xdv" "Finger-Knuckle.pdf" "Finger-Knuckle" 1656421547
+  "Finger-Knuckle.xdv" 1656421494 285156 e3a1fc81b0414ff5e7e52d007e03ecc2 "xelatex"
   (generated)
   "Finger-Knuckle.pdf"
-["xelatex"] 1656330360 "/home/zhenyuzhou/Desktop/Completely-Contactless-and-Online-Finger-Knuckle-Identification/Finger-Knuckle.tex" "Finger-Knuckle.xdv" "Finger-Knuckle" 1656330364
+["xelatex"] 1656421492 "/home/zhenyuzhou/Desktop/Completely-Contactless-and-Online-Finger-Knuckle-Identification/Finger-Knuckle.tex" "Finger-Knuckle.xdv" "Finger-Knuckle" 1656421547
   "/etc/texmf/web2c/texmf.cnf" 1651642677 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/zhenyuzhou/Desktop/Completely-Contactless-and-Online-Finger-Knuckle-Identification/Finger-Knuckle.tex" 1656312361 1203 b8846c41faec32fb05f36b2abcf146be ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -111,11 +111,11 @@
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1651643145 5131182 775cd643dd24cdb8681d22c214c66fe7 ""
   "FK-Identification/abstract.tex" 1656215249 19 1dc04139a615819eb415c78705704f15 ""
   "FK-Identification/backpropagationoftrtl.tex" 1656312223 4986 e60bbce7c8d5fb88b753913041edda68 ""
-  "FK-Identification/experiments/3dof3dfingerknuckle.tex" 1655537621 1005 dfdc29ab36d7c330a2f432829805553e ""
+  "FK-Identification/experiments/3dof3dfingerknuckle.tex" 1656400351 1006 127fdd96b5bb04cfbb0bfb84cbb814e2 ""
   "FK-Identification/experiments/ablation.tex" 1656312555 24 e86876e7af67c4be2c21be2abc0e46f1 ""
   "FK-Identification/experiments/crossdb.tex" 1656215508 2941 7319f10a3d5bb78c8eeca69260063be4 ""
-  "FK-Identification/experiments/experimentsandresults.tex" 1656330359 3329 c49286f3529b4ce3ed1bfc9cde5d0754 ""
-  "FK-Identification/experiments/withindb.tex" 1656215573 5420 6ae934d1728a9ff8e1f0c2f09a27f408 ""
+  "FK-Identification/experiments/experimentsandresults.tex" 1656404145 4336 79fa20e212d08ca89efc64c9f2220cd4 ""
+  "FK-Identification/experiments/withindb.tex" 1656421234 6261 9a73df44b28b5638007ee3d50da2efba ""
   "FK-Identification/introduction.tex" 1656215266 22 5c23bcd9d46cf48d2292896666a8a8fc ""
   "FK-Identification/onlinefingerknuckleidentification.tex" 1656215298 8439 bd3fe844ff7936653d3ba9474b4a4f62 ""
   "Figures/2dof3d-cmc_compare_new.eps" 1655537621 29673 da36ee86d7384fb7829a2d4a07816402 ""
@@ -138,10 +138,10 @@
   "Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps" 1655537621 117195 15f88359df98f0e6220ce5aec38085d4 ""
   "Figures/yolov5vsdatabase/hd-cmc_compare_new.eps" 1655537621 20496 f36e3472b6673ffa84b89d6e90eeab0a ""
   "Figures/yolov5vsdatabase/hd-roc_compare_new.eps" 1655537621 143182 e0763868fd04d05de5eb2102ccd7fe98 ""
-  "Finger-Knuckle.aux" 1656330361 9919 a887f3cd30e59f6b1032ba89477b9d01 "xelatex"
-  "Finger-Knuckle.bbl" 1656330349 27090 ec5c6f42fbf884c1064f0fd123d40fe4 "biber Finger-Knuckle"
-  "Finger-Knuckle.out" 1656330361 5498 4ed3ac07f12d1fb6ffabfe1ff1c99c6a "xelatex"
-  "Finger-Knuckle.run.xml" 1656330361 2410 994dbd583df300de55c69817339a0395 "xelatex"
+  "Finger-Knuckle.aux" 1656421494 13602 f1c91bf1cb39c325c56b06539393b8a7 "xelatex"
+  "Finger-Knuckle.bbl" 1656421547 41845 9c766f2de17b0bd785a45043dbd85ff9 "biber Finger-Knuckle"
+  "Finger-Knuckle.out" 1656421494 5688 daf4af1f2d4383f3f2074b7ee6e8e7a0 "xelatex"
+  "Finger-Knuckle.run.xml" 1656421494 2410 994dbd583df300de55c69817339a0395 "xelatex"
   "Finger-Knuckle.tex" 1656312361 1203 b8846c41faec32fb05f36b2abcf146be ""
   "references.tex" 1655125813 57 6abdf21bbef6e8507a82adc4c973cbc4 ""
   (generated)
