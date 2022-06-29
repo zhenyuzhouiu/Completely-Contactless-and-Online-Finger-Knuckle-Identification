@@ -1,4 +1,6 @@
-\section{3D Finger Knuckle of 3D Finger Knuckle Database}
+\subsection{3D Finger Knuckle Images Database}
+
+Because the RFNet with TRTL and STTL can get the best performance on the within database experiment and cross database experiment, 
 
 I have used the matlab code that offered by the FKNet to generate the 3D finger knuckle images for getting the depth information. But it is different that the input image size. The FKNet will resize the original image size $148*212$ to $70*100$ as the testing dataset, and crop from the $70*100$ to $48*80$ as the training dataset. As for RFNet, I just use the original image as the input data. Then the experiment protocol will generate $190*6$ genuine matching scores, and $190*189*6$ imposter matching scores. From the experiment result, we can get that the RFNet is the best model for the 3D Finger Knuckle Database.
 
@@ -11,3 +13,11 @@ I have used the matlab code that offered by the FKNet to generate the 3D finger 
         \includegraphics[width=\linewidth]{Figures/3dod3d-cmc_compare_new.eps}
     \end{subfigure}
 \end{figure}
+
+
+\subsection{Discussion}
+From these experiment results, we can see that EfficientV2-S model is better than FKNet in some dataset. Because EfficientNetV2 model use MBConv as a block unit for replacing residual block. As for MBConv block, it uses depth-wise convolutions to decrease training weights and use Squeeze-Excited block as channel transformer. Meanwhile, the depth of EfficientNetV2-S is deeper than the FKNet.
+
+There is another conclusion is that TRTL generalization ability is lower than STTL loss from the cross database experiment. But in the within database experiment, these model with TRTL loss is better than STTL loss.
+
+..............

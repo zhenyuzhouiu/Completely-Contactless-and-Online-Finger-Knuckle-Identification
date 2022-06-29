@@ -1,49 +1,56 @@
-\subsection{Cross-Database Experiments}
+\subsection{Cross Database Performance Evaluation}
 
-I firstly pre-trained my models on the Finger Knuckle V1 Database, and then fine-tuned models on the Finger Knuckle V3 Database (with deformable). I use these kind training method, and use these models to test performance on the Index Finger Knuckle of Hand Dorsal Image and Tsinghua Finger Knuckle Database as a cross database experiment. The label in the finger curve, the content in parentheses indicates the training samples. Such as RFN-WS(1-104), it uses 1-104 subjects of Finger Knuckle V3 Database to train models.
+From the within database experiment, we can clearly get a conclusion that the TRTL loss function can increase the performance compare to the STTL loss function, and the RFNet is better than the DeConvRFNet, EfficientNetV2-S, and FKNet. Meanwhile, the FKNet performance is the worst one. In this section, we will compare these models' performance on the cross database experiment. For these cross database experiment, it can get the generalization ability of neural network, because these data can be regard as unseen data. 
 
-\subsubsection{Index Finger Knuckle of Hand Dorsal Image}
+As for the cross database experiment, I firstly pre-trained our models on the Finger Knuckle Images Database V1, and then fine-tuned models on the Finger Knuckle Images Database V3 (with deformable). In the next step, we use these model to test all the finger knuckle of the Hand Dorsal Images Database and the Tsinghua Finger Vein and Finger Dorsal Texture Database (THU-FVFDT3) \cite{thufvfdt3}. Although the THU-FVFDT3 database can offer two-session samples with interval several seconds, but strictly speaking, it is not two-session database. Therefore, I just use the training set of the database as our testing dataset.
 
-\begin{figure}[H]
+\subsubsection{Hand Dorsal Images Database}
+
+\textbf{Index Finger Knuckle and Middle Finger Knuckle}
+
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crosshd-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
     \begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crosshd-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for one-session of the index finger knuckle on the contactless hand dorsal image database \cite{ContactlessHnadDorsaldb}.}
+	\label{crosshd-index-one-session}
 \end{figure}
 
-The database totally has 712 subjects, and each subject has 5 samples. Therefore, it will have $712*5$ genuine matching scores and $712*711*5$ imposter matching scores. From the cure, the performance of RFNet-SSTL and RFNet-TRTL is similar, and the RFNet-SSTL is slightly better than RFNet-TRTL while using the same training samples.
-
-\subsubsection{Middle Finger Knuckle of Hand Dorsal Image}
-\begin{figure}[H]
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crosshd-middle-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
     \begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crosshd-middle-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for one-session of the middle finger knuckle on the contactless hand dorsal image database \cite{ContactlessHnadDorsaldb}.}
+	\label{crosshd-middle-one-session}
 \end{figure}
 
+The database totally has 712 subjects, and each subject has 5 samples. Therefore, it will have $712*5=3560$ genuine matching scores and $712*711*5 = 2531160$ imposter matching scores for index and middle finger knuckle. Figure \ref{crosshd-index-one-session} is the performance result on the index finger, and Figure \ref{crosshd-middle-one-session} is the performance result on the middle finger knuckle. From Figure \ref{crosshd-index-one-session} and Figure \ref{crosshd-middle-one-session}, all models' cross database performance is similar on the database regardless which finger. We should also notice that STTL is better than TRTL on the cross database experiment, while within database, the TRTL is better than STTL. It shows that the generalization ability of TRTL is not better than STTL to some extent. However, the RFNet-STTL outperform the rest models depend on the ROC and CMC. Even better than FKNet and EfficientNetV2-S, both of them are classification models.
 
-\subsubsection{Tsinghua Finger Knuckle Database}
-\begin{figure}[H]
+\subsubsection{Tsinghua Finger Vein and Finger Dorsal Texture Database}
+\begin{figure}[ht!]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crossthu-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
     \begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/crossthu-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
+	\caption{Comparative ROC (a) and corresponding CMC (b) for one-session of the finger dorsal texture images \cite{thufvfdt3}.}
+	\label{crossthu-one-session}
 \end{figure}
 
-The database has 610 subjects, and each subject can offer 4 samples. Then as the cross database experiment, it will have $610*4$ genuine matching scores and $610*609*4$ imposter matching scores. In this database, all models can get very high matching performance from the table and figure.
-
-\subsection{Discussion}
-From these experiment results, we can see that EfficientV2-S model is better than FKNet in some dataset. Because EfficientNetV2 model use MBConv as a block unit for replacing residual block. As for MBConv block, it uses depth-wise convolutions to decrease training weights and use Squeeze-Excited block as channel transformer. Meanwhile, the depth of EfficientNetV2-S is deeper than the FKNet.
-
-There is another conclusion is that TRTL generalization ability is lower than STTL loss from the cross database experiment. But in the within database experiment, these model with TRTL loss is better than STTL loss.
-
-..............
+The database \cite{thufvfdt3} has 610 subjects, and each subject can offer 4 samples. From the finger dorsal texture images, we can use our YOLOv5-CSL model to segment finger knuckle images as our testing set. Then as the cross database experiment, it will have $610*4=2440$ genuine matching scores and $610*609*4=1485960$ imposter matching scores. In this database, all models can get very high matching performance from the Figure \ref{crossthu-one-session}, even the worst FKNet can arrive at $6.00\%$ EER on the database. The RFNet with TRTL and STTL get the same accuracy, in terms of the CMC, the recognition rate almost arrive at $100\%$.

@@ -748,6 +748,13 @@
       \field{pages}{10096\bibrangedash 10106}
       \range{pages}{11}
     \endentry
+    \entry{3dfingerknuckle}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www4.comp.polyu.edu.hk/~csajaykr/3DKnuckle.htm}}
+      \field{title}{The HKPolyU 3D Finger Knuckle Images Database:}
+    \endentry
     \entry{fingerknuckledbv1.0}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -768,6 +775,13 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/knuckleV2.htm}}
       \field{title}{The HKPolyU Contactless Hand Dorsal Images Database:}
+    \endentry
+    \entry{thufvfdt3}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.sigs.tsinghua.edu.cn/labs/vipl/thu-fvfdt.html}}
+      \field{title}{Tsinghua University Finger Vein and Finger Dorsal Texture Database (THU-FVFDT3):}
     \endentry
     \entry{YOLOv5}{misc}{}
       \name{author}{1}{}{%
