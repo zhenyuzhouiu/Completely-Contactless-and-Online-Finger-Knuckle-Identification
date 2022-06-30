@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -611,6 +611,82 @@
       \field{year}{2015}
       \field{pages}{91\bibrangedash 99}
       \range{pages}{9}
+    \endentry
+    \entry{russakovsky2015imagenet}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=2a74ec28b731b015747e2af5f0b519e1}{%
+           family={Russakovsky},
+           familyi={R\bibinitperiod},
+           given={Olga},
+           giveni={O\bibinitperiod}}}%
+        {{hash=0ae7fdc13773f928525f673b05f37149}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=18c26ddba8b9dd77f278213fd4e93ce4}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bdb3759bbe6ab0618874848557abd459}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=434c8ee62c507c93be09958bae942da5}{%
+           family={Satheesh},
+           familyi={S\bibinitperiod},
+           given={Sanjeev},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e3f8564120f7528479a3ea1b507bd705}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6e8d947dd72de23b8500095b595e1e99}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhiheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e91a4c2044bccdbef249eabc886ff988}{%
+           family={Karpathy},
+           familyi={K\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c8d6add84efe17681e0d4968ebf47fdc}{%
+           family={Khosla},
+           familyi={K\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9c5821708eb9cc9bc6c92c66ada53892}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8ba3ccfdb2fef3e42589e7ae3b2c964a}
+      \strng{fullhash}{02269a963f3dd2d4cd3516e184f1fb29}
+      \strng{bibnamehash}{8ba3ccfdb2fef3e42589e7ae3b2c964a}
+      \strng{authorbibnamehash}{8ba3ccfdb2fef3e42589e7ae3b2c964a}
+      \strng{authornamehash}{8ba3ccfdb2fef3e42589e7ae3b2c964a}
+      \strng{authorfullhash}{02269a963f3dd2d4cd3516e184f1fb29}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of computer vision}
+      \field{number}{3}
+      \field{title}{Imagenet large scale visual recognition challenge}
+      \field{volume}{115}
+      \field{year}{2015}
+      \field{pages}{211\bibrangedash 252}
+      \range{pages}{42}
     \endentry
     \entry{schroff2015facenet}{inproceedings}{}
       \name{author}{3}{}{%

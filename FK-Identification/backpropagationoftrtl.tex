@@ -14,7 +14,7 @@ In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss
 	\label{Tripletloss}
 \end{equation}
 
-In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$. Meanwhile, the distance $D_{w,h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
+In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal translation and rotation distance (MTRD). Meanwhile, the distance $D_{w,h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
 \begin{equation}
 	\begin{aligned}
 		L(T_1, T_2) = \mathop{min}\limits_{-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(T_1, T_2)}
