@@ -4,30 +4,3 @@ We choose the baseline model is the RFNet \cite{liu2020contactless}, its perform
 Meanwhile, we will also compare with the FKNet \cite{cheng2020deep} which get the state-of-the-art performance on 3D finger knuckle identification, and EfficientNetV2-S \cite{tan2021efficientnetv2}. FKNet performance on the 3D finger knuckle database, 2D finger knuckle and even palmprint database can over SGD \cite{cheng2019contactless}, CR\_L1\_DALM, CR\_L2 \cite{zhang20143d}, ResNet-50 \cite{he2016deep}, VGG-16 \cite{simonyan2014very}, AlexNet \cite{krizhevsky2012imagenet}, DenseNet-121 \cite{huang2017densely}, and SE-ResNet-50 \cite{hu2018squeeze}. Both of FKNet and EfficientNetV2-S are classification neural network. As a classification neural network, it commonly has a problem when the number of classes of testing dataset is not as same as the training set classes, result in fine-tuning on the testing set. Therefore, we use the vector before soft-max layer as the feature vector, and then calculate the MSE of two feature vectors as the similarity score during matching finger knuckle. We use the ResNet-50 pretrained weights as the FKNet initial weights, and use the pretrained weights on the ImageNet21K as the initial weights of EfficientNetV2-S.
 
 We also want to show the performance of TRTL and SSTL on the EfficientNetV2-S model, therefore we keep the same architecture and just change the FC layer of the head part with convolution layer for fitting TRTL and STTL. The changed EfficientNetV2-S model with TRTL called EfficientNetV2-S-TRTL, and with STTL called EfficientNetV2-S-STTL. As same as the EfficientNetV2-S model, we also use the pretrained model weights on the ImageNet21K dataset. In generally, public finger knuckle database already offer segmented finger knuckle images, but we use our YOLOv5-CSL model to segment finger knuckle as our training and testing data during our experiment.
-
-
-\subsection{Model Complexity Analysis}
-
-As a completely contactless and online finger knuckle identification, we must choose a model that can meet the requirements of matching speed while ensuring matching accuracy, and even sacrifice matching accuracy for a certain matching speed. We have listed learnable weights of each model, and the corresponding feature extraction time and matching time on the Table \ref{model-complexity}.
-
-\begin{table}[ht!]
-    \centering
-    \begin{tabular}{c c c c c c c}
-        \hline
-        Model & \makecell[c]{Prams \\(M)} & \makecell[c]{Input \\ Size} & \makecell[c]{Template \\ Size} & \makecell[c]{FLOPs \\(B)} & \makecell[c]{Feature \\Extraction \\ (s)} & \makecell[c]{Matching \\ (s)} \\
-        \hline
-        DeConvRFNet-STTL & 0.36M &128x128 &32x32 &1.29B  &0.0057s  & 0.045s \\
-        DeConvRFNet-TRTL & 0.36M &128x128 &32x32 &1.29B  &0.0057s  & 0.110s\\
-        EfficientNetV2-S \cite{tan2021efficientnetv2} & 20.18M &300x300 &classes & 5.40B &0.0106s  &0.061s \\
-        EfficientNetV2-S-STTL & 20.00M &300x300 & 9x9 & 5.38B &0.0103s  & 0.087s \\
-        EfficientNetV2-S-TRTL &20.00M &300x300 & 9x9& 5.38B &0.0103s  & 0.0103 \\
-        FKNet \cite{cheng2020deep} &7.28M &96x64 &classes & 0.28B & 0.0073s  &0.055s  \\
-        RFNet-STTL \cite{liu2020contactless} & 0.46M &128x128 &32x32 & 1.39B & 0.0062s & 0.049s \\
-        RFNet-TRTL & 0.46M &128x128 &32x32 & 1.39B & 0.0062s & 0.127s \\
-        \hline
-    \end{tabular}
-    \caption{Comparison time and space complexity of different neural network. Time complexity is the average time of 10k images on the Ubuntu 22.04 with GeForce RTX 2080 GPU. When the template size is classes, it means the training set classes number. For the STTL, the shift size is 4; for the TRTL, the shift size is 4, and add rotation with 4 angles.}
-    \label{model-complexity}
-\end{table}
-
-......

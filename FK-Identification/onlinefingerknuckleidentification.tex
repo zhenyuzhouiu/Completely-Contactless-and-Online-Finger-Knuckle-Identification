@@ -4,12 +4,12 @@ With TRTL loss, the RFNet \cite{liu2020contactless} can outperform state-of-the-
 Meanwhile, as for neural network, the current based on YOLO \cite{redmon2016you}, \cite{redmon2017yolo9000}, \cite{redmon2018yolov3}, \cite{bochkovskiy2020yolov4}, \cite{YOLOv5} and R-CNN \cite{girshick2014rich}, \cite{girshick2015fast}, \cite{ren2015faster}, \cite{he2017mask} series object detection and segmentation approaches cannot simultaneously obtain the angle of finger knuckle and the segmentation with high precision. Especially, the angle of the finger knuckle is a vital factor for identification. If we can get the angle of finger knuckle, we can use angle information to align two feature maps for increasing matching accuracy and efficiency. For solving above problems, we propose rotated bounding box detection based on YOLOv5 model for segmenting and getting angle information.
 
 \subsection{Contactless Finger Knuckle Detection}
-\subsubsection{ Rotated Bounding Box Based on YOLOv5}
+\subsubsection{ Oriented Bounding Box Based on YOLOv5}
 In order to solve the problem of finger knuckle detection in the real world, we choose to use YOLOv5 model because the YOLO series is famous for its fast detection speed and high accuracy. Especially, the YOLOv5's \cite{YOLOv5} speed can meet our online detection requirements.
 
-\noindent\textbf{Rotated Bounding Box}
+\noindent\textbf{Oriented Bounding Box}
 
-\noindent{ However, the YOLOv5 just detect horizontal bounding boxes which cannot offer angle information and will segment a lot of background information. In order to solve these above problem, a rotated bounding box will be predicted instead of horizontal bounding box. As analyzed in this paper \cite{yang2020csl}, the rotated bounding boxes loss will mainly come from angular periodicity and the exchangeability of edges. When use the long side definition of rotated bounding box, it can deal with the exchangeability of edges problem. Meanwhile, using classification task to predict angle can make model easier to train. A periodic coding method called Circular Smooth Label (CSL) \cite{yang2020csl} soft coding can also solve the problem that One-Hot cannot distinguish class relationship. Formula \ref{CSL Function} $g(x)$ is the window function to smooth One-Hot label, and $r$ is a window function of the radius.}
+\noindent{However, the YOLOv5 just detect horizontal bounding boxes which cannot offer angle information and will segment a lot of background information. In order to solve these above problem, a rotated bounding box will be predicted instead of horizontal bounding box. As analyzed in this paper \cite{yang2020csl}, the rotated bounding boxes loss will mainly come from angular periodicity and the exchangeability of edges. When use the long side definition of rotated bounding box, it can deal with the exchangeability of edges problem. Meanwhile, using classification task to predict angle can make model easier to train. A periodic coding method called Circular Smooth Label (CSL) \cite{yang2020csl} soft coding can also solve the problem that One-Hot cannot distinguish class relationship. Formula \ref{CSL Function} $g(x)$ is the window function to smooth One-Hot label, and $r$ is a window function of the radius.}
 
 \begin{equation}
     CSL(x)=
@@ -26,12 +26,10 @@ Furthermore, in this paper, we used the Gaussian function for the Equation \ref{
 \noindent\textbf{Loss function}
 
 \noindent{The original YOLOv5 loss function can have three components. The formula can be simply written as $Loss = CIOU\_Loss + Loss_{conf} + Loss_{class}$. Since the rotated bounding box is based on the modification of YOLOv5, only the angle classification loss is added more. So the total loss function is as expressed in Equation \ref{Loss}, with the addition of $Loss_{angle}$ to YOLOv5 loss function.}
-
 \begin{equation}
     Loss = CIOU\_Loss + Loss_{conf} + Loss_{class} + Loss_{angle}
     \label{Loss}
 \end{equation}
-
 \begin{equation}
     \begin{aligned}
         Loss_{angle} = \sum_{i=0}^{S^2}I_{ij}^{obj}\sum_{a{\in}[0,180)}[\hat{P_i(a)}log(P_i(a)) + \\
@@ -40,9 +38,8 @@ Furthermore, in this paper, we used the Gaussian function for the Equation \ref{
     \label{Loss_angle}
 \end{equation}
 
-
 \subsubsection{Contactless Finger Knuckle Dataset}
-Our task is to detect finger knuckles in the contactless and online scenario, but by understanding current public finger knuckle database, their data are collected at specific conditions such as certain angle, certain light. In this kind of situation, this kind of data cannot represent real images of finger knuckle in real world. In order to address the shortcomings of current public finger knuckle dataset for contactless detection, we use a web crawler to get images from the Unsplash \cite{Unsplash} where the keywords are finger knuckles. The Unsplash is an image site that offers uploads and downloads, and uses a copyright license that allows users to download and use them for free or even for commercial use \cite{unsplashlicense}. We have downloaded 2347 images, there are 738 images without knuckles, and these images can be used as background training, and the rest 1609 images that contain at least one finger knuckle are the positive samples for the network model. In the network training process, we use crawled images, 169 finger knuckle images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0}, and 64 finger knuckles images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb} as for the training set. And we use the rest data as testing set to evaluate performance. The most important part is the data augmentaion which conatains flip, rotation, resize, translate and mosaic.
+Our task is to detect finger knuckles in the contactless and online scenario, but by understanding current public finger knuckle database, their data are collected at specific conditions such as certain angle, certain light. In this kind of situation, this kind of data cannot represent real images of finger knuckle in real world. In order to address the shortcomings of current public finger knuckle dataset for contactless detection, we use a web crawler to get images from the Unsplash \cite{Unsplash} where the keywords are finger knuckles. The Unsplash is an image site that offers uploads and downloads, and uses a copyright license that allows users to download and use them for free or even for commercial use \cite{unsplashlicense}. We have downloaded 2347 images, there are 738 images without knuckles, and these images can be used as background training, and the rest 1609 images that contain at least one finger knuckle are the positive samples for the network model. In the network training process, we use crawled images, 169 finger knuckle images from the HKPolyU Finger Knuckle Database (V1.0) \cite{fingerknuckledbv1.0}, and 64 finger knuckles images from the HKPolyU Hand Dorsal Database \cite{ContactlessHnadDorsaldb} as for the training set. And we use the rest data as testing set to evaluate performance. The most important part is the data augmentation which contains flip, rotation, resize, translate and mosaic.
 
 \subsubsection{Contactless Finger Knuckle Detection}
 
@@ -62,7 +59,7 @@ The YOLOv4 model predict horizontal bounding box, while the remaining YOLOv5 mod
         YOLOv4 & 25.992 & 161 & 70.7 & 83.6 & 57.7 \\
         \hline
     \end{tabular}
-    \caption{Comparison of the accuracy of the different models of the YOLO series for the detection of the finger knuckle.The calculated values of mAP were measured at a detection threshold of 0.4 as well as an IOU threshold of 0.5.}
+    \caption{Comparison of the accuracy of the different models of the YOLO series for the detection of the finger knuckle. The calculated values of mAP were measured at a detection threshold of 0.4 as well as an IOU threshold of 0.5.}
     \label{mAP of different model}
 \end{table}
 
