@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  2 JUL 2022 18:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  3 JUL 2022 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,7 +778,10 @@ File: Figures/ablation-genuine_distribution.eps Graphic file (type eps)
 <Figures/ablation-genuine_distribution.eps>
 File: Figures/ablation-imposter_distribution.eps Graphic file (type eps)
 <Figures/ablation-imposter_distribution.eps>
-) (./FK-Identification/onlinefingerknuckleidentification.tex [13] [14] [15]
+) (./FK-Identification/onlinefingerknuckleidentification.tex [13] [14]
+Underfull \vbox (badness 1048) has occurred while \output is active []
+
+ [15]
 File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -816,4 +819,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  81i,19n,89p,1861b,4727s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (20 pages, 515088 bytes).
+Output written on Finger-Knuckle.xdv (20 pages, 515084 bytes).
