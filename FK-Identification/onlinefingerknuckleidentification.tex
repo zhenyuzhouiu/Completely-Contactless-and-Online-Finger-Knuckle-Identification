@@ -46,9 +46,9 @@ Our task is to detect finger knuckles in the contactless and online scenario, bu
 \noindent\textbf{Detection Performance}
 
 \noindent
-The YOLOv4 model predict horizontal bounding box, while the remaining YOLOv5 model predict rotated bounding box with CSL classification, called YOLOv5-CSL. We can see the performance difference between these variations of the YOLOv5 model from the Table \ref{mAP of different model}. Among the downloaded 2580 images, 100 images were randomly selected as the testing set.
+The YOLOv4, YOLOv5x, and YOLOv5m model predict horizontal bounding box, while the remaining YOLOv5 model predict oriented bounding box with CSL classification, called YOLOv5-CSL. We can see the performance difference between these variations of the YOLOv5 model from the Table \ref{mAP of different model}. Among the downloaded 2580 images, 100 images were randomly selected as the testing set. \textcolor{red}{Compare the performance of the horizontal bounding box prediction and oriented bounding box.}
 
-\begin{table}[H]
+\begin{table}[ht!]
     \centering
     \begin{tabular}{c c c c c c}
         \hline
@@ -57,6 +57,8 @@ The YOLOv4 model predict horizontal bounding box, while the remaining YOLOv5 mod
         YOLOv5x-CSL & 41.395 & 407 & \textbf{89.9} &\textbf{89.6} & \textbf{90.1} \\
         YOLOv5m-CSL & 36.252 & 263 & 85.7 & 88.9 & 80.4 \\
         YOLOv4 & 25.992 & 161 & 70.7 & 83.6 & 57.7 \\
+        YOLOv5x &  & & &  &  \\
+        YOLOv5m &  &  &  &  &  \\
         \hline
     \end{tabular}
     \caption{Comparison of the accuracy of the different models of the YOLO series for the detection of the finger knuckle. The calculated values of mAP were measured at a detection threshold of 0.4 as well as an IOU threshold of 0.5.}
@@ -94,4 +96,6 @@ From the above figures, we can clearly get the conclusion that quality of segmen
 
 
  \subsection{Online Contactless Finger Knuckle Identification Performance}
+
+ For proving our contactless and online finger knuckle identification performance, we capture  52 subjects
  .............

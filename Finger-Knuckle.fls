@@ -797,6 +797,7 @@ INPUT ./FK-Identification/introduction.tex
 INPUT FK-Identification/introduction.tex
 INPUT ./FK-Identification/introduction.tex
 INPUT FK-Identification/introduction.tex
+OUTPUT Finger-Knuckle.xdv
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
@@ -809,14 +810,13 @@ INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-OUTPUT Finger-Knuckle.xdv
 INPUT ./FK-Identification/backpropagationoftrtl.tex
 INPUT FK-Identification/backpropagationoftrtl.tex
 INPUT ./FK-Identification/backpropagationoftrtl.tex
 INPUT FK-Identification/backpropagationoftrtl.tex
-INPUT ./Figures/TRTL.png
-INPUT ./Figures/TRTL.png
-INPUT Figures/TRTL.png
+INPUT ./Figures/RITL.png
+INPUT ./Figures/RITL.png
+INPUT Figures/RITL.png
 INPUT ./FK-Identification/experiments/experimentsandresults.tex
 INPUT FK-Identification/experiments/experimentsandresults.tex
 INPUT ./FK-Identification/experiments/experimentsandresults.tex

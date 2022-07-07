@@ -649,6 +649,40 @@
       \field{pages}{201\bibrangedash 209}
       \range{pages}{9}
     \endentry
+    \entry{kumar2009personal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b54563c75758d15300611eb6c6ebc5f4}{%
+           family={Ravikanth},
+           familyi={R\bibinitperiod},
+           given={Ch},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \strng{fullhash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \strng{bibnamehash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \strng{authorbibnamehash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \strng{authornamehash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \strng{authorfullhash}{b8ee810b366a97fa1f6b004ed9cc470c}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{number}{1}
+      \field{title}{Personal authentication using finger knuckle surface}
+      \field{volume}{4}
+      \field{year}{2009}
+      \field{pages}{98\bibrangedash 110}
+      \range{pages}{13}
+    \endentry
     \entry{lecun1998gradient}{article}{}
       \name{author}{4}{}{%
         {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
@@ -1311,6 +1345,75 @@
       \field{pages}{10096\bibrangedash 10106}
       \range{pages}{11}
     \endentry
+    \entry{tarawneh2022deepknuckle}{article}{}
+      \name{author}{9}{}{%
+        {{hash=b47c43a46d0ff5aae3005dd7d14fb257}{%
+           family={Tarawneh},
+           familyi={T\bibinitperiod},
+           given={Ahmad\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=95400c34324b170f8a6de9f9efbb89b3}{%
+           family={Hassanat},
+           familyi={H\bibinitperiod},
+           given={Ahmad\bibnamedelima B},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=da3a76cbdbb373faf3ef0d47e3dda05e}{%
+           family={Alkafaween},
+           familyi={A\bibinitperiod},
+           given={Esra’a},
+           giveni={E\bibinitperiod}}}%
+        {{hash=80108c0905955b576e4c00536fac4408}{%
+           family={Sarayrah},
+           familyi={S\bibinitperiod},
+           given={Bayan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6279dcf8647d5be0c806c632fc840f3c}{%
+           family={Mnasri},
+           familyi={M\bibinitperiod},
+           given={Sami},
+           giveni={S\bibinitperiod}}}%
+        {{hash=bc574f1e4f10241b88310ef9cae918a5}{%
+           family={Altarawneh},
+           familyi={A\bibinitperiod},
+           given={Ghada\bibnamedelima A},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0d3902766105db420413c250c39035e5}{%
+           family={Alrashidi},
+           familyi={A\bibinitperiod},
+           given={Malek},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f0e5a83a0370156239dcd4895862f5c5}{%
+           family={Alghamdi},
+           familyi={A\bibinitperiod},
+           given={Mansoor},
+           giveni={M\bibinitperiod}}}%
+        {{hash=24a1d4bd5111c88f5bdf6ffb4bad3aae}{%
+           family={Almuhaimeed},
+           familyi={A\bibinitperiod},
+           given={Abdullah},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{0baea4adc0ac4bbdd6bd105a62706b34}
+      \strng{fullhash}{f9eac79046d122208e29734ba635c491}
+      \strng{bibnamehash}{0baea4adc0ac4bbdd6bd105a62706b34}
+      \strng{authorbibnamehash}{0baea4adc0ac4bbdd6bd105a62706b34}
+      \strng{authornamehash}{0baea4adc0ac4bbdd6bd105a62706b34}
+      \strng{authorfullhash}{f9eac79046d122208e29734ba635c491}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Electronics}
+      \field{number}{4}
+      \field{title}{DeepKnuckle: Deep Learning for Finger Knuckle Print Recognition}
+      \field{volume}{11}
+      \field{year}{2022}
+      \field{pages}{513}
+      \range{pages}{1}
+    \endentry
     \entry{3dfingerknuckle}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -1628,6 +1731,7 @@
       \strng{authorbibnamehash}{28657ed324e41f2c879d1bf29d4788c0}
       \strng{authornamehash}{28657ed324e41f2c879d1bf29d4788c0}
       \strng{authorfullhash}{c6268ccc769157d652e6fb8b547c615a}
+      \field{extraname}{1}
       \field{sortinit}{Z}
       \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
       \field{labelnamesource}{author}
@@ -1639,6 +1743,51 @@
       \field{year}{2014}
       \field{pages}{1730\bibrangedash 1736}
       \range{pages}{7}
+    \endentry
+    \entry{zhang2010online}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3a1f1a0016bb4e33e52e9bd0f48cfd33}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f4a4cbf770add19c206827116c68732e}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=94d314d7b645e07423926dfb8d939dc0}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1eb36ac7379f97ac09ccce4580f50db2}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Hailong},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{fullhash}{23b560fc7760f215c27a15c3d9e8668a}
+      \strng{bibnamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorbibnamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authornamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorfullhash}{23b560fc7760f215c27a15c3d9e8668a}
+      \field{extraname}{2}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern recognition}
+      \field{number}{7}
+      \field{title}{Online finger-knuckle-print verification for personal authentication}
+      \field{volume}{43}
+      \field{year}{2010}
+      \field{pages}{2560\bibrangedash 2571}
+      \range{pages}{12}
     \endentry
     \entry{zheng20163d}{article}{}
       \name{author}{3}{}{%

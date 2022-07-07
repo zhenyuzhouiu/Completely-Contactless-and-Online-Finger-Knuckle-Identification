@@ -1,15 +1,15 @@
 \section{Matching Contactless Finger Knuckle}
-One of our contributions is the online finger knuckle identification. In this kind of situation, we choose the Residual Feature Network (RFNet) \cite{liu2020contactless} as our feature extraction backbone, because the model not only is lightweight enough, but it achieves state-of-the-art performance on the palmprint dataset. Meanwhile, the paper \cite{liu2020contactless} uses the soft-shifted triplet loss function, called SSTL to train the model and matching two features for dealing with translation problem. However, in generally, feature maps of the same class will not only just shift along two axes, but also will have local deformable transformation. For solving it, we propose a new loss and also a new matching method, called translation and rotation triplet loss function (TRTL). With the TRTL, the feature maps can be translated along the x-axis and y-axis, and can be rotated clockwise and counterclockwise. Then we will get the minimal value after translation and rotation as the similarity scores.
+One of our contributions is the online finger knuckle identification. In this kind of situation, we choose the Residual Feature Network (RFNet) \cite{liu2020contactless} as our feature extraction backbone, because the model not only is lightweight enough, but it achieves state-of-the-art performance on the palmprint dataset. Meanwhile, the paper \cite{liu2020contactless} uses the soft-shifted triplet loss function, called SSTL to train the model and matching two features for dealing with shifting problem. However, in generally, feature maps of the same class will not only just shift along two axes, but also will have local deformable transformation with rotation. For solving it, we propose a new loss and also a new matching method, called rotation invariant triplet loss function (RITL). With the RITL, the feature maps can be translated along the x-axis and y-axis, and can be rotated clockwise and counterclockwise. Then we will get the minimal value after translation and rotation as the similarity scores.
 
 \subsection{Translated and Rotated Triplet Loss Function}
 
-As for a new loss function, the most important point is whether it can be differentiable. With a differentiable loss, the back propagation process can proceed smoothly, and the learnable parameters can be updated to get the minimal loss. In this section, we will discuss the derivation of the TRTL loss function. Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used TRTL as loss function to update convolutional kernel of our models.
+As for a new loss function, the most important point is whether it can be differentiable. With a differentiable loss, the back propagation process can proceed smoothly, and the learnable parameters can be updated to get the minimal loss. In this section, we will discuss the derivation of the RITL loss function. Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used RITL as loss function to update convolutional kernel of our models.
 
-In generally, the TRTLoss is still a variant of triple loss, so that the TRTLoss can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the batch size during training iteration, and $T(I^{a})$ is the output template of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away during training process.
+In generally, the RITL is still a variant of triple loss, so that the RITL can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the batch size during training iteration, and $T(I^{a})$ is the output template of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away during training process.
 
 \begin{equation}
 	\begin{aligned}
-		TRTL = \frac{1}{N}\sum_{i}^{N}[L(T(I_{i}^{a}),T(I_{i}^{p}))-L(T(I_{i}^{a}),T(I_{i}^{n})) + m]_{+}
+		RITL = \frac{1}{N}\sum_{i}^{N}[L(T(I_{i}^{a}),T(I_{i}^{p}))-L(T(I_{i}^{a}),T(I_{i}^{n})) + m]_{+}
 	\end{aligned}
 	\label{Tripletloss}
 \end{equation}
@@ -30,13 +30,13 @@ In order to adapt to tasks with different degrees of deformation, and balance pe
 \begin{figure}[ht!]
     \centering
     \begin{subfigure}[b]{0.8\linewidth}
-        \includegraphics[width=\linewidth]{Figures/TRTL.png}
+        \includegraphics[width=\linewidth]{Figures/RITL.png}
 	\end{subfigure}
-    \caption{An overview of how to use our translation and rotation triplet loss function (TRTL) to train the triplet neural network. We will use the minimal translation and rotation distance (MTRD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MTRD to calculate matching scores.}
-    \label{TRTL}
+    \caption{An overview of how to use our translation and rotation triplet loss function (RITL) to train the triplet neural network. We will use the minimal translation and rotation distance (MTRD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MTRD to calculate matching scores.}
+    \label{RITL}
 \end{figure}
 
-In terms of $C_{w,h,\theta}$, it represents the common region between two templates after one template shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$, as showed in the Figure \ref{TRTL}. As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(T_a, T_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(T_a, T_m)$.
+In terms of $C_{w,h,\theta}$, it represents the common region between two templates after one template shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$, as showed in the Figure \ref{RITL}. As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(T_a, T_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(T_a, T_m)$.
 \begin{equation}
 	\begin{aligned}
 		\frac{\partial{Loss}}{\partial{T_i^p}}=
