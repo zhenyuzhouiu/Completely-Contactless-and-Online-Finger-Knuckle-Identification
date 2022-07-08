@@ -1,22 +1,22 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Finger-Knuckle.blg'
-[108] biber-MSWIN32:340> INFO - === 
-[144] Biber.pm:415> INFO - Reading 'Finger-Knuckle.bcf'
-[277] Biber.pm:952> INFO - Found 54 citekeys in bib section 0
-[293] Biber.pm:4340> INFO - Processing section 0
-[306] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[370] bibtex.pm:1689> INFO - LaTeX decoding ...
-[459] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[460] Utils.pm:395> WARN - Duplicate entry key: 'kumar2019toward' in file 'references.bib', skipping ...
-[460] Utils.pm:395> WARN - Duplicate entry key: 'kumar2020contactless' in file 'references.bib', skipping ...
-[463] Utils.pm:395> WARN - Duplicate entry key: 'ridnik2021tresnet' in file 'references.bib', skipping ...
-[463] Utils.pm:395> WARN - Duplicate entry key: 'zheng20163d' in file 'references.bib', skipping ...
-[610] Utils.pm:395> WARN - legacy year field '18 May 2020' in entry 'YOLOv5' is not an integer - this will probably not sort properly.
-[693] Utils.pm:395> WARN - legacy year field 'Retrieved 11 January 2017' in entry 'unsplashlicense' is not an integer - this will probably not sort properly.
-[757] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[757] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[757] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[758] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[807] bbl.pm:654> INFO - Writing 'Finger-Knuckle.bbl' with encoding 'UTF-8'
-[839] bbl.pm:757> INFO - Output to Finger-Knuckle.bbl
-[839] Biber.pm:128> INFO - WARNINGS: 6
+[112] biber-MSWIN32:340> INFO - === 
+[152] Biber.pm:415> INFO - Reading 'Finger-Knuckle.bcf'
+[292] Biber.pm:952> INFO - Found 54 citekeys in bib section 0
+[308] Biber.pm:4340> INFO - Processing section 0
+[320] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[375] bibtex.pm:1689> INFO - LaTeX decoding ...
+[462] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[463] Utils.pm:395> WARN - Duplicate entry key: 'kumar2019toward' in file 'references.bib', skipping ...
+[464] Utils.pm:395> WARN - Duplicate entry key: 'kumar2020contactless' in file 'references.bib', skipping ...
+[466] Utils.pm:395> WARN - Duplicate entry key: 'ridnik2021tresnet' in file 'references.bib', skipping ...
+[467] Utils.pm:395> WARN - Duplicate entry key: 'zheng20163d' in file 'references.bib', skipping ...
+[619] Utils.pm:395> WARN - legacy year field '18 May 2020' in entry 'YOLOv5' is not an integer - this will probably not sort properly.
+[704] Utils.pm:395> WARN - legacy year field 'Retrieved 11 January 2017' in entry 'unsplashlicense' is not an integer - this will probably not sort properly.
+[775] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[775] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[775] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[775] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[825] bbl.pm:654> INFO - Writing 'Finger-Knuckle.bbl' with encoding 'UTF-8'
+[858] bbl.pm:757> INFO - Output to Finger-Knuckle.bbl
+[859] Biber.pm:128> INFO - WARNINGS: 6

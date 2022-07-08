@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  7 JUL 2022 19:54
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  8 JUL 2022 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -720,22 +720,19 @@ Package biblatex Info: Reference segment=0 on input line 20.
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-Underfull \vbox (badness 4416) has occurred while \output is active []
-
- [3]) (./FK-Identification/backpropagationoftrtl.tex [4]
+ [2] [3]) (./FK-Identification/backpropagationoftrtl.tex [4]
 File: Figures/RITL.png Graphic file (type bmp)
 <Figures/RITL.png>
- [5]) (./FK-Identification/experiments/experimentsandresults.tex) (./FK-Identification/experiments/withindb.tex [6]
+ [5]) (./FK-Identification/experiments/experimentsandresults.tex [6]) (./FK-Identification/experiments/withindb.tex
 Overfull \hbox (0.57442pt too wide) in paragraph at lines 6--20
  [][] 
  []
 
+[7]
 File: Figures/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-roc_compare_new.eps>
 File: Figures/fkv3-cmc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-cmc_compare_new.eps>
-[7]
 File: Figures/two-fkv3roc_compare_new.eps Graphic file (type eps)
 <Figures/two-fkv3roc_compare_new.eps>
 File: Figures/two-fkv3cmc_compare_new.eps Graphic file (type eps)
@@ -745,18 +742,19 @@ File: Figures/hd-roc_compare_new.eps Graphic file (type eps)
 File: Figures/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/hd-cmc_compare_new.eps>
  [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
 File: Figures/2dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-roc_compare_new.eps>
 File: Figures/2dof3d-cmc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-cmc_compare_new.eps>
 ) (./FK-Identification/experiments/crossdb.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
 File: Figures/crosshd-roc_compare_new.eps Graphic file (type eps)
 <Figures/crosshd-roc_compare_new.eps>
 File: Figures/crosshd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crosshd-cmc_compare_new.eps>
+ [10]
 File: Figures/crosshd-middle-roc_compare_new.eps Graphic file (type eps)
 <Figures/crosshd-middle-roc_compare_new.eps>
 File: Figures/crosshd-middle-cmc_compare_new.eps Graphic file (type eps)
@@ -765,15 +763,18 @@ File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
+) (./FK-Identification/experiments/3dof3dfingerknuckle.tex
+Underfull \vbox (badness 1565) has occurred while \output is active []
 
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
- [10]) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [11]
+ [11]
 File: Figures/3dod3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dod3d-roc_compare_new.eps>
 File: Figures/3dod3d-cmc_compare_new.eps Graphic file (type eps)
 <Figures/3dod3d-cmc_compare_new.eps>
  [12]) (./FK-Identification/experiments/ablation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 File: Figures/ablation-roc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-roc_compare_new.eps>
 File: Figures/ablation-cmc_compare_new.eps Graphic file (type eps)
@@ -782,8 +783,8 @@ File: Figures/ablation-genuine_distribution.eps Graphic file (type eps)
 <Figures/ablation-genuine_distribution.eps>
 File: Figures/ablation-imposter_distribution.eps Graphic file (type eps)
 <Figures/ablation-imposter_distribution.eps>
-) (./FK-Identification/onlinefingerknuckleidentification.tex [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) (./FK-Identification/onlinefingerknuckleidentification.tex
+Underfull \vbox (badness 1762) has occurred while \output is active []
 
  [14] [15]
 Overfull \hbox (5.19514pt too wide) in paragraph at lines 48--50
@@ -795,24 +796,27 @@ File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1558) has occurred while \output is active []
 
  [16]
 File: Figures/yolov5vsdatabase/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-cmc_compare_new.eps>
-) (./FK-Identification/conclusionsandfuturework.tex) (./references.tex
+) (./FK-Identification/conclusionsandfuturework.tex
+Underfull \vbox (badness 7595) has occurred while \output is active []
+
+ [17]) (./references.tex
 Overfull \hbox (0.31264pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 KamYuen Cheng and Ajay Kumar. “Contactless finger knuckle identification using smart-
  []
 
-[17] [18]
+[18]
 Overfull \hbox (10.36765pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Joseph Redmon and Ali Farhadi. “Yolov3: An incremental improvement”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint
  []
 
-[19]) [20] (./Finger-Knuckle.aux)
+[19] [20]) [21] (./Finger-Knuckle.aux)
 Package rerunfilecheck Info: File `Finger-Knuckle.out' has not changed.
 (rerunfilecheck)             Checksum: 5151C5675E8AFE029FE6541D52D4F18A;5888.
 Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
@@ -822,10 +826,10 @@ Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 Here is how much of TeX's memory you used:
  20177 strings out of 476919
  398530 string characters out of 5819151
- 1195326 words of memory out of 5000000
+ 1197326 words of memory out of 5000000
  39885 multiletter control sequences out of 15000+600000
  408772 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 81i,19n,89p,1861b,4729s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,19n,89p,2142b,4729s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (20 pages, 532536 bytes).
+Output written on Finger-Knuckle.xdv (21 pages, 543180 bytes).

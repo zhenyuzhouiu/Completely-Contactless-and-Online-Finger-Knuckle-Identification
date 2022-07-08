@@ -1,15 +1,15 @@
 # Fdb version 3
-["biber Finger-Knuckle"] 1657185156 "Finger-Knuckle.bcf" "Finger-Knuckle.bbl" "Finger-Knuckle" 1657194894
-  "Finger-Knuckle.bcf" 1657194873 113553 d1bee0bb573b6638b0163d808bdd61bd "xelatex"
+["biber Finger-Knuckle"] 1657261625 "Finger-Knuckle.bcf" "Finger-Knuckle.bbl" "Finger-Knuckle" 1657261788
+  "Finger-Knuckle.bcf" 1657261766 113553 f7bb74b9b8dd19d935f533cd528ea969 "xelatex"
   "references.bib" 1657185124 22202 7bc5a8827e690f0bfb2893a381472cca ""
   (generated)
-  "Finger-Knuckle.bbl"
   "Finger-Knuckle.blg"
-["xdvipdfmx"] 1657194873 "Finger-Knuckle.xdv" "Finger-Knuckle.pdf" "Finger-Knuckle" 1657194894
-  "Finger-Knuckle.xdv" 1657194873 532536 7d070ad86350d1f6299fb0d521d38c3b "xelatex"
+  "Finger-Knuckle.bbl"
+["xdvipdfmx"] 1657261766 "Finger-Knuckle.xdv" "Finger-Knuckle.pdf" "Finger-Knuckle" 1657261788
+  "Finger-Knuckle.xdv" 1657261766 543180 f76b0ecc3c99f491c73ebbc5fa237854 "xelatex"
   (generated)
   "Finger-Knuckle.pdf"
-["xelatex"] 1657194868 "c:/Users/ZhenyuZHOU/Desktop/Completely-Contactless-and-Online-Finger-Knuckle-Identification/Finger-Knuckle.tex" "Finger-Knuckle.xdv" "Finger-Knuckle" 1657194894
+["xelatex"] 1657261763 "c:/Users/ZhenyuZHOU/Desktop/Completely-Contactless-and-Online-Finger-Knuckle-Identification/Finger-Knuckle.tex" "Finger-Knuckle.xdv" "Finger-Knuckle" 1657261788
   "FK-Identification/abstract.tex" 1656559630 20 1dc04139a615819eb415c78705704f15 ""
   "FK-Identification/backpropagationoftrtl.tex" 1657001660 5774 c2c13e74b6c239a94dec6ec217cde87b ""
   "FK-Identification/conclusionsandfuturework.tex" 1656644601 37 33092a3e62d2bb6b3b26929ca8684b89 ""
@@ -18,7 +18,7 @@
   "FK-Identification/experiments/crossdb.tex" 1656568071 4708 aacbd5a9858c84775346f8b71c4f5db5 ""
   "FK-Identification/experiments/experimentsandresults.tex" 1656756421 3009 e3e1616a51c5fe281a3a71c64f2df7c5 ""
   "FK-Identification/experiments/withindb.tex" 1656756442 9116 0f03a2d56b64e55eb9d985591f5a2376 ""
-  "FK-Identification/introduction.tex" 1657194888 12523 778f566da110ed2a3ef39964f2f689d5 ""
+  "FK-Identification/introduction.tex" 1657261758 13566 bd15f80649c68f059eb777ae1b92daa7 ""
   "FK-Identification/onlinefingerknuckleidentification.tex" 1657179008 8847 96459637438dc32c5712215d0bcc540e ""
   "Figures/2dof3d-cmc_compare_new.eps" 1656559630 31987 da36ee86d7384fb7829a2d4a07816402 ""
   "Figures/2dof3d-roc_compare_new.eps" 1656559630 159007 7fcc3caa240d708a87ed1191edeadafc ""
@@ -45,10 +45,10 @@
   "Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps" 1656559630 126852 15f88359df98f0e6220ce5aec38085d4 ""
   "Figures/yolov5vsdatabase/hd-cmc_compare_new.eps" 1656559630 21901 f36e3472b6673ffa84b89d6e90eeab0a ""
   "Figures/yolov5vsdatabase/hd-roc_compare_new.eps" 1656559630 154628 e0763868fd04d05de5eb2102ccd7fe98 ""
-  "Finger-Knuckle.aux" 1657194873 27723 286c9c10706e20c004cdd81d6c5f5977 "xelatex"
-  "Finger-Knuckle.bbl" 1657185158 77978 923b7eec6caf8e754073c3f15c9441a2 "biber Finger-Knuckle"
-  "Finger-Knuckle.out" 1657194873 5888 5151c5675e8afe029fe6541d52d4f18a "xelatex"
-  "Finger-Knuckle.run.xml" 1657194873 2410 994dbd583df300de55c69817339a0395 "xelatex"
+  "Finger-Knuckle.aux" 1657261766 27724 bca60209e0595acb8a50a75d6e086776 "xelatex"
+  "Finger-Knuckle.bbl" 1657261628 77978 923b7eec6caf8e754073c3f15c9441a2 "biber Finger-Knuckle"
+  "Finger-Knuckle.out" 1657261766 5888 5151c5675e8afe029fe6541d52d4f18a "xelatex"
+  "Finger-Knuckle.run.xml" 1657261766 2410 994dbd583df300de55c69817339a0395 "xelatex"
   "Finger-Knuckle.tex" 1656644578 1299 9680c612c91e4f02a6e16c05725d1deb ""
   "c:/Program Files/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1637210819 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1637212240 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -153,8 +153,8 @@
   "references.tex" 1656559630 59 6abdf21bbef6e8507a82adc4c973cbc4 ""
   (generated)
   "Finger-Knuckle.run.xml"
-  "Finger-Knuckle.out"
-  "Finger-Knuckle.bcf"
-  "Finger-Knuckle.aux"
-  "Finger-Knuckle.log"
   "Finger-Knuckle.xdv"
+  "Finger-Knuckle.log"
+  "Finger-Knuckle.aux"
+  "Finger-Knuckle.bcf"
+  "Finger-Knuckle.out"
