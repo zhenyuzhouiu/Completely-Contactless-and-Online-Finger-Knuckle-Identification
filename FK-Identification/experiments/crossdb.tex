@@ -38,6 +38,22 @@ As for the cross database experiment, I firstly pre-trained our models on the Fi
 
 The database totally has 712 subjects, and each subject has 5 samples of hand dorsal image. Therefore, it will have $712*5=3560$ genuine matching scores and $712*711*5 = 2531160$ imposter matching scores for index and middle finger knuckle. Figure \ref{crosshd-index-one-session} is the performance result on the index finger, and Figure \ref{crosshd-middle-one-session} is the performance result on the middle finger knuckle. From Figure \ref{crosshd-index-one-session} and Figure \ref{crosshd-middle-one-session}, all models' cross database performance is similar on the database regardless which finger. We should also notice that STTL is better than TRTL on the cross database experiment, while within database, the TRTL is better than STTL. It shows that the generalization ability of TRTL is not better than STTL to some extent. However, the RFNet-STTL outperform the rest models depend on the ROC and CMC. Even better than FKNet and EfficientNetV2-S, both of them are classification models.
 
+\begin{figure}[ht!]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps}
+		\caption{}
+	\end{subfigure}
+    \begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps}
+		\caption{}
+	\end{subfigure}
+	\caption{}
+	\label{}
+\end{figure}
+
+
+
 \subsubsection{Tsinghua Finger Vein and Finger Dorsal Texture Database}
 \begin{figure}[ht!]
 	\centering

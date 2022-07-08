@@ -52,16 +52,15 @@ The YOLOv4, YOLOv5x, and YOLOv5m model predict horizontal bounding box, while th
     \centering
     \begin{tabular}{c c c c c c}
         \hline
-        Model & \makecell[c]{Inference \\ Time/ms\\ (1024x1024)} & \makecell[c]{Number \\of Layers} & \makecell[c]{${mAP}^{val}$\\0.5} & \makecell[c]{AP of\\ Major \\FK} & \makecell[c]{AP of\\ Minor \\FK}\\
+        Model & \makecell[c]{Total \\ Time/ms\\ (1024x1024)} & \makecell[c]{Number \\of Layers} & \makecell[c]{${mAP}^{val}$\\0.5} & \makecell[c]{AP of\\ Major \\FK} & \makecell[c]{AP of\\ Minor \\FK}\\
         \hline
-        YOLOv5x-CSL & 41.395 & 407 & \textbf{89.9} &\textbf{89.6} & \textbf{90.1} \\
-        YOLOv5m-CSL & 36.252 & 263 & 85.7 & 88.9 & 80.4 \\
-        YOLOv4 & 25.992 & 161 & 70.7 & 83.6 & 57.7 \\
-        YOLOv5x &  & & &  &  \\
-        YOLOv5m &  &  &  &  &  \\
+        YOLOv5x-CSL & 40.9 & 407 & \textbf{89.9} &\textbf{89.6} & \textbf{90.1} \\
+        YOLOv5m-CSL & 23.3 & 263 & 85.7 & 88.9 & 80.4 \\
+        YOLOv5x & 33.3 ms & 407 & 87.3 & 86.5 & 88.0  \\
+        YOLOv5m & 12.1ms & 263 & 84.8 & 84.5 & 85.1 \\
         \hline
     \end{tabular}
-    \caption{Comparison of the accuracy of the different models of the YOLO series for the detection of the finger knuckle. The calculated values of mAP were measured at a detection threshold of 0.4 as well as an IOU threshold of 0.5.}
+    \caption{Comparison of the accuracy of the different models of the YOLO series for detecting finger knuckle. The calculated values of mAP were measured at a detection threshold of 0.001 as well as an IOU threshold of 0.5. All the experiments are test on the GTX 2080 GPU and I7-7800X CPU, and the total time includes the inference and NMS process.}
     \label{mAP of different model}
 \end{table}
 
@@ -99,3 +98,25 @@ From the above figures, we can clearly get the conclusion that quality of segmen
 
  For proving our contactless and online finger knuckle identification performance, we capture  52 subjects
  .............
+
+ \begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/online-performance/1s1f-roc_compare_new.eps}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/online-performance/1s1f-cmc_compare_new.eps}
+	\end{subfigure}
+	\caption{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/online-performance/1s6f-roc_compare_new.eps}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\includegraphics[width=\linewidth]{Figures/online-performance/1s6f-cmc_compare_new.eps}
+	\end{subfigure}
+	\caption{}
+\end{figure}
