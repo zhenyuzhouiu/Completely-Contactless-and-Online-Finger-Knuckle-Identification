@@ -76,7 +76,7 @@ This section aim to compare quality of finger knuckle between YOLOv5-CSL segment
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps}
 	\end{subfigure}
-	\caption{Compare performance on the Finger Knucle V3 Dataset (with deformable)}
+	\caption{Compare performance on the Finger Knuckle V3 Dataset (with deformable)}
 \end{figure}
 
 \begin{figure}[H]
@@ -96,18 +96,20 @@ From the above figures, we can clearly get the conclusion that quality of segmen
 
  \subsection{Online Contactless Finger Knuckle Identification Performance}
 
- For proving our contactless and online finger knuckle identification performance, we capture  52 subjects
+ \textcolor{red}{For proving our contactless and online finger knuckle identification performance, we capture  52 subjects and each subject can offer about 15-20s contactless finger knuckle video. The minimum frame rate of the videos we offer is 30 frames per second. We choose two method to get the contactless finger knuckle images, one is that we get 1 image per second, another one is that we get 6 images per second for testing online matching performance. Because the shortest video is 15s, for 1 image per second, we can totally get $52*15 = 780$ finger knuckle images for keeping the same number of samples result in $52*15 =1789 $ genuine matching scores and $52*51*15 = 39780$ imposter matching scores. In terms of the 6 images per second, we can get $52*15*6=4680$ finger knuckle samples, result in $52*90=4680$ genuine matching scores and $52*51*90=238680$ imposter matching scores.}
  .............
 
  \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/online-performance/1s1f-roc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\linewidth}
 		\includegraphics[width=\linewidth]{Figures/online-performance/1s1f-cmc_compare_new.eps}
+		\caption{}
 	\end{subfigure}
-	\caption{}
+	\caption{Comparative ROC (a) and corresponding CMC (b) with one session protocol for }
 \end{figure}
 
 \begin{figure}[H]
