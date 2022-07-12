@@ -7,17 +7,17 @@ As a completely contactless and online finger knuckle identification, we must ch
         \hline
         Model & \makecell[c]{Prams \\(M)} & \makecell[c]{Input \\ Size} & \makecell[c]{Template \\ Size} & \makecell[c]{FLOPs \\(B)} & \makecell[c]{Feature \\Extraction \\ (s)} & \makecell[c]{Matching \\ (s)} \\
         \hline
-        DeConvRFNet-STTL & 0.36M &128x128 &32x32 &1.29B  &0.02880s  & 0.01320s \\
-        DeConvRFNet-TRTL & 0.36M &128x128 &32x32 &1.29B  &0.02880s  & 0.02516s\\
-        EfficientNetV2-S \cite{tan2021efficientnetv2} & 20.18M &300x300 &$1*N$ & 5.40B &0.07501s &0.00002s \\
-        EfficientNetV2-S-STTL & 20.00M &300x300 & 9x9 & 5.38B &0.07135s  & 0.00911s \\
-        EfficientNetV2-S-TRTL &20.00M &300x300 & 9x9& 5.38B &0.07135s  & 0.02581s \\
-        FKNet \cite{cheng2020deep} &7.28M &96x64 &$1*N$ & 0.28B & 0.04492s &0.00002s  \\
-        RFNet-STTL \cite{liu2020contactless} & 0.46M &128x128 &32x32 & 1.39B & 0.01957s & 0.01104s \\
-        RFNet-TRTL & 0.46M &128x128 &32x32 & 1.39B & 0.01957s & 0.01984s \\
+        DeConvRFNet-STTL & 0.36M &$128*128$ &$32*32$ &1.29B  &0.02880s  & 0.01320s \\
+        DeConvRFNet-TRTL & 0.36M &$128*128$ &$32*32$ &1.29B  &0.02880s  & 0.02516s\\
+        EfficientNetV2-S \cite{tan2021efficientnetv2} & 20.18M &$300*300$ &$9*9$ & 5.40B &0.07501s &0.00002s \\
+        EfficientNetV2-S-STTL & 20.00M &$300*300$ & $9*9$ & 5.38B &0.07135s  & 0.00911s \\
+        EfficientNetV2-S-TRTL &20.00M &$300*300$ & $9*9$& 5.38B &0.07135s  & 0.02581s \\
+        FKNet \cite{cheng2020deep} &7.28M &$96*64$ &$8*12$ & 0.28B & 0.04492s &0.00002s  \\
+        RFNet-STTL \cite{liu2020contactless} & 0.46M &$128*128$ &$32*32$ & 1.39B & 0.01957s & 0.01104s \\
+        RFNet-TRTL & 0.46M &$128*128$ &$32*32$ & 1.39B & 0.01957s & 0.01984s \\
         \hline
     \end{tabular}
-    \caption{Comparison time and space complexity of different neural network. Time complexity is the average time on the Ubuntu 22.04 with GeForce RTX 2080 GPU and I7-7800X CPU. When the template size is $1*N$, it means the training set classes number. For the STTL, the shift size is 4; for the TRTL, the shift size is 4, and add rotation with 4 angles.}
+    \caption{Comparison time and space complexity of different neural network. Time complexity is the average time on the Ubuntu 22.04 with GeForce RTX 2080 GPU and I7-7800X CPU. For the STTL, the shift size is 4; for the TRTL, the shift size is 4, and add rotation with 4 angles. The FKNet and EfficientNetV2-S serial models obey their same input image size of the original paper \cite{cheng2020deep} and \cite{tan2021efficientnetv2}, respectively.}
     \label{model-complexity}
 \end{table}
 
