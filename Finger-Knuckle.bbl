@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -186,6 +186,13 @@
       \field{year}{2020}
       \field{pages}{1158\bibrangedash 1173}
       \range{pages}{16}
+    \endentry
+    \entry{HKPolyUFKP}{misc}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{ https://www4.comp.polyu.edu.hk/ biometrics/FKP.htm}}
+      \field{title}{Finger-knuckle-print polyu:}
     \endentry
     \entry{girshick2015fast}{inproceedings}{}
       \name{author}{1}{}{%
@@ -440,6 +447,13 @@
       \field{pages}{4700\bibrangedash 4708}
       \range{pages}{9}
     \endentry
+    \entry{IITDV1.0}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{ http://www.comp.polyu.edu.hk/~csajaykr/knuckle/iitd_knuckle.htm}}
+      \field{title}{IIT Delhi Finger Knuckle Database version 1.0:}
+    \endentry
     \entry{jia2008palmprint}{article}{}
       \name{author}{3}{}{%
         {{hash=06a3261191e8a8374ae5ea255505437d}{%
@@ -589,6 +603,34 @@
       \field{volume}{25}
       \field{year}{2012}
     \endentry
+    \entry{kumar2020contactless}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \strng{fullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \strng{bibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \strng{authorbibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \strng{authornamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 8th International Workshop on Biometrics and Forensics (IWBF)}
+      \field{title}{Contactless finger knuckle authentication under severe pose deformations}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
     \entry{kumar2014importance}{article}{}
       \name{author}{1}{}{%
         {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
@@ -606,7 +648,7 @@
       \strng{authorbibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \strng{authornamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \field{extraname}{1}
+      \field{extraname}{2}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -636,7 +678,7 @@
       \strng{authorbibnamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \strng{authornamehash}{eb6a64cf20a5b21db872c9ca0d491ed9}
       \strng{authorfullhash}{eb6a64cf20a5b21db872c9ca0d491ed9}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
@@ -682,6 +724,40 @@
       \field{year}{2009}
       \field{pages}{98\bibrangedash 110}
       \range{pages}{13}
+    \endentry
+    \entry{kumar2016personal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bbdb5857e392564b991c8fa4d2a43e6b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhihuan},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \strng{fullhash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \strng{bibnamehash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \strng{authorbibnamehash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \strng{authornamehash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \strng{authorfullhash}{2b8982429cdf492a86f2957c2b0ec6a5}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{number}{10}
+      \field{title}{Personal identification using minor knuckle patterns from palm dorsal surface}
+      \field{volume}{11}
+      \field{year}{2016}
+      \field{pages}{2338\bibrangedash 2348}
+      \range{pages}{11}
     \endentry
     \entry{lecun1998gradient}{article}{}
       \name{author}{4}{}{%
@@ -962,6 +1038,55 @@
       \field{title}{Finger knuckle identification using principal component analysis and nearest mean classifier}
       \field{volume}{70}
       \field{year}{2013}
+    \endentry
+    \entry{al2020human}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=aea14d132a816f77d6ff7dfc7d762b9f}{%
+           family={Al-Nima},
+           familyi={A\bibinithyphendelim N\bibinitperiod},
+           given={Raid\bibnamedelimb Rafi\bibnamedelima Omar},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=337cf482b1ccc74005c2fd5fc9a7bd9f}{%
+           family={Jarjes},
+           familyi={J\bibinitperiod},
+           given={Muhammed\bibnamedelima Khidr},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=41c628ccafc2d26796ce7689eb3ab2ce}{%
+           family={Kasim},
+           familyi={K\bibinitperiod},
+           given={Ahmed\bibnamedelima Waled},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=7073e4aed522a7c58e7d29d9a74c9627}{%
+           family={Sheet},
+           familyi={S\bibinitperiod},
+           given={Sinan\bibnamedelimb S\bibnamedelima Mohammed},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{b8e6def43d134d87c1817888449cdfab}
+      \strng{fullhash}{bfdcb685aec122caae7a432ed4d14467}
+      \strng{bibnamehash}{b8e6def43d134d87c1817888449cdfab}
+      \strng{authorbibnamehash}{b8e6def43d134d87c1817888449cdfab}
+      \strng{authornamehash}{b8e6def43d134d87c1817888449cdfab}
+      \strng{authorfullhash}{bfdcb685aec122caae7a432ed4d14467}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2020 IEEE 8th Conference on Systems, Process and Control (ICSPC)}
+      \field{title}{Human Identification using Local Binary Patterns for Finger Outer Knuckle}
+      \field{year}{2020}
+      \field{pages}{7\bibrangedash 12}
+      \range{pages}{6}
+    \endentry
+    \entry{FKI}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/ csajaykr/fn1.htm}}
+      \field{title}{Polyu contact-less finger knuckle image database:}
     \endentry
     \entry{redmon2017yolo9000}{inproceedings}{}
       \name{author}{2}{}{%
@@ -1414,6 +1539,43 @@
       \field{pages}{513}
       \range{pages}{1}
     \endentry
+    \entry{thapar2019fkimnet}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7b2a3529f055da2e0f0a3accff6537ae}{%
+           family={Thapar},
+           familyi={T\bibinitperiod},
+           given={Daksh},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6c382a0a4cb63a6b2e3f53fed7984311}{%
+           family={Jaswal},
+           familyi={J\bibinitperiod},
+           given={Gaurav},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fa4b8c8dc56d3905c912c8883e772782}{%
+           family={Nigam},
+           familyi={N\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \strng{fullhash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \strng{bibnamehash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \strng{authorbibnamehash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \strng{authornamehash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \strng{authorfullhash}{0fd99b26f84087fbc0de6f71b6c20be2}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 international joint conference on neural networks (IJCNN)}
+      \field{title}{Fkimnet: a finger dorsal image matching network comparing component (major, minor and nail) matching with holistic (finger dorsal) matching}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+    \endentry
     \entry{3dfingerknuckle}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -1441,6 +1603,13 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/knuckleV2.htm}}
       \field{title}{The HKPolyU Contactless Hand Dorsal Images Database:}
+    \endentry
+    \entry{HKPolyUMobilePhone}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{ https://web.comp.polyu.edu.hk/csajaykr/knuckle.htm}}
+      \field{title}{The Hong Kong Polytechnic University Mobile Phone Finger Knuckle Database:}
     \endentry
     \entry{thufvfdt3}{misc}{}
       \field{sortinit}{T}

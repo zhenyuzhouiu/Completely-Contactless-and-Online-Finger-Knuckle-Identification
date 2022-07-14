@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<bcf:controlfile version="3.8" bltxversion="3.17" xmlns:bcf="https://sourceforge.net/projects/biblatex">
-=======
 <bcf:controlfile version="3.7" bltxversion="3.16" xmlns:bcf="https://sourceforge.net/projects/biblatex">
->>>>>>> df34738ec882e7d11c0eec179c5982b3bb5645e4
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -1252,14 +1248,14 @@
       <bcf:field fieldtype="field" datatype="datepart">minute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">second</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">timezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">yeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">season</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endmonth</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endday</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endhour</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">endtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">endyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">endseason</bcf:field>
       <bcf:field fieldtype="field" datatype="date" skip_output="true">eventdate</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">eventendyear</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">eventyear</bcf:field>
@@ -1269,14 +1265,14 @@
       <bcf:field fieldtype="field" datatype="datepart">eventminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">eventyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">eventseason</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendmonth</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendday</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendhour</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">eventendtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">eventendyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">eventendseason</bcf:field>
       <bcf:field fieldtype="field" datatype="date" skip_output="true">origdate</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">origendyear</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">origyear</bcf:field>
@@ -1286,14 +1282,14 @@
       <bcf:field fieldtype="field" datatype="datepart">origminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">origyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">origseason</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendmonth</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendday</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendhour</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">origendtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">origendyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">origendseason</bcf:field>
       <bcf:field fieldtype="field" datatype="date" skip_output="true">urldate</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">urlendyear</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart" nullok="true">urlyear</bcf:field>
@@ -1303,14 +1299,14 @@
       <bcf:field fieldtype="field" datatype="datepart">urlminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urltimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">urlyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">urlseason</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendmonth</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendday</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendhour</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendminute</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendsecond</bcf:field>
       <bcf:field fieldtype="field" datatype="datepart">urlendtimezone</bcf:field>
-      <bcf:field fieldtype="field" datatype="datepart">urlendyeardivision</bcf:field>
+      <bcf:field fieldtype="field" datatype="datepart">urlendseason</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">doi</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">eprint</bcf:field>
       <bcf:field fieldtype="field" datatype="verbatim">file</bcf:field>
@@ -1343,10 +1339,10 @@
       <bcf:field>endhour</bcf:field>
       <bcf:field>endminute</bcf:field>
       <bcf:field>endmonth</bcf:field>
+      <bcf:field>endseason</bcf:field>
       <bcf:field>endsecond</bcf:field>
       <bcf:field>endtimezone</bcf:field>
       <bcf:field>endyear</bcf:field>
-      <bcf:field>endyeardivision</bcf:field>
       <bcf:field>entryset</bcf:field>
       <bcf:field>entrysubtype</bcf:field>
       <bcf:field>execute</bcf:field>
@@ -1385,17 +1381,17 @@
       <bcf:field>origendhour</bcf:field>
       <bcf:field>origendminute</bcf:field>
       <bcf:field>origendmonth</bcf:field>
+      <bcf:field>origendseason</bcf:field>
       <bcf:field>origendsecond</bcf:field>
       <bcf:field>origendtimezone</bcf:field>
       <bcf:field>origendyear</bcf:field>
-      <bcf:field>origendyeardivision</bcf:field>
       <bcf:field>orighour</bcf:field>
       <bcf:field>origminute</bcf:field>
       <bcf:field>origmonth</bcf:field>
+      <bcf:field>origseason</bcf:field>
       <bcf:field>origsecond</bcf:field>
       <bcf:field>origtimezone</bcf:field>
       <bcf:field>origyear</bcf:field>
-      <bcf:field>origyeardivision</bcf:field>
       <bcf:field>origlocation</bcf:field>
       <bcf:field>origpublisher</bcf:field>
       <bcf:field>origtitle</bcf:field>
@@ -1405,6 +1401,7 @@
       <bcf:field>relatedoptions</bcf:field>
       <bcf:field>relatedstring</bcf:field>
       <bcf:field>relatedtype</bcf:field>
+      <bcf:field>season</bcf:field>
       <bcf:field>second</bcf:field>
       <bcf:field>shortauthor</bcf:field>
       <bcf:field>shorteditor</bcf:field>
@@ -1446,7 +1443,6 @@
       <bcf:field>xdata</bcf:field>
       <bcf:field>xref</bcf:field>
       <bcf:field>year</bcf:field>
-      <bcf:field>yeardivision</bcf:field>
     </bcf:entryfields>
     <bcf:entryfields>
       <bcf:entrytype>set</bcf:entrytype>
@@ -1875,12 +1871,12 @@
       <bcf:field>note</bcf:field>
       <bcf:field>number</bcf:field>
       <bcf:field>pubstate</bcf:field>
+      <bcf:field>season</bcf:field>
       <bcf:field>series</bcf:field>
       <bcf:field>subtitle</bcf:field>
       <bcf:field>title</bcf:field>
       <bcf:field>titleaddon</bcf:field>
       <bcf:field>volume</bcf:field>
-      <bcf:field>yeardivision</bcf:field>
     </bcf:entryfields>
     <bcf:entryfields>
       <bcf:entrytype>mvproceedings</bcf:entrytype>
@@ -1892,17 +1888,17 @@
       <bcf:field>eventendhour</bcf:field>
       <bcf:field>eventendminute</bcf:field>
       <bcf:field>eventendmonth</bcf:field>
+      <bcf:field>eventendseason</bcf:field>
       <bcf:field>eventendsecond</bcf:field>
       <bcf:field>eventendtimezone</bcf:field>
       <bcf:field>eventendyear</bcf:field>
-      <bcf:field>eventendyeardivision</bcf:field>
       <bcf:field>eventhour</bcf:field>
       <bcf:field>eventminute</bcf:field>
       <bcf:field>eventmonth</bcf:field>
+      <bcf:field>eventseason</bcf:field>
       <bcf:field>eventsecond</bcf:field>
       <bcf:field>eventtimezone</bcf:field>
       <bcf:field>eventyear</bcf:field>
-      <bcf:field>eventyeardivision</bcf:field>
       <bcf:field>eventtitle</bcf:field>
       <bcf:field>eventtitleaddon</bcf:field>
       <bcf:field>isbn</bcf:field>
@@ -1933,17 +1929,17 @@
       <bcf:field>eventendhour</bcf:field>
       <bcf:field>eventendminute</bcf:field>
       <bcf:field>eventendmonth</bcf:field>
+      <bcf:field>eventendseason</bcf:field>
       <bcf:field>eventendsecond</bcf:field>
       <bcf:field>eventendtimezone</bcf:field>
       <bcf:field>eventendyear</bcf:field>
-      <bcf:field>eventendyeardivision</bcf:field>
       <bcf:field>eventhour</bcf:field>
       <bcf:field>eventminute</bcf:field>
       <bcf:field>eventmonth</bcf:field>
+      <bcf:field>eventseason</bcf:field>
       <bcf:field>eventsecond</bcf:field>
       <bcf:field>eventtimezone</bcf:field>
       <bcf:field>eventyear</bcf:field>
-      <bcf:field>eventyeardivision</bcf:field>
       <bcf:field>eventtitle</bcf:field>
       <bcf:field>eventtitleaddon</bcf:field>
       <bcf:field>isbn</bcf:field>
@@ -1984,17 +1980,17 @@
       <bcf:field>eventendhour</bcf:field>
       <bcf:field>eventendminute</bcf:field>
       <bcf:field>eventendmonth</bcf:field>
+      <bcf:field>eventendseason</bcf:field>
       <bcf:field>eventendsecond</bcf:field>
       <bcf:field>eventendtimezone</bcf:field>
       <bcf:field>eventendyear</bcf:field>
-      <bcf:field>eventendyeardivision</bcf:field>
       <bcf:field>eventhour</bcf:field>
       <bcf:field>eventminute</bcf:field>
       <bcf:field>eventmonth</bcf:field>
+      <bcf:field>eventseason</bcf:field>
       <bcf:field>eventsecond</bcf:field>
       <bcf:field>eventtimezone</bcf:field>
       <bcf:field>eventyear</bcf:field>
-      <bcf:field>eventyeardivision</bcf:field>
       <bcf:field>eventtitle</bcf:field>
       <bcf:field>eventtitleaddon</bcf:field>
       <bcf:field>isbn</bcf:field>
@@ -2066,17 +2062,17 @@
       <bcf:field>eventendhour</bcf:field>
       <bcf:field>eventendminute</bcf:field>
       <bcf:field>eventendmonth</bcf:field>
+      <bcf:field>eventendseason</bcf:field>
       <bcf:field>eventendsecond</bcf:field>
       <bcf:field>eventendtimezone</bcf:field>
       <bcf:field>eventendyear</bcf:field>
-      <bcf:field>eventendyeardivision</bcf:field>
       <bcf:field>eventhour</bcf:field>
       <bcf:field>eventminute</bcf:field>
       <bcf:field>eventmonth</bcf:field>
+      <bcf:field>eventseason</bcf:field>
       <bcf:field>eventsecond</bcf:field>
       <bcf:field>eventtimezone</bcf:field>
       <bcf:field>eventyear</bcf:field>
-      <bcf:field>eventyeardivision</bcf:field>
       <bcf:field>eventtitle</bcf:field>
       <bcf:field>eventtitleaddon</bcf:field>
       <bcf:field>howpublished</bcf:field>
@@ -2365,166 +2361,146 @@
     <bcf:citekey order="15">kumar2019toward</bcf:citekey>
     <bcf:citekey order="16">cheng2020deep</bcf:citekey>
     <bcf:citekey order="17">kapoor2020completely</bcf:citekey>
-    <bcf:citekey order="18">zheng20163d</bcf:citekey>
-    <bcf:citekey order="19">lecun1998gradient</bcf:citekey>
-    <bcf:citekey order="20">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="21">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="22">he2016deep</bcf:citekey>
-    <bcf:citekey order="23">kapoor2020completely</bcf:citekey>
-    <bcf:citekey order="24">kumar2019toward</bcf:citekey>
-    <bcf:citekey order="25">cheng2012contactless</bcf:citekey>
-    <bcf:citekey order="26">girshick2014rich</bcf:citekey>
-    <bcf:citekey order="27">girshick2015fast</bcf:citekey>
-    <bcf:citekey order="28">ren2015faster</bcf:citekey>
-    <bcf:citekey order="29">redmon2016you</bcf:citekey>
-    <bcf:citekey order="30">redmon2017yolo9000</bcf:citekey>
-    <bcf:citekey order="31">redmon2018yolov3</bcf:citekey>
-    <bcf:citekey order="32">bochkovskiy2020yolov4</bcf:citekey>
-    <bcf:citekey order="33">liu2016ssd</bcf:citekey>
-    <bcf:citekey order="34">xin2021pafnet</bcf:citekey>
-    <bcf:citekey order="35">YOLOv5</bcf:citekey>
-    <bcf:citekey order="36">kumar2019toward</bcf:citekey>
-    <bcf:citekey order="37">kumar2019toward</bcf:citekey>
-    <bcf:citekey order="38">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="39">ahmed2015improved</bcf:citekey>
-    <bcf:citekey order="40">subramaniam2016deep</bcf:citekey>
-    <bcf:citekey order="41">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="42">YOLOv5</bcf:citekey>
-    <bcf:citekey order="43">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="44">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="45">schroff2015facenet</bcf:citekey>
-    <bcf:citekey order="46">schroff2015facenet</bcf:citekey>
-    <bcf:citekey order="47">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="48">huang2017densely</bcf:citekey>
-    <bcf:citekey order="49">kong2004competitive</bcf:citekey>
-    <bcf:citekey order="50">zheng20163d</bcf:citekey>
-    <bcf:citekey order="51">sun2005ordinal</bcf:citekey>
-    <bcf:citekey order="52">jia2008palmprint</bcf:citekey>
-    <bcf:citekey order="53">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="54">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="55">yu2015multi</bcf:citekey>
-    <bcf:citekey order="56">zhu2019deformable</bcf:citekey>
-    <bcf:citekey order="57">fingerknuckledbv1.0</bcf:citekey>
-    <bcf:citekey order="58">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="59">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="60">cheng2019contactless</bcf:citekey>
-    <bcf:citekey order="61">zhang20143d</bcf:citekey>
-    <bcf:citekey order="62">he2016deep</bcf:citekey>
-    <bcf:citekey order="63">simonyan2014very</bcf:citekey>
-    <bcf:citekey order="64">krizhevsky2012imagenet</bcf:citekey>
-    <bcf:citekey order="65">huang2017densely</bcf:citekey>
-    <bcf:citekey order="66">hu2018squeeze</bcf:citekey>
-    <bcf:citekey order="67">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="68">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="18">lecun1998gradient</bcf:citekey>
+    <bcf:citekey order="19">tan2021efficientnetv2</bcf:citekey>
+    <bcf:citekey order="20">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="21">he2016deep</bcf:citekey>
+    <bcf:citekey order="22">kapoor2020completely</bcf:citekey>
+    <bcf:citekey order="23">kumar2019toward</bcf:citekey>
+    <bcf:citekey order="24">cheng2012contactless</bcf:citekey>
+    <bcf:citekey order="25">girshick2014rich</bcf:citekey>
+    <bcf:citekey order="26">girshick2015fast</bcf:citekey>
+    <bcf:citekey order="27">ren2015faster</bcf:citekey>
+    <bcf:citekey order="28">redmon2016you</bcf:citekey>
+    <bcf:citekey order="29">redmon2017yolo9000</bcf:citekey>
+    <bcf:citekey order="30">redmon2018yolov3</bcf:citekey>
+    <bcf:citekey order="31">bochkovskiy2020yolov4</bcf:citekey>
+    <bcf:citekey order="32">liu2016ssd</bcf:citekey>
+    <bcf:citekey order="33">xin2021pafnet</bcf:citekey>
+    <bcf:citekey order="34">YOLOv5</bcf:citekey>
+    <bcf:citekey order="35">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="36">kumar2020contactless</bcf:citekey>
+    <bcf:citekey order="37">kapoor2020completely</bcf:citekey>
+    <bcf:citekey order="38">cheng2012contactless</bcf:citekey>
+    <bcf:citekey order="39">thapar2019fkimnet</bcf:citekey>
+    <bcf:citekey order="40">al2020human</bcf:citekey>
+    <bcf:citekey order="41">fingerknuckledbv1.0</bcf:citekey>
+    <bcf:citekey order="42">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="43">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="44">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="45">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="46">HKPolyUMobilePhone</bcf:citekey>
+    <bcf:citekey order="47">FKI</bcf:citekey>
+    <bcf:citekey order="48">HKPolyUFKP</bcf:citekey>
+    <bcf:citekey order="49">IITDV1.0</bcf:citekey>
+    <bcf:citekey order="50">fingerknuckledbv1.0</bcf:citekey>
+    <bcf:citekey order="51">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="52">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="53">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="54">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="55">HKPolyUMobilePhone</bcf:citekey>
+    <bcf:citekey order="56">FKI</bcf:citekey>
+    <bcf:citekey order="57">HKPolyUFKP</bcf:citekey>
+    <bcf:citekey order="58">IITDV1.0</bcf:citekey>
+    <bcf:citekey order="59">zheng20163d</bcf:citekey>
+    <bcf:citekey order="60">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="61">kapoor2020completely</bcf:citekey>
+    <bcf:citekey order="62">thapar2019fkimnet</bcf:citekey>
+    <bcf:citekey order="63">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="64">kumar2016personal</bcf:citekey>
+    <bcf:citekey order="65">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="66">cheng2012contactless</bcf:citekey>
+    <bcf:citekey order="67">kumar2019toward</bcf:citekey>
+    <bcf:citekey order="68">kumar2019toward</bcf:citekey>
     <bcf:citekey order="69">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="70">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="71">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="72">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="73">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="74">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="75">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="76">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="77">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="78">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="79">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="80">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="81">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="82">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="83">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="84">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="85">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="86">thufvfdt3</bcf:citekey>
-    <bcf:citekey order="87">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="88">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="89">thufvfdt3</bcf:citekey>
-    <bcf:citekey order="90">thufvfdt3</bcf:citekey>
-    <bcf:citekey order="91">thufvfdt3</bcf:citekey>
-    <bcf:citekey order="92">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="93">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="94">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="95">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="96">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="97">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="98">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="99">russakovsky2015imagenet</bcf:citekey>
-    <bcf:citekey order="100">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="101">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="102">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="103">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="104">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="105">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="106">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="107">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="108">redmon2016you</bcf:citekey>
-    <bcf:citekey order="109">redmon2017yolo9000</bcf:citekey>
-    <bcf:citekey order="110">redmon2018yolov3</bcf:citekey>
-    <bcf:citekey order="111">bochkovskiy2020yolov4</bcf:citekey>
-    <bcf:citekey order="112">YOLOv5</bcf:citekey>
-    <bcf:citekey order="113">girshick2014rich</bcf:citekey>
-    <bcf:citekey order="114">girshick2015fast</bcf:citekey>
-    <bcf:citekey order="115">ren2015faster</bcf:citekey>
-    <bcf:citekey order="116">he2017mask</bcf:citekey>
-    <bcf:citekey order="117">YOLOv5</bcf:citekey>
-    <bcf:citekey order="118">yang2020csl</bcf:citekey>
-    <bcf:citekey order="119">yang2020csl</bcf:citekey>
-    <bcf:citekey order="120">Unsplash</bcf:citekey>
-    <bcf:citekey order="121">unsplashlicense</bcf:citekey>
-    <bcf:citekey order="122">fingerknuckledbv1.0</bcf:citekey>
-    <bcf:citekey order="123">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="124">kumar2014importance</bcf:citekey>
-    <bcf:citekey order="125">kumar2009personal</bcf:citekey>
-    <bcf:citekey order="126">zhang2010online</bcf:citekey>
-    <bcf:citekey order="127">cheng2020deep</bcf:citekey>
-    <bcf:citekey order="128">tarawneh2022deepknuckle</bcf:citekey>
-    <bcf:citekey order="129">yang2011finger</bcf:citekey>
-    <bcf:citekey order="130">neware2013finger</bcf:citekey>
-    <bcf:citekey order="131">meraoumia2011fusion</bcf:citekey>
-    <bcf:citekey order="132">zhang2006biometric</bcf:citekey>
-    <bcf:citekey order="133">hennings2005verification</bcf:citekey>
-    <bcf:citekey order="134">meraoumiapersonal</bcf:citekey>
-    <bcf:citekey order="135">mehrotra1992gabor</bcf:citekey>
-    <bcf:citekey order="136">cheng2012contactless</bcf:citekey>
-    <bcf:citekey order="137">kumar2019toward</bcf:citekey>
-    <bcf:citekey order="138">kapoor2020completely</bcf:citekey>
-    <bcf:citekey order="139">zheng20163d</bcf:citekey>
-    <bcf:citekey order="140">lecun1998gradient</bcf:citekey>
-    <bcf:citekey order="141">tan2021efficientnetv2</bcf:citekey>
-    <bcf:citekey order="142">he2016deep</bcf:citekey>
-    <bcf:citekey order="143">girshick2014rich</bcf:citekey>
-    <bcf:citekey order="144">girshick2015fast</bcf:citekey>
-    <bcf:citekey order="145">ren2015faster</bcf:citekey>
-    <bcf:citekey order="146">redmon2016you</bcf:citekey>
-    <bcf:citekey order="147">redmon2017yolo9000</bcf:citekey>
-    <bcf:citekey order="148">redmon2018yolov3</bcf:citekey>
-    <bcf:citekey order="149">bochkovskiy2020yolov4</bcf:citekey>
-    <bcf:citekey order="150">liu2016ssd</bcf:citekey>
-    <bcf:citekey order="151">xin2021pafnet</bcf:citekey>
-    <bcf:citekey order="152">YOLOv5</bcf:citekey>
-    <bcf:citekey order="153">liu2020contactless</bcf:citekey>
-    <bcf:citekey order="154">ahmed2015improved</bcf:citekey>
-    <bcf:citekey order="155">subramaniam2016deep</bcf:citekey>
-    <bcf:citekey order="156">schroff2015facenet</bcf:citekey>
-    <bcf:citekey order="157">huang2017densely</bcf:citekey>
-    <bcf:citekey order="158">kong2004competitive</bcf:citekey>
-    <bcf:citekey order="159">sun2005ordinal</bcf:citekey>
-    <bcf:citekey order="160">jia2008palmprint</bcf:citekey>
-    <bcf:citekey order="161">yu2015multi</bcf:citekey>
-    <bcf:citekey order="162">zhu2019deformable</bcf:citekey>
-    <bcf:citekey order="163">fingerknuckledbv1.0</bcf:citekey>
-    <bcf:citekey order="164">cheng2019contactless</bcf:citekey>
-    <bcf:citekey order="165">zhang20143d</bcf:citekey>
-    <bcf:citekey order="166">simonyan2014very</bcf:citekey>
-    <bcf:citekey order="167">krizhevsky2012imagenet</bcf:citekey>
-    <bcf:citekey order="168">hu2018squeeze</bcf:citekey>
-    <bcf:citekey order="169">fingerknuckledbv3.0</bcf:citekey>
-    <bcf:citekey order="170">ContactlessHnadDorsaldb</bcf:citekey>
-    <bcf:citekey order="171">3dfingerknuckle</bcf:citekey>
-    <bcf:citekey order="172">thufvfdt3</bcf:citekey>
-    <bcf:citekey order="173">russakovsky2015imagenet</bcf:citekey>
-    <bcf:citekey order="174">he2017mask</bcf:citekey>
-    <bcf:citekey order="175">yang2020csl</bcf:citekey>
-    <bcf:citekey order="176">Unsplash</bcf:citekey>
-    <bcf:citekey order="177">unsplashlicense</bcf:citekey>
+    <bcf:citekey order="70">ahmed2015improved</bcf:citekey>
+    <bcf:citekey order="71">subramaniam2016deep</bcf:citekey>
+    <bcf:citekey order="72">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="73">YOLOv5</bcf:citekey>
+    <bcf:citekey order="74">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="75">yang2020csl</bcf:citekey>
+    <bcf:citekey order="76">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="77">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="78">schroff2015facenet</bcf:citekey>
+    <bcf:citekey order="79">schroff2015facenet</bcf:citekey>
+    <bcf:citekey order="80">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="81">huang2017densely</bcf:citekey>
+    <bcf:citekey order="82">kong2004competitive</bcf:citekey>
+    <bcf:citekey order="83">zheng20163d</bcf:citekey>
+    <bcf:citekey order="84">sun2005ordinal</bcf:citekey>
+    <bcf:citekey order="85">jia2008palmprint</bcf:citekey>
+    <bcf:citekey order="86">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="87">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="88">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="89">yu2015multi</bcf:citekey>
+    <bcf:citekey order="90">zhu2019deformable</bcf:citekey>
+    <bcf:citekey order="91">fingerknuckledbv1.0</bcf:citekey>
+    <bcf:citekey order="92">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="93">tan2021efficientnetv2</bcf:citekey>
+    <bcf:citekey order="94">cheng2019contactless</bcf:citekey>
+    <bcf:citekey order="95">zhang20143d</bcf:citekey>
+    <bcf:citekey order="96">he2016deep</bcf:citekey>
+    <bcf:citekey order="97">simonyan2014very</bcf:citekey>
+    <bcf:citekey order="98">krizhevsky2012imagenet</bcf:citekey>
+    <bcf:citekey order="99">huang2017densely</bcf:citekey>
+    <bcf:citekey order="100">hu2018squeeze</bcf:citekey>
+    <bcf:citekey order="101">tan2021efficientnetv2</bcf:citekey>
+    <bcf:citekey order="102">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="103">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="104">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="105">tan2021efficientnetv2</bcf:citekey>
+    <bcf:citekey order="106">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="107">tan2021efficientnetv2</bcf:citekey>
+    <bcf:citekey order="108">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="109">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="110">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="111">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="112">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="113">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="114">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="115">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="116">cheng2020deep</bcf:citekey>
+    <bcf:citekey order="117">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="118">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="119">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="120">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="121">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="122">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="123">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="124">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="125">thufvfdt3</bcf:citekey>
+    <bcf:citekey order="126">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="127">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="128">3dfingerknuckle</bcf:citekey>
+    <bcf:citekey order="129">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="130">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="131">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="132">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="133">russakovsky2015imagenet</bcf:citekey>
+    <bcf:citekey order="134">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="135">ContactlessHnadDorsaldb</bcf:citekey>
+    <bcf:citekey order="136">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="137">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="138">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="139">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="140">fingerknuckledbv3.0</bcf:citekey>
+    <bcf:citekey order="141">liu2020contactless</bcf:citekey>
+    <bcf:citekey order="142">redmon2016you</bcf:citekey>
+    <bcf:citekey order="143">redmon2017yolo9000</bcf:citekey>
+    <bcf:citekey order="144">redmon2018yolov3</bcf:citekey>
+    <bcf:citekey order="145">bochkovskiy2020yolov4</bcf:citekey>
+    <bcf:citekey order="146">YOLOv5</bcf:citekey>
+    <bcf:citekey order="147">girshick2014rich</bcf:citekey>
+    <bcf:citekey order="148">girshick2015fast</bcf:citekey>
+    <bcf:citekey order="149">ren2015faster</bcf:citekey>
+    <bcf:citekey order="150">he2017mask</bcf:citekey>
+    <bcf:citekey order="151">YOLOv5</bcf:citekey>
+    <bcf:citekey order="152">yang2020csl</bcf:citekey>
+    <bcf:citekey order="153">yang2020csl</bcf:citekey>
+    <bcf:citekey order="154">Unsplash</bcf:citekey>
+    <bcf:citekey order="155">unsplashlicense</bcf:citekey>
+    <bcf:citekey order="156">fingerknuckledbv1.0</bcf:citekey>
+    <bcf:citekey order="157">ContactlessHnadDorsaldb</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

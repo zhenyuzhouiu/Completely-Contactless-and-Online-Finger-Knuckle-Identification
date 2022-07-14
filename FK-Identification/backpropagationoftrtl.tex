@@ -1,72 +1,103 @@
 \section{Matching Contactless Finger Knuckle}
 
-We choose the Residual Feature Network (RFNet) \cite{liu2020contactless} as our feature extraction backbone, because the model not only is lightweight enough, but it achieves state-of-the-art performance on the palmprint dataset. Meanwhile, the paper \cite{liu2020contactless} uses the soft-shifted triplet loss function, called SSTL to train the model and matching two features for dealing with palmprint shifting problem. As for the triplet loss function \cite{schroff2015facenet}, it has been a great success in the field of biometrics recognition.
+We choose the Residual Feature Network (RFNet) \cite{liu2020contactless} as our feature extraction backbone, because the model not only is lightweight enough, but it achieves state-of-the-art performance on the palmprint dataset. Meanwhile, the paper \cite{liu2020contactless} uses the soft-shifted triplet loss function, called SSTL to train the model and matching two features for dealing with palmprint shifting problem. As for the triplet loss function \cite{schroff2015facenet}, it has been a great success in the field of biometrics recognition. However, in generally, the contactless finger knuckle of the same subject will not only just shift, but also will have local deformable transformation with rotation which is a common problem in the contactless biometrics identification. For solving it, we propose a new loss and also a new matching method. With our proposal loss function, the feature extraction backbone can learn the most robust features that can be rotation invariant, because our loss will get the minimal MSE between two feature maps after translating along the x-axis and y-axis, and rotating clockwise and counterclockwise with hyperparameter. In other words, we can get the minimum value regardless of how the features are rotated, therefore, we call our new loss function rotation and shift invariant triplet loss function (RSIL).
 
-However, in generally, the contactless finger knuckle of the same subject will not only just shift, but also will have local deformable transformation with rotation which is a common problem in the contactless biometrics identification. For solving it, we propose a new loss and also a new matching method. With our proposal loss function, the feature extraction backbone can learn the most robust features that can be rotation invariant, because our loss will get the minimal MSE between two feature maps after translating along the x-axis and y-axis, and rotating clockwise and counterclockwise with hyperparameter. In other words, we can get the minimum value regardless of how the features are rotated, therefore, we call our new loss function rotation invariant triplet loss function (RITL).
+\subsection{Rotation and Shift Invariant Loss Function}
 
-\subsection{Rotation Invariant Triplet Loss Function}
+As for a new loss function, the most important point is whether it can be differentiable. With a differentiable loss, the back propagation process can proceed smoothly, and the learnable parameters can be updated to get the minimal loss. In this section, we will discuss the derivation of the RSIL loss function. Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used RSIL as loss function to update convolutional kernel of our models.
 
-As for a new loss function, the most important point is whether it can be differentiable. With a differentiable loss, the back propagation process can proceed smoothly, and the learnable parameters can be updated to get the minimal loss. In this section, we will discuss the derivation of the RITL loss function. Because our neural networks were trained using the architecture of triplet network \cite{schroff2015facenet}, we used RITL as loss function to update convolutional kernel of our models.
-
-In generally, the RITL is still a variant of triple loss, so that the RITL can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the batch size during training iteration, and $T(I^{a})$ is the output template of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away during training process.
+In generally, the RSIL is still a variant of triple loss, so that the RSIL can be written as a format of triple loss function as the Equation \ref{Tripletloss}. As for the $N$, it means the batch size during training iteration, and $T(I^{a})$ is the output template of input anchor image $I^a$ through neural network. The hard margin parameter $m$ can determine the distance between different class cluster by pushing them away during training process.
 
 \begin{equation}
 	\begin{aligned}
-		RITL = \frac{1}{N}\sum_{i}^{N}[L(T(I_{i}^{a}),T(I_{i}^{p}))-L(T(I_{i}^{a}),T(I_{i}^{n})) + m]_{+}
+		RSIL = \frac{1}{N}\sum_{i}^{N}[L(T(I_{i}^{a}),T(I_{i}^{p}))-L(T(I_{i}^{a}),T(I_{i}^{n})) + m]_{+}
 	\end{aligned}
 	\label{Tripletloss}
 \end{equation}
 
-In order to adapt to tasks with different degrees of deformation, and balance performance and speed, we set translation and rotation ranges as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after translation and rotation in the range $-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal translation and rotation distance (MTRD). Meanwhile, the distance $D_{w,h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is translated $w$ pixel along x-axis and $h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
+In order to adapt to tasks with different degrees of rotation and translation, and balance performance and speed, we set translation and rotation parameter as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after shift and rotation in the range $-SW{\leq}sw{\leq}SW, -SH{\leq}sh{\leq}SH, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal rotate and shift distance (MRSD). Meanwhile, the distance $D_{sw,sh,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is shifted $sw$ pixel along x-axis and $sh$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
 \begin{equation}
 	\begin{aligned}
-		L(T_1, T_2) = \mathop{min}\limits_{-W{\leq}w{\leq}W, -H{\leq}h{\leq}H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{w,h,\theta}(T_1, T_2)}
+		L(T_1, T_2) = \mathop{min}\limits_{-SW{\leq}sw{\leq}SW, -SH{\leq}sh{\leq}SH, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{sw,sh,\theta}(T_1, T_2)}
 	\end{aligned}
 \end{equation}
 \begin{equation}
 	\begin{aligned}
-		D_{w,h,\theta}(T_1, T_2) = \frac{1}{|C_{w,h,\theta}|}\sum_{(x,y){\in}C_{w,h,\theta}}(T_1^{(w,h,\theta)}[x,y] - T_2[x,y])^2
+		D_{sw,sh,\theta}(T_1, T_2) = \frac{1}{|C_{sw,sh,\theta}|}\sum_{(x,y){\in}C_{sw,sh,\theta}}(T_1^{(sw,sh,\theta)}[x,y] - T_2[x,y])^2
 	\end{aligned}
 	\label{Distance}
 \end{equation}
 
 \begin{figure}[ht!]
     \centering
-    \begin{subfigure}[b]{0.8\linewidth}
-        \includegraphics[width=\linewidth]{Figures/RITL.png}
+    \begin{subfigure}[b]{\linewidth}
+        \includegraphics[width=\linewidth]{Figures/RSIL.png}
 	\end{subfigure}
-    \caption{An overview of how to use our translation and rotation triplet loss function (RITL) to train the triplet neural network. We will use the minimal translation and rotation distance (MTRD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MTRD to calculate matching scores.}
-    \label{RITL}
+    \caption{An overview of how to use our rotation and shift invariant loss function (RSIL) to train the triplet neural network. We will use the minimal rotate and shift distance (MRSD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MRSD to calculate matching scores.}
+    \label{RSIL}
 \end{figure}
 
-\textcolor{red}{Draw a more detail picture with rotation angle, shift size.}
 
-In terms of $C_{w,h,\theta}$, it represents the common region between two templates after one template shifted along x-axis with w, shifted along y-axis with h, and rotated with $\theta$, as showed in the Figure \ref{RITL}. As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($w_{ap}$, $h_{ap}$) pixels can get the minimal $D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{w_{ap},h_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(w_{an}, h_{an}, \theta_{an})$, the $(T_a, T_n)$ pair can get the minimal $D_{w_{an},h_{an},\theta_{an}}(T_a, T_m)$.
+In terms of $C_{sw,sh,\theta}$, it represents the common region between two templates after one template shifted along x-axis with sw, shifted along y-axis with sh, and rotated with $\theta$, as showed in the Figure \ref{RSIL}. When templates are rotated and shifted, just affine transformation, the new $T^{(sw,sh,\theta)}[x,y]$ template can be sampled from the source $T[n,m]$ depending on the sampling method as the Equation \ref{Any-Biliner}, the H and W is the height and width of the $T[n,m]$. At here, we use the $[n,m]$ for representing the original pixel position before affine transformation.
+
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial{Loss}}{\partial{T_i^p}}=
+		T^{(sw,sh,\theta)}[x,y] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]p(x-m)q(y-n)
+	\end{aligned}
+	\label{Any-Biliner}
+\end{equation}
+
+$p()$ is the interpolation method along the x-axis, $q()$ is the interpolation method along the y-axis. At here, if we use the bilinear interpolation method, the above equation can be written as the Equation \ref{Biliner}. Then the partial derivatives of $T^{(sw,sh,\theta)}[x,y]$ with respect to $T[x,y]$ can also be written as the Equation \ref{Biliner-partial}.
+
+\begin{equation}
+	\begin{aligned}
+		T^{(sw,sh,\theta)}[m,n] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]max(0, 1-|x-m|)max(0, 1-|y-n|)
+	\end{aligned}
+	\label{Biliner}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial{T^{(sw,sh,\theta)}[x,y]}}{\partial{T[n,m]}}=\sum_{n}^{H}\sum_{m}^{W}max(0, 1-|x-m|)max(0, 1-|y-n|)
+	\end{aligned}
+	\label{Biliner-partial}
+\end{equation}
+
+
+As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($sw_{ap}$, $sh_{ap}$) pixels, $T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]$, can get the minimal $D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(sw_{an}, sh_{an}, \theta_{an})$, $T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]$, the $(T_a, T_n)$ pair can get the minimal $D_{sw_{an},sh_{an},\theta_{an}}(T_a, T_n)$, therefore, the partial derivatives of RSIL with respect to $T_i^p$ and $T_i^n$ are showed as below.
+
+\begin{equation}
+	\begin{aligned}
+		\frac{\partial{RSIL}}{\partial{T_i^p}}=
 		\begin{cases}
-			0, if (x,y) \notin {C_{w_{ap}, h_{ap}, \theta_{ap}}}{\ }or{\ }Loss = 0 \\
-			\frac{-2(T_i^a[[x_{w_{ap}}, y_{h_{ap}}]*M(\theta_{ap})]-T_i^p[x,y])}{N|C_{w_{ap},h_{ap},\theta_{ap}}|},otherwise
+			0, if (x,y) \notin {C_{sw_{ap}, sh_{ap}, \theta_{ap}}}{\ }or{\ }RSIL = 0 \\
+			-\frac{2(T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]-T_i^p[x,y])}{N*|C_{sw_{ap},sh_{ap},\theta_{ap}}|},otherwise
 		\end{cases}
 	\end{aligned}
 \end{equation}
-The $M(\theta_{ap})$ is the rotation matrix.
+
 
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial{Loss}}{\partial{T_i^n}}=
+		\frac{\partial{RSIL}}{\partial{T_i^n}}=
 		\begin{cases}
-			0, if (x,y) \notin {C_{w_{an}, h_{an}, \theta_{an}}}{\ }or{\ }Loss = 0 \\
-			\frac{-2(T_i^a[[x_{w_{an}}, y_{h_{an}}]*M(\theta_{an})]-T_i^n[x,y])}{N|C_{w_{an},h_{an},a_{an}}|}, otherwise
+			0, if (x,y) \notin {C_{sw_{an}, sh_{an}, \theta_{an}}}{\ }or{\ }RSIL = 0 \\
+			\frac{2(T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]-T_i^n[x,y])}{N*|C_{sw_{an},sh_{an},\theta_{an}}|},otherwise
 		\end{cases}
 	\end{aligned}
 \end{equation}
 
-As for the $T_i^a[x,y]$ derivation, because we shift and rotate the anchor in the above formula, we can inversely shift and rotate the positive and negative input feature.
+As for the $T_i^a[x,y]$ partial derivation, because we shift and rotate the anchor template, then the anchor template will be interpolated to generate the new $T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]$ and  $T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]$, result in the result as below.
+
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial{Loss}}{\partial{T_i^a[x,y]}} = -\frac{\partial{Loss}}{\partial{T_i^p[[x-w_{ap}, y-h_{ap}]*M(-\theta_{ap})]}} + \\
-		 \frac{\partial{Loss}}{\partial{T_i^n[[x-w_{an}, y-h_{an}]*M(-\theta_{an})]}}
+		\frac{\partial{RSIL}}{\partial{T_i^a}}=
+		\begin{cases}
+			0, if (x,y) \notin {(C_{sw_{an}, sh_{an}, \theta_{an}} or C_{sw_{ap}, sh_{ap}, \theta_{ap}})}{\ }or{\ }RSIL = 0 \\
+			\frac{2(T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]-T_i^p[x,y])}{N*|C_{sw_{ap},sh_{ap},\theta_{ap}}|}*\frac{\partial{T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]}}{\partial{T_{i}^{a}[x,y]}} + \\
+			\frac{-2(T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]-T_i^n[x,y])}{N*|C_{sw_{an},sh_{an},\theta_{an}}|}* \frac{\partial{T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]}}{\partial{T_{i}^{a}[x,y]}},otherwise
+		\end{cases}
 	\end{aligned}
 \end{equation}
+
+After affine transformation, the partial derivation of $\frac{\partial{T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ and $\frac{\partial{T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ as show in the Equation \ref{Biliner-partial}. Now the $T_i^{a}$, $T_i^{p}$, and $T_i^{n}$ is the output feature of models, then the RSIL loss will backpropagation with chain rule to update the learnable parameters.

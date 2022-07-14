@@ -1,6 +1,6 @@
 \section{Online Contactless Finger Knuckle Identification}
 
-With TRTL loss, the RFNet \cite{liu2020contactless} can outperform state-of-the-art methods. In the previous section, we have estimated its verification and identification performance on different public finger knuckle database, including within-db and cross-db experiments. As for a completely contactless and online finger knuckle identification, the finger knuckle detector is a very important module for automatically detect and segment finger knuckle region. However, as for traditional segmentation algorithm, they cannot correctly segment the finger knuckles in the presence of complex background interference, multiple finger knuckles in the same field of view, obscured finger knuckles or bent finger knuckles.
+With RSIL loss, the RFNet \cite{liu2020contactless} can outperform state-of-the-art methods. In the previous section, we have estimated its verification and identification performance on different public finger knuckle database, including within-db and cross-db experiments. As for a completely contactless and online finger knuckle identification, the finger knuckle detector is a very important module for automatically detect and segment finger knuckle region. However, as for traditional segmentation algorithm, they cannot correctly segment the finger knuckles in the presence of complex background interference, multiple finger knuckles in the same field of view, obscured finger knuckles or bent finger knuckles.
 Meanwhile, as for neural network, the current based on YOLO \cite{redmon2016you}, \cite{redmon2017yolo9000}, \cite{redmon2018yolov3}, \cite{bochkovskiy2020yolov4}, \cite{YOLOv5} and R-CNN \cite{girshick2014rich}, \cite{girshick2015fast}, \cite{ren2015faster}, \cite{he2017mask} series object detection and segmentation approaches cannot simultaneously obtain the angle of finger knuckle and the segmentation with high precision. Especially, the angle of the finger knuckle is a vital factor for identification. If we can get the angle of finger knuckle, we can use angle information to align two feature maps for increasing matching accuracy and efficiency. For solving above problems, we propose rotated bounding box detection based on YOLOv5 model for segmenting and getting angle information.
 
 \subsection{Contactless Finger Knuckle Detection}
@@ -8,6 +8,22 @@ Meanwhile, as for neural network, the current based on YOLO \cite{redmon2016you}
 In order to solve the problem of finger knuckle detection in the real world, we choose to use YOLOv5 model because the YOLO series is famous for its fast detection speed and high accuracy. Especially, the YOLOv5's \cite{YOLOv5} speed can meet our online detection requirements.
 
 \noindent\textbf{Oriented Bounding Box}
+
+\begin{figure}[ht!]
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.6\linewidth]{Figures/five-parameter-definition.png}
+		\caption{Five-parameter definition with $180^{\circ}$ angular range.}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{Figures/CSL-angle.png}
+		\caption{Circle smooth label with Gaussian window function.}
+	\end{subfigure}
+	\caption{Oriented rectangle definition and the circle smooth label method.}
+\end{figure}
+
 
 \noindent{However, the YOLOv5 just detect horizontal bounding boxes which cannot offer angle information and will segment a lot of background information. In order to solve these above problem, a rotated bounding box will be predicted instead of horizontal bounding box. As analyzed in this paper \cite{yang2020csl}, the rotated bounding boxes loss will mainly come from angular periodicity and the exchangeability of edges. When use the long side definition of rotated bounding box, it can deal with the exchangeability of edges problem. Meanwhile, using classification task to predict angle can make model easier to train. A periodic coding method called Circular Smooth Label (CSL) \cite{yang2020csl} soft coding can also solve the problem that One-Hot cannot distinguish class relationship. Formula \ref{CSL Function} $g(x)$ is the window function to smooth One-Hot label, and $r$ is a window function of the radius.}
 
@@ -25,15 +41,14 @@ Furthermore, in this paper, we used the Gaussian function for the Equation \ref{
 
 \noindent\textbf{Loss function}
 
-\noindent{The original YOLOv5 loss function can have three components. The formula can be simply written as $Loss = CIOU\_Loss + Loss_{conf} + Loss_{class}$. Since the rotated bounding box is based on the modification of YOLOv5, only the angle classification loss is added more. So the total loss function is as expressed in Equation \ref{Loss}, with the addition of $Loss_{angle}$ to YOLOv5 loss function.}
+\noindent{The original YOLOv5 loss function can have three components. The formula can be simply written as $Loss = CIOU\_Loss + Loss_{obj} + Loss_{class}$. Since the rotated bounding box is based on the modification of YOLOv5, only the angle classification loss is added more. So the total loss function is as expressed in Equation \ref{Loss}, with the addition of $Loss_{angle}$ to YOLOv5 loss function.}
 \begin{equation}
-    Loss = CIOU\_Loss + Loss_{conf} + Loss_{class} + Loss_{angle}
+    Loss = CIOU\_Loss + Loss_{obj} + Loss_{class} + Loss_{angle}
     \label{Loss}
 \end{equation}
 \begin{equation}
     \begin{aligned}
-        Loss_{angle} = \sum_{i=0}^{S^2}I_{ij}^{obj}\sum_{a{\in}[0,180)}[\hat{P_i(a)}log(P_i(a)) + \\
-        (1-\hat{P_i(a)})log(1-P_i(a))]
+        Loss_{angle} = \sum_{i=0}^{S^2}I_{ij}^{obj}\sum_{a{\in}[0,180)}[\hat{P_i(a)}log(P_i(a)) + (1-\hat{P_i(a)})log(1-P_i(a))]
     \end{aligned}
     \label{Loss_angle}
 \end{equation}
@@ -46,7 +61,7 @@ Our task is to detect finger knuckles in the contactless and online scenario, bu
 \noindent\textbf{Detection Performance}
 
 \noindent
-The YOLOv4, YOLOv5x, and YOLOv5m model predict horizontal bounding box, while the remaining YOLOv5 model predict oriented bounding box with CSL classification, called YOLOv5-CSL. We can see the performance difference between these variations of the YOLOv5 model from the Table \ref{mAP of different model}. Among the downloaded 2580 images, 100 images were randomly selected as the testing set. \textcolor{red}{Compare the performance of the horizontal bounding box prediction and oriented bounding box.}
+The YOLOv4, YOLOv5x, and YOLOv5m model predict horizontal bounding box, while the remaining YOLOv5 model predict oriented bounding box with CSL classification, called YOLOv5-CSL. We can see the performance difference between these variations of the YOLOv5 model from the Table \ref{mAP of different model}. Among the downloaded 2580 images, 100 images were randomly selected as the testing set. 
 
 \begin{table}[ht!]
     \centering
@@ -96,7 +111,7 @@ From the above figures, we can clearly get the conclusion that quality of segmen
 
  \subsection{Online Contactless Finger Knuckle Identification Performance}
 
- \textcolor{red}{For proving our contactless and online finger knuckle identification performance, we capture  52 subjects and each subject can offer about 15-20s contactless finger knuckle video. The minimum frame rate of the videos we offer is 30 frames per second. We choose two method to get the contactless finger knuckle images, one is that we get 1 image per second, another one is that we get 6 images per second for testing online matching performance. Because the shortest video is 15s, for 1 image per second, we can totally get $52*15 = 780$ finger knuckle images for keeping the same number of samples result in $52*15 =1789 $ genuine matching scores and $52*51*15 = 39780$ imposter matching scores. In terms of the 6 images per second, we can get $52*15*6=4680$ finger knuckle samples, result in $52*90=4680$ genuine matching scores and $52*51*90=238680$ imposter matching scores.}
+ For proving our contactless and online finger knuckle identification performance, we capture  52 subjects and each subject can offer about 15-20s contactless finger knuckle video. The minimum frame rate of the videos we offer is 30 frames per second. We choose two method to get the contactless finger knuckle images, one is that we get 1 image per second, another one is that we get 6 images per second for testing online matching performance. Because the shortest video is 15s, for 1 image per second, we can totally get $52*15 = 780$ finger knuckle images for keeping the same number of samples result in $52*15 =1789 $ genuine matching scores and $52*51*15 = 39780$ imposter matching scores. In terms of the 6 images per second, we can get $52*15*6=4680$ finger knuckle samples, result in $52*90=4680$ genuine matching scores and $52*51*90=238680$ imposter matching scores.
  .............
 
  \begin{figure}[H]
