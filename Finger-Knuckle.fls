@@ -732,6 +732,43 @@ INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/colortbl/colortbl.sty
 INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+INPUT c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
 INPUT ./Finger-Knuckle.aux
 INPUT Finger-Knuckle.aux
 INPUT Finger-Knuckle.aux
@@ -816,6 +853,15 @@ INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT ./FK-Identification/abstract.tex
 INPUT FK-Identification/abstract.tex
@@ -834,6 +880,15 @@ INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib8.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib6.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -1108,6 +1163,9 @@ INPUT Figures/five-parameter-definition.png
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT ./Figures/CSL-angle.png
 INPUT ./Figures/CSL-angle.png

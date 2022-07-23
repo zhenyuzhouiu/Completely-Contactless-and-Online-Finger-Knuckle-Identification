@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  14 JUL 2022 17:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  17 JUL 2022 11:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,92 +572,113 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+\@float@every@algorithm=\toks27
+\c@algorithm=\count428
+) (c:/Program Files/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count429
+\c@ALC@line=\count430
+\c@ALC@rem=\count431
+\c@ALC@depth=\count432
+\ALC@tlm=\skip80
+\algorithmicindent=\skip81
+) (c:/Program Files/texlive/2021/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
 )
-\@quotelevel=\count428
-\@quotereset=\count429
+\@quotelevel=\count433
+\@quotereset=\count434
  (./Finger-Knuckle.aux)
 \openout1 = `Finger-Knuckle.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 24.
  (c:/Program Files/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
-\symlegacymaths=\mathgroup4
+\symlegacymaths=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 21.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 21.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 21.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 21.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 21.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 21.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 21.
-LaTeX Font Info:    Redeclaring math accent \check on input line 21.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 21.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 21.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 21.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 21.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 24.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 24.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 24.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 24.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 24.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 24.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 24.
+LaTeX Font Info:    Redeclaring math accent \check on input line 24.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 24.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 24.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 24.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 24.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 24.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 21.
+(Font)              `operators' in the math version `normal' on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 21.
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 24.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 21.
+(Font)              `operators' in the math version `bold' on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 21.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 21.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 21.
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 21.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 21.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 21.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 21.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 21.
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 21.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 21.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -693,7 +714,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 24.
 (c:/Program Files/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (c:/Program Files/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -701,11 +722,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/Program Files/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count430
+\c@section@level=\count435
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
  (./Finger-Knuckle.out) (./Finger-Knuckle.out)
 \@outlinefile=\write4
 \openout4 = `Finger-Knuckle.out'.
@@ -734,8 +755,8 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Finger-Knuckle.bbl' found.
  (./Finger-Knuckle.bbl)
-Package biblatex Info: Reference section=0 on input line 21.
-Package biblatex Info: Reference segment=0 on input line 21.
+Package biblatex Info: Reference section=0 on input line 24.
+Package biblatex Info: Reference segment=0 on input line 24.
  (./FK-Identification/abstract.tex) (./FK-Identification/introduction.tex [1
 
 ]
@@ -746,7 +767,9 @@ LaTeX Warning: No positions in optional float specifier.
 [2] [3]) (./FK-Identification/backpropagationoftrtl.tex [4]
 File: Figures/RSIL.png Graphic file (type bmp)
 <Figures/RSIL.png>
- [5]) (./FK-Identification/experiments/experimentsandresults.tex [6]) (./FK-Identification/experiments/withindb.tex [7]
+ [5]) (./FK-Identification/experiments/experimentsandresults.tex [6]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 12.
+) (./FK-Identification/experiments/withindb.tex [7]
 File: Figures/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-roc_compare_new.eps>
 File: Figures/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -759,21 +782,22 @@ File: Figures/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/hd-roc_compare_new.eps>
 File: Figures/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/hd-cmc_compare_new.eps>
- [8]
+ [8] [9]
 File: Figures/2dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-roc_compare_new.eps>
 File: Figures/2dof3d-cmc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-cmc_compare_new.eps>
- [9]) (./FK-Identification/experiments/crossdb.tex
+) (./FK-Identification/experiments/crossdb.tex
 File: Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps Graphic file (type eps)
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps>
 File: Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps Graphic file (type eps)
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps>
+ [10]
 File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
-) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [10]
+) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [11]
 File: Figures/3dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dof3d-roc_compare_new.eps>
 File: Figures/3dof3d-cmc_compare_new.eps Graphic file (type eps)
@@ -850,7 +874,7 @@ File: Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/5-0.jpg Graphic f
 <Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/5-0.jpg>
 File: Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/6-0.jpg Graphic file (type bmp)
 <Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/6-0.jpg>
- [11] [12]
+ [12] [13]
 File: Figures/EigenCAM/PolyUHD/Origin/700/1.jpg Graphic file (type bmp)
 <Figures/EigenCAM/PolyUHD/Origin/700/1.jpg>
 File: Figures/EigenCAM/PolyUHD/Origin/700/2.jpg Graphic file (type bmp)
@@ -886,7 +910,6 @@ File: Figures/ablation-roc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-roc_compare_new.eps>
 File: Figures/ablation-cmc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-cmc_compare_new.eps>
- [13]
 File: Figures/ablation-genuine_distribution.eps Graphic file (type eps)
 <Figures/ablation-genuine_distribution.eps>
 File: Figures/ablation-imposter_distribution.eps Graphic file (type eps)
@@ -906,43 +929,44 @@ File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps>
+ [17]
 File: Figures/yolov5vsdatabase/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-cmc_compare_new.eps>
- [17]
 File: Figures/online-performance/1s1f-roc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s1f-roc_compare_new.eps>
 File: Figures/online-performance/1s1f-cmc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s1f-cmc_compare_new.eps>
+ [18]
 File: Figures/online-performance/1s6f-roc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s6f-roc_compare_new.eps>
 File: Figures/online-performance/1s6f-cmc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s6f-cmc_compare_new.eps>
-) (./FK-Identification/conclusionsandfuturework.tex [18]) (./references.tex
+) (./FK-Identification/conclusionsandfuturework.tex) (./references.tex [19]
 Overfull \hbox (16.98808pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Ejaz Ahmed, Michael Jones, and Tim K Marks. “An improved deep learning architecture for person re-identification”.
  []
 
-[19] [20]
+[20] [21]
 Overfull \hbox (11.14255pt too wide) in paragraph at lines 3--3
 []\TU/TimesNewRoman(0)/m/n/12 Ying Xin et al. “PAFNet: An Efficient Anchor-Free Object Detector Guidance”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint arXiv:2104.13534
  []
 
-) [21] (./Finger-Knuckle.aux)
+) [22] (./Finger-Knuckle.aux)
 Package rerunfilecheck Info: File `Finger-Knuckle.out' has not changed.
-(rerunfilecheck)             Checksum: BF1908C00D169E6D0BF59CD6A9BAFE90;5878.
+(rerunfilecheck)             Checksum: 4DDE67BA106078F6D67471D5FC2716E5;5936.
 Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 \openout1 = `Finger-Knuckle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20968 strings out of 476919
- 421789 string characters out of 5819151
- 1228417 words of memory out of 5000000
- 40638 multiletter control sequences out of 15000+600000
- 409912 words of font info for 75 fonts, out of 8000000 for 9000
+ 21271 strings out of 476919
+ 425790 string characters out of 5819151
+ 1232832 words of memory out of 5000000
+ 40916 multiletter control sequences out of 15000+600000
+ 416379 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 81i,20n,89p,2641b,4727s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,20n,89p,2641b,4723s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (21 pages, 653144 bytes).
+Output written on Finger-Knuckle.xdv (22 pages, 723868 bytes).

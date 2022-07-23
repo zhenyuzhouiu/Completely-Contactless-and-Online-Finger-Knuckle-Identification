@@ -451,8 +451,43 @@
       \field{sortinit}{I}
       \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{ http://www.comp.polyu.edu.hk/~csajaykr/knuckle/iitd_knuckle.htm}}
+      \field{howpublished}{\url{http://www4.comp.polyu.edu.hk/~csajaykr/IITD/iitd_knuckle.htm}}
       \field{title}{IIT Delhi Finger Knuckle Database version 1.0:}
+    \endentry
+    \entry{jaderberg2015spatial}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=7dc1446dea7ff50b2b02fb83780cc9c6}{%
+           family={Jaderberg},
+           familyi={J\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9d16b7284df92c9adaee86c37ab992df}{%
+           family={Simonyan},
+           familyi={S\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc3bd7280fb89baf660e08e410c2351f}
+      \strng{fullhash}{dc3bd7280fb89baf660e08e410c2351f}
+      \strng{bibnamehash}{dc3bd7280fb89baf660e08e410c2351f}
+      \strng{authorbibnamehash}{dc3bd7280fb89baf660e08e410c2351f}
+      \strng{authornamehash}{dc3bd7280fb89baf660e08e410c2351f}
+      \strng{authorfullhash}{dc3bd7280fb89baf660e08e410c2351f}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Spatial transformer networks}
+      \field{volume}{28}
+      \field{year}{2015}
     \endentry
     \entry{jia2008palmprint}{article}{}
       \name{author}{3}{}{%

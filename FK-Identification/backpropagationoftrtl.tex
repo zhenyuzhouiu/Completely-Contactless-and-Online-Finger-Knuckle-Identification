@@ -15,15 +15,15 @@ In generally, the RSIL is still a variant of triple loss, so that the RSIL can b
 	\label{Tripletloss}
 \end{equation}
 
-In order to adapt to tasks with different degrees of rotation and translation, and balance performance and speed, we set translation and rotation parameter as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{w,h,\theta}(T_1, T_2)$ after shift and rotation in the range $-SW{\leq}sw{\leq}SW, -SH{\leq}sh{\leq}SH, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal rotate and shift distance (MRSD). Meanwhile, the distance $D_{sw,sh,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is shifted $sw$ pixel along x-axis and $sh$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
+In order to adapt to tasks with different degrees of rotation and translation, and balance performance and speed, we set translation and rotation parameter as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{s_w,s_h,\theta}(T_1, T_2)$ after shift and rotation in the range $-S_W{\leq}s_w{\leq}S_W, -S_H{\leq}s_h{\leq}S_H, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal rotate and shift distance (MRSD). Meanwhile, the distance $D_{s_w,s_h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is shifted $s_w$ pixel along x-axis and $s_h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
 \begin{equation}
 	\begin{aligned}
-		L(T_1, T_2) = \mathop{min}\limits_{-SW{\leq}sw{\leq}SW, -SH{\leq}sh{\leq}SH, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{sw,sh,\theta}(T_1, T_2)}
+		L(T_1, T_2) = \mathop{min}\limits_{-S_W{\leq}s_w{\leq}S_W, -S_H{\leq}s_h{\leq}S_H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{s_w,s_h,\theta}(T_1, T_2)}
 	\end{aligned}
 \end{equation}
 \begin{equation}
 	\begin{aligned}
-		D_{sw,sh,\theta}(T_1, T_2) = \frac{1}{|C_{sw,sh,\theta}|}\sum_{(x,y){\in}C_{sw,sh,\theta}}(T_1^{(sw,sh,\theta)}[x,y] - T_2[x,y])^2
+		D_{s_w,s_h,\theta}(T_1, T_2) = \frac{1}{|C_{s_w,s_h,\theta}|}\sum_{(x,y){\in}C_{s_w,s_h,\theta}}(T_1^{(s_w,s_h,\theta)}[x,y] - T_2[x,y])^2
 	\end{aligned}
 	\label{Distance}
 \end{equation}
@@ -38,27 +38,27 @@ In order to adapt to tasks with different degrees of rotation and translation, a
 \end{figure}
 
 
-In terms of $C_{sw,sh,\theta}$, it represents the common region between two templates after one template shifted along x-axis with sw, shifted along y-axis with sh, and rotated with $\theta$, as showed in the Figure \ref{RSIL}. When templates are rotated and shifted, just affine transformation, the new $T^{(sw,sh,\theta)}[x,y]$ template can be sampled from the source $T[n,m]$ depending on the sampling method as the Equation \ref{Any-Biliner}, the H and W is the height and width of the $T[n,m]$. At here, we use the $[n,m]$ for representing the original pixel position before affine transformation.
+In terms of $C_{s_w,s_h,\theta}$, it represents the common region between two templates after one template shifted along x-axis with $s_w$, shifted along y-axis with $s_h$, and rotated with $\theta$, as showed in the Figure \ref{RSIL}. When templates are rotated and shifted, just affine transformation, the new $T^{(s_w,s_h,\theta)}[x,y]$ template can be sampled from the source $T[n,m]$ depending on the sampling method as the Equation \ref{Any-Biliner}, the H and W is the height and width of the $T[n,m]$. At here, we use the $[n,m]$ for representing the original pixel position before affine transformation.
 
 \begin{equation}
 	\begin{aligned}
-		T^{(sw,sh,\theta)}[x,y] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]p(x-m)q(y-n)
+		T^{(s_w,s_h,\theta)}[x,y] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]p(x-m)q(y-n)
 	\end{aligned}
 	\label{Any-Biliner}
 \end{equation}
 
-$p()$ is the interpolation method along the x-axis, $q()$ is the interpolation method along the y-axis. At here, if we use the bilinear interpolation method, the above equation can be written as the Equation \ref{Biliner}. Then the partial derivatives of $T^{(sw,sh,\theta)}[x,y]$ with respect to $T[x,y]$ can also be written as the Equation \ref{Biliner-partial}.
+$p()$ is the interpolation method along the x-axis, $q()$ is the interpolation method along the y-axis. At here, if we use the bilinear interpolation method, the above equation can be written as the Equation \ref{Biliner}. Then the partial derivatives of $T^{(s_w,s_h,\theta)}[x,y]$ with respect to $T[x,y]$ can also be written as the Equation \ref{Biliner-partial}.
 
 \begin{equation}
 	\begin{aligned}
-		T^{(sw,sh,\theta)}[m,n] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]max(0, 1-|x-m|)max(0, 1-|y-n|)
+		T^{(s_w,s_h,\theta)}[m,n] = \sum_{n}^{H}\sum_{m}^{W}T[n,m]max(0, 1-|x-m|)max(0, 1-|y-n|)
 	\end{aligned}
 	\label{Biliner}
 \end{equation}
 
 \begin{equation}
 	\begin{aligned}
-		\frac{\partial{T^{(sw,sh,\theta)}[x,y]}}{\partial{T[n,m]}}=\sum_{n}^{H}\sum_{m}^{W}max(0, 1-|x-m|)max(0, 1-|y-n|)
+		\frac{\partial{T^{(s_w,s_h,\theta)}[x,y]}}{\partial{T[x,y]}}=\sum_{n}^{H}\sum_{m}^{W}max(0, 1-|x-m|)max(0, 1-|y-n|)
 	\end{aligned}
 	\label{Biliner-partial}
 \end{equation}
@@ -100,4 +100,4 @@ As for the $T_i^a[x,y]$ partial derivation, because we shift and rotate the anch
 	\end{aligned}
 \end{equation}
 
-After affine transformation, the partial derivation of $\frac{\partial{T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ and $\frac{\partial{T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ as show in the Equation \ref{Biliner-partial}. Now the $T_i^{a}$, $T_i^{p}$, and $T_i^{n}$ is the output feature of models, then the RSIL loss will backpropagation with chain rule to update the learnable parameters.
+After affine transformation, the partial derivation of $\frac{\partial{T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ and $\frac{\partial{T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]}}{\partial{T_{i}^{a}[x,y]}}$ as show in the Equation \ref{Biliner-partial}. Now the $T_i^{a}$, $T_i^{p}$, and $T_i^{n}$ is the output feature of models, then the RSIL loss will backpropagation with chain rule to update the learnable parameters when train neural networks. In terms of testing process or matching process, the MRSD will be used to calculate the matching score.

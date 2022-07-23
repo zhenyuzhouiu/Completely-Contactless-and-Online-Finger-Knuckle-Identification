@@ -1,5 +1,5 @@
 \subsection{Model Complexity Analysis}
-As a completely contactless and online finger knuckle identification, we must choose a model that can meet the requirements of matching speed while ensuring matching accuracy, and even sacrifice matching accuracy for a certain matching speed. We have listed learnable weights of each model, and the corresponding feature extraction time and matching time on the Table \ref{model-complexity}.
+As a completely contactless and online finger knuckle identification, we must choose a model that can meet the requirements of matching speed while ensuring matching accuracy, and even sacrifice matching accuracy for a certain matching speed. We have listed learnable weights of each model, and the corresponding feature extraction time and matching time on the Table \ref{model-complexity}. From the table, the RFNet costs the minimal time for extracting feature of finger knuckle crease with 0.01957s. And the matching time of all of these models with RSIL is longer than these models with STTL, because RSIL will not only shift but also rotate feature maps for getting the minimal matching score. However, the EfficientNetV2-S and FKNet do not shift or rotate feature maps during matching process, result in the shortest matching time with 0.00002s.
 
 \begin{table}[ht!]
     \centering
@@ -21,7 +21,6 @@ As a completely contactless and online finger knuckle identification, we must ch
     \label{model-complexity}
 \end{table}
 
-......
 
 \subsection{Within Database Performance Evaluation}
 

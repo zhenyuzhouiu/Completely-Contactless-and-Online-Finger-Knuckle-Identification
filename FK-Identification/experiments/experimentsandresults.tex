@@ -4,3 +4,28 @@ We choose the baseline model is the RFNet \cite{liu2020contactless}, its perform
 Meanwhile, we will also compare with the FKNet \cite{cheng2020deep} which get the state-of-the-art performance on 3D finger knuckle identification, and EfficientNetV2-S \cite{tan2021efficientnetv2}. FKNet performance on the 3D finger knuckle database, 2D finger knuckle and even palmprint database can over SGD \cite{cheng2019contactless}, CR\_L1\_DALM, CR\_L2 \cite{zhang20143d}, ResNet-50 \cite{he2016deep}, VGG-16 \cite{simonyan2014very}, AlexNet \cite{krizhevsky2012imagenet}, DenseNet-121 \cite{huang2017densely}, and SE-ResNet-50 \cite{hu2018squeeze}. Both of FKNet and EfficientNetV2-S are classification neural network. As a classification neural network, it commonly has a problem when the number of classes of testing dataset is not as same as the training set classes, result in fine-tuning on the testing set. Therefore, we use the vector before soft-max layer as the feature vector, and then calculate the MSE of two feature vectors as the similarity score during matching finger knuckle. We use the ResNet-50 pretrained weights as the FKNet initial weights, and use the pretrained weights on the ImageNet21K as the initial weights of EfficientNetV2-S.
 
 We also want to show the performance of RSIL and SSTL on the EfficientNetV2-S model, therefore we keep the same architecture and just change the FC layer of the head part with convolution layer for fitting RSIL and STTL. The changed EfficientNetV2-S model with RSIL called EfficientNetV2-S-RSIL, and with STTL called EfficientNetV2-S-STTL. As same as the EfficientNetV2-S model, we also use the pretrained model weights on the ImageNet21K dataset. In generally, public finger knuckle database already offer segmented finger knuckle images, but we use our YOLOv5-CSL model to segment finger knuckle as our training and testing data during our experiment.
+
+
+\begin{algorithm}[ht!]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicensure}{\textbf{Output:}}
+    \caption{Comparing Contactless Finger Knuckle Using Trained Model}
+    \begin{algorithmic}[1]
+        \REQUIRE \bm{$I_{1},I_{2}$} $\gets$ input two images with dimension $h*w*c$ (i.e. $128*128*3$); s $\gets$ down sampling factor of the network (i.e. 4 of RFNet); 
+        s $\gets$ down sampling factor of the network (i.e. 4 of RFNet); \\
+        SH $\gets$ shift template along the y-axis range; \\
+        SW $\gets$ shift template along the x-axis range; \\
+        $\Theta$ $\gets$ rotate template with angle range;
+
+        \ENSURE \textbf{MRSD}: final matching score;\\
+        \STATE Convolve $I_{1}$ and $I_{2}$ with trained neural network to get two templates with dimension $\frac{h}{s}*\frac{w}{s}*1$;
+        \FOR {$sh \in (-SH, SH)$}
+            \FOR {$sw \in (-SW, SW)$}
+                \FOR {$\theta \in (-\Theta, \Theta)$}
+                    \STATE Calculate the $I_{1}$ pixel-wise MSE with $I_{2}$ after shifting (sh, sw) and rotating $\theta$
+                \ENDFOR
+            \ENDFOR
+        \ENDFOR
+        \STATE Get the minimal MSE as the MRSD matching score between  $I_{1}$ and $I_{2}$
+    \end{algorithmic}
+\end{algorithm}
