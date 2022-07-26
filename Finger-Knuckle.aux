@@ -99,6 +99,26 @@
 \abx@aux@segm{0}{0}{thapar2019fkimnet}
 \abx@aux@cite{cheng2019contactless}
 \abx@aux@segm{0}{0}{cheng2019contactless}
+\abx@aux@cite{fingerknuckledbv1.0}
+\abx@aux@segm{0}{0}{fingerknuckledbv1.0}
+\abx@aux@cite{ContactlessHnadDorsaldb}
+\abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
+\abx@aux@cite{fingerknuckledbv3.0}
+\abx@aux@segm{0}{0}{fingerknuckledbv3.0}
+\abx@aux@cite{3dfingerknuckle}
+\abx@aux@segm{0}{0}{3dfingerknuckle}
+\abx@aux@cite{thufvfdt3}
+\abx@aux@segm{0}{0}{thufvfdt3}
+\abx@aux@cite{fingerknuckledbv1.0}
+\abx@aux@segm{0}{0}{fingerknuckledbv1.0}
+\abx@aux@cite{ContactlessHnadDorsaldb}
+\abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
+\abx@aux@cite{fingerknuckledbv3.0}
+\abx@aux@segm{0}{0}{fingerknuckledbv3.0}
+\abx@aux@cite{3dfingerknuckle}
+\abx@aux@segm{0}{0}{3dfingerknuckle}
+\abx@aux@cite{thufvfdt3}
+\abx@aux@segm{0}{0}{thufvfdt3}
 \abx@aux@cite{zheng20163d}
 \abx@aux@segm{0}{0}{zheng20163d}
 \abx@aux@cite{cheng2020deep}
@@ -115,7 +135,7 @@
 \abx@aux@segm{0}{0}{cheng2020deep}
 \abx@aux@cite{cheng2012contactless}
 \abx@aux@segm{0}{0}{cheng2012contactless}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces (a): The HKPolyU Contactless Finger Knuckle Images Database (Version 1.0); (b): The HKPolyU Contactless Hand Dorsal Images Database; (c): The HKPolyU Contactless Finger Knuckle Images Database (Version 3.0); (d): The HKPolyU 3D Finger Knuckle Images Database; (e): Tsinghua University Finger Vein and Finger Dorsal Texture Database.\relax }}{3}{table.caption.1}\protected@file@percent }
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Database description: A: The HKPolyU Contactless Finger Knuckle Images Database (Version 1.0) \cite {fingerknuckledbv1.0}; B: The HKPolyU Contactless Hand Dorsal Images Database \cite {ContactlessHnadDorsaldb}; C: The HKPolyU Contactless Finger Knuckle Images Database (Version 3.0) \cite {fingerknuckledbv3.0}; D: The HKPolyU 3D Finger Knuckle Images Database (D(1) 3D Images, D(2) 2D Images) \cite {3dfingerknuckle}; E: Tsinghua University Finger Vein and Finger Dorsal Texture Database \cite {thufvfdt3}.\relax }}{3}{table.caption.1}\protected@file@percent }
 \abx@aux@cite{kumar2019toward}
 \abx@aux@segm{0}{0}{kumar2019toward}
 \abx@aux@cite{kumar2019toward}
@@ -146,7 +166,7 @@
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3}Matching Contactless Finger Knuckle}{5}{section.3}\protected@file@percent }
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Rotation and Shift Invariant Loss Function}{5}{subsection.3.1}\protected@file@percent }
 \newlabel{Tripletloss}{{1}{5}{Rotation and Shift Invariant Loss Function}{equation.3.1}{}}
-\newlabel{Distance}{{3}{6}{Rotation and Shift Invariant Loss Function}{equation.3.3}{}}
+\newlabel{Distance}{{3}{5}{Rotation and Shift Invariant Loss Function}{equation.3.3}{}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An overview of how to use our rotation and shift invariant loss function (RSIL) to train the triplet neural network. We will use the minimal rotate and shift distance (MRSD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MRSD to calculate matching scores.\relax }}{6}{figure.caption.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{RSIL}{{1}{6}{An overview of how to use our rotation and shift invariant loss function (RSIL) to train the triplet neural network. We will use the minimal rotate and shift distance (MRSD) to calculate the similarity of two output templates, the common region is the red box after shifting and rotating. During matching process instead of training process, we also use the MRSD to calculate matching scores.\relax }{figure.caption.2}{}}
@@ -216,6 +236,8 @@
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Model Complexity Analysis}{8}{subsection.4.1}\protected@file@percent }
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comparison time and space complexity of different neural network. Time complexity is the average time on the Ubuntu 22.04 with GeForce RTX 2080 GPU and I7-7800X CPU. For the STTL, the shift size is 4; for the RSIL, the shift size is 4, and add rotation with 4 angles. The FKNet and EfficientNetV2-S serial models obey their same input image size of the original paper \cite {cheng2020deep} and \cite {tan2021efficientnetv2}, respectively.\relax }}{8}{table.caption.3}\protected@file@percent }
 \newlabel{model-complexity}{{2}{8}{Comparison time and space complexity of different neural network. Time complexity is the average time on the Ubuntu 22.04 with GeForce RTX 2080 GPU and I7-7800X CPU. For the STTL, the shift size is 4; for the RSIL, the shift size is 4, and add rotation with 4 angles. The FKNet and EfficientNetV2-S serial models obey their same input image size of the original paper \cite {cheng2020deep} and \cite {tan2021efficientnetv2}, respectively.\relax }{table.caption.3}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Within Database Performance Evaluation}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Contactless Finger Knuckle Image Database (Version 3.0)}{8}{subsubsection.4.2.1}\protected@file@percent }
 \abx@aux@cite{fingerknuckledbv3.0}
 \abx@aux@segm{0}{0}{fingerknuckledbv3.0}
 \abx@aux@cite{fingerknuckledbv3.0}
@@ -228,19 +250,17 @@
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
 \abx@aux@cite{ContactlessHnadDorsaldb}
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Within Database Performance Evaluation}{9}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Contactless Finger Knuckle Image Database (Version 3.0)}{9}{subsubsection.4.2.1}\protected@file@percent }
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }}{9}{figure.caption.4}\protected@file@percent }
-\newlabel{fkv3-one-session}{{2}{9}{Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }{figure.caption.4}{}}
 \abx@aux@cite{ContactlessHnadDorsaldb}
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
 \abx@aux@cite{cheng2020deep}
 \abx@aux@segm{0}{0}{cheng2020deep}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{fkv3-one-session}{{2}{9}{Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Index Finger Knuckle of Contactless Hand Dorsal Image Database}{9}{subsubsection.4.2.2}\protected@file@percent }
 \abx@aux@cite{3dfingerknuckle}
 \abx@aux@segm{0}{0}{3dfingerknuckle}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for two-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }}{10}{figure.caption.5}\protected@file@percent }
 \newlabel{fkv3-two-session}{{3}{10}{Comparative ROC (a) and corresponding CMC (b) for two-session on the contactless finger knuckle image database \cite {fingerknuckledbv3.0}.\relax }{figure.caption.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Index Finger Knuckle of Contactless Hand Dorsal Image Database}{10}{subsubsection.4.2.2}\protected@file@percent }
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless hand dorsal image database \cite {ContactlessHnadDorsaldb}.\relax }}{10}{figure.caption.6}\protected@file@percent }
 \newlabel{hd-one-session}{{4}{10}{Comparative ROC (a) and corresponding CMC (b) for one-session on the contactless hand dorsal image database \cite {ContactlessHnadDorsaldb}.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}2D Forefinger of 3D Finger Knuckle Database}{10}{subsubsection.4.2.3}\protected@file@percent }
@@ -254,23 +274,23 @@
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
 \abx@aux@cite{ContactlessHnadDorsaldb}
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}
+\abx@aux@cite{thufvfdt3}
+\abx@aux@segm{0}{0}{thufvfdt3}
+\abx@aux@cite{thufvfdt3}
+\abx@aux@segm{0}{0}{thufvfdt3}
+\abx@aux@cite{thufvfdt3}
+\abx@aux@segm{0}{0}{thufvfdt3}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session on the 3D finger knuckle database\cite {3dfingerknuckle}.\relax }}{11}{figure.caption.7}\protected@file@percent }
 \newlabel{2dof3d-one-session}{{5}{11}{Comparative ROC (a) and corresponding CMC (b) for one-session on the 3D finger knuckle database\cite {3dfingerknuckle}.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Cross Database Performance Evaluation}{11}{subsection.4.3}\protected@file@percent }
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Hand Dorsal Images Database}{11}{subsubsection.4.3.1}\protected@file@percent }
-\abx@aux@cite{thufvfdt3}
-\abx@aux@segm{0}{0}{thufvfdt3}
-\abx@aux@cite{thufvfdt3}
-\abx@aux@segm{0}{0}{thufvfdt3}
-\abx@aux@cite{thufvfdt3}
-\abx@aux@segm{0}{0}{thufvfdt3}
 \abx@aux@cite{3dfingerknuckle}
 \abx@aux@segm{0}{0}{3dfingerknuckle}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session of the index finger knuckle on the contactless hand dorsal image database \cite {ContactlessHnadDorsaldb}.\relax }}{12}{figure.caption.8}\protected@file@percent }
 \newlabel{crosshd-index-one-session}{{6}{12}{Comparative ROC (a) and corresponding CMC (b) for one-session of the index finger knuckle on the contactless hand dorsal image database \cite {ContactlessHnadDorsaldb}.\relax }{figure.caption.8}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Tsinghua Finger Vein and Finger Dorsal Texture Database}{12}{subsubsection.4.3.2}\protected@file@percent }
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session of the finger dorsal texture images \cite {thufvfdt3}.\relax }}{12}{figure.caption.9}\protected@file@percent }
 \newlabel{crossthu-one-session}{{7}{12}{Comparative ROC (a) and corresponding CMC (b) for one-session of the finger dorsal texture images \cite {thufvfdt3}.\relax }{figure.caption.9}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Tsinghua Finger Vein and Finger Dorsal Texture Database}{12}{subsubsection.4.3.2}\protected@file@percent }
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}3D Finger Knuckle Images Database}{12}{subsection.4.4}\protected@file@percent }
 \abx@aux@cite{3dfingerknuckle}
 \abx@aux@segm{0}{0}{3dfingerknuckle}
@@ -284,12 +304,12 @@
 \abx@aux@segm{0}{0}{fingerknuckledbv3.0}
 \abx@aux@cite{fingerknuckledbv3.0}
 \abx@aux@segm{0}{0}{fingerknuckledbv3.0}
-\abx@aux@cite{russakovsky2015imagenet}
-\abx@aux@segm{0}{0}{russakovsky2015imagenet}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Comparative ROC (a) and corresponding CMC (b) for one-session of the 3D finger knuckle database \cite {3dfingerknuckle}.\relax }}{13}{figure.caption.10}\protected@file@percent }
 \newlabel{3dof3d-one-session}{{8}{13}{Comparative ROC (a) and corresponding CMC (b) for one-session of the 3D finger knuckle database \cite {3dfingerknuckle}.\relax }{figure.caption.10}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Discussion}{13}{subsection.4.5}\protected@file@percent }
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Show the class activation maps for the first session samples of 104th subject of the HKPolyU Finger Knuckle Images Database \cite {fingerknuckledbv3.0} with RFNet.\relax }}{14}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Show the class activation maps for the first session samples of 104th subject of the HKPolyU Finger Knuckle Images Database \cite {fingerknuckledbv3.0} with RFNet.\relax }}{13}{figure.caption.11}\protected@file@percent }
+\abx@aux@cite{russakovsky2015imagenet}
+\abx@aux@segm{0}{0}{russakovsky2015imagenet}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Show the class activation maps (CAM) for the second session samples of 104th subject of the HKPolyU Finger Knuckle Images Database \cite {fingerknuckledbv3.0} with RFNet.\relax }}{14}{figure.caption.12}\protected@file@percent }
 \abx@aux@cite{ContactlessHnadDorsaldb}
 \abx@aux@segm{0}{0}{ContactlessHnadDorsaldb}

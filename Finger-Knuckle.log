@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  25 JUL 2022 15:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  26 JUL 2022 21:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -759,12 +759,17 @@ Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
  (./FK-Identification/abstract.tex) (./FK-Identification/introduction.tex [1
 
-] [2] [3] [4]) (./FK-Identification/backpropagationoftrtl.tex [5]
+]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 24.
+
+[2] [3]) (./FK-Identification/backpropagationoftrtl.tex [4]
 File: Figures/RSIL.png Graphic file (type bmp)
 <Figures/RSIL.png>
- [6]) (./FK-Identification/experiments/experimentsandresults.tex [7]
+ [5] [6]) (./FK-Identification/experiments/experimentsandresults.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 12.
-) (./FK-Identification/experiments/withindb.tex [8]
+) (./FK-Identification/experiments/withindb.tex [7] [8]
 File: Figures/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-roc_compare_new.eps>
 File: Figures/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -787,12 +792,11 @@ File: Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps Graphic fi
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps>
 File: Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps Graphic file (type eps)
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps>
- [11]
 File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
-) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [12]
+) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [11] [12]
 File: Figures/3dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dof3d-roc_compare_new.eps>
 File: Figures/3dof3d-cmc_compare_new.eps Graphic file (type eps)
@@ -963,10 +967,10 @@ Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 Here is how much of TeX's memory you used:
  21261 strings out of 476919
  425351 string characters out of 5819151
- 1226575 words of memory out of 5000000
+ 1224575 words of memory out of 5000000
  40906 multiletter control sequences out of 15000+600000
  416379 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  81i,20n,89p,2641b,4733s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (25 pages, 709224 bytes).
+Output written on Finger-Knuckle.xdv (25 pages, 707424 bytes).
