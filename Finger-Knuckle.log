@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  17 JUL 2022 11:13
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  25 JUL 2022 15:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -688,15 +688,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(14.22636pt, 569.05515pt, 14.22636pt)
-* v-part:(T,H,B)=(14.22636pt, 816.59412pt, 14.22636pt)
+* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 759.6886pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=569.05515pt
-* \textheight=816.59412pt
-* \oddsidemargin=-58.04362pt
-* \evensidemargin=-58.04362pt
-* \topmargin=-95.04362pt
+* \textwidth=512.14963pt
+* \textheight=759.6886pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -759,17 +759,12 @@ Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
  (./FK-Identification/abstract.tex) (./FK-Identification/introduction.tex [1
 
-]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 22.
-
-[2] [3]) (./FK-Identification/backpropagationoftrtl.tex [4]
+] [2] [3] [4]) (./FK-Identification/backpropagationoftrtl.tex [5]
 File: Figures/RSIL.png Graphic file (type bmp)
 <Figures/RSIL.png>
- [5]) (./FK-Identification/experiments/experimentsandresults.tex [6]
+ [6]) (./FK-Identification/experiments/experimentsandresults.tex [7]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 12.
-) (./FK-Identification/experiments/withindb.tex [7]
+) (./FK-Identification/experiments/withindb.tex [8]
 File: Figures/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/fkv3-roc_compare_new.eps>
 File: Figures/fkv3-cmc_compare_new.eps Graphic file (type eps)
@@ -782,7 +777,7 @@ File: Figures/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/hd-roc_compare_new.eps>
 File: Figures/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/hd-cmc_compare_new.eps>
- [8] [9]
+ [9] [10]
 File: Figures/2dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/2dof3d-roc_compare_new.eps>
 File: Figures/2dof3d-cmc_compare_new.eps Graphic file (type eps)
@@ -792,12 +787,12 @@ File: Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps Graphic fi
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/roc_compare_new.eps>
 File: Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps Graphic file (type eps)
 <Figures/cross-hd-index-fkv3(yolov5)-105-221/cmc_compare_new.eps>
- [10]
+ [11]
 File: Figures/crossthu-roc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-roc_compare_new.eps>
 File: Figures/crossthu-cmc_compare_new.eps Graphic file (type eps)
 <Figures/crossthu-cmc_compare_new.eps>
-) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [11]
+) (./FK-Identification/experiments/3dof3dfingerknuckle.tex [12]
 File: Figures/3dof3d-roc_compare_new.eps Graphic file (type eps)
 <Figures/3dof3d-roc_compare_new.eps>
 File: Figures/3dof3d-cmc_compare_new.eps Graphic file (type eps)
@@ -874,7 +869,7 @@ File: Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/5-0.jpg Graphic f
 <Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/5-0.jpg>
 File: Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/6-0.jpg Graphic file (type bmp)
 <Figures/EigenCAM/PolyUKnuckleV3/WS/105-221/Session_2/104/6-0.jpg>
- [12] [13]
+ [13] [14]
 File: Figures/EigenCAM/PolyUHD/Origin/700/1.jpg Graphic file (type bmp)
 <Figures/EigenCAM/PolyUHD/Origin/700/1.jpg>
 File: Figures/EigenCAM/PolyUHD/Origin/700/2.jpg Graphic file (type bmp)
@@ -910,50 +905,55 @@ File: Figures/ablation-roc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-roc_compare_new.eps>
 File: Figures/ablation-cmc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-cmc_compare_new.eps>
+ [15]
 File: Figures/ablation-genuine_distribution.eps Graphic file (type eps)
 <Figures/ablation-genuine_distribution.eps>
 File: Figures/ablation-imposter_distribution.eps Graphic file (type eps)
 <Figures/ablation-imposter_distribution.eps>
- [14]
 File: Figures/ablation-study-184-208/roc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-study-184-208/roc_compare_new.eps>
 File: Figures/ablation-study-184-208/cmc_compare_new.eps Graphic file (type eps)
 <Figures/ablation-study-184-208/cmc_compare_new.eps>
-) (./FK-Identification/onlinefingerknuckleidentification.tex [15]
+) (./FK-Identification/onlinefingerknuckleidentification.tex [16]
 File: Figures/five-parameter-definition.png Graphic file (type bmp)
 <Figures/five-parameter-definition.png>
+
+Underfull \hbox (badness 3179) in paragraph at lines 14--14
+[]\TU/TimesNewRoman(0)/m/n/10.95 (a) |Five-parameter definition with $\OT1/cmr/m/n/10.95 180[]$ \TU/TimesNewRoman(0)/m/n/10.95 angular
+ []
+
 File: Figures/CSL-angle.png Graphic file (type bmp)
 <Figures/CSL-angle.png>
- [16]
+[17] [18]
 File: Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/fkv3-cmc_compare_new.eps>
- [17]
 File: Figures/yolov5vsdatabase/hd-roc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-roc_compare_new.eps>
 File: Figures/yolov5vsdatabase/hd-cmc_compare_new.eps Graphic file (type eps)
 <Figures/yolov5vsdatabase/hd-cmc_compare_new.eps>
+ [19]
 File: Figures/online-performance/1s1f-roc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s1f-roc_compare_new.eps>
 File: Figures/online-performance/1s1f-cmc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s1f-cmc_compare_new.eps>
- [18]
+ [20]
 File: Figures/online-performance/1s6f-roc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s6f-roc_compare_new.eps>
 File: Figures/online-performance/1s6f-cmc_compare_new.eps Graphic file (type eps)
 <Figures/online-performance/1s6f-cmc_compare_new.eps>
-) (./FK-Identification/conclusionsandfuturework.tex) (./references.tex [19]
-Overfull \hbox (16.98808pt too wide) in paragraph at lines 3--3
-[]\TU/TimesNewRoman(0)/m/n/12 Ejaz Ahmed, Michael Jones, and Tim K Marks. “An improved deep learning architecture for person re-identification”.
+) (./FK-Identification/conclusionsandfuturework.tex) (./references.tex [21] [22]
+Overfull \hbox (43.11838pt too wide) in paragraph at lines 3--3
+[]\TU/TimesNewRoman(0)/m/n/12 Joseph Redmon and Ali Farhadi. “Yolov3: An incremental improvement”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint arXiv:1804.02767
  []
 
-[20] [21]
-Overfull \hbox (11.14255pt too wide) in paragraph at lines 3--3
-[]\TU/TimesNewRoman(0)/m/n/12 Ying Xin et al. “PAFNet: An Efficient Anchor-Free Object Detector Guidance”. In: \TU/TimesNewRoman(0)/m/it/12 arXiv preprint arXiv:2104.13534
+[23] [24]
+Overfull \hbox (3.56363pt too wide) in paragraph at lines 3--3
+[]\TU/TimesNewRoman(0)/m/n/12 David Zhang, Xiaoyuan Jing, and Jian Yang. \TU/TimesNewRoman(0)/m/it/12 Biometric image discrimination technologies\TU/TimesNewRoman(0)/m/n/12 . IGI Global,
  []
 
-) [22] (./Finger-Knuckle.aux)
+) [25] (./Finger-Knuckle.aux)
 Package rerunfilecheck Info: File `Finger-Knuckle.out' has not changed.
 (rerunfilecheck)             Checksum: 4DDE67BA106078F6D67471D5FC2716E5;5936.
 Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
@@ -961,12 +961,12 @@ Package logreq Info: Writing requests to 'Finger-Knuckle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21271 strings out of 476919
- 425790 string characters out of 5819151
- 1232832 words of memory out of 5000000
- 40916 multiletter control sequences out of 15000+600000
+ 21261 strings out of 476919
+ 425351 string characters out of 5819151
+ 1226575 words of memory out of 5000000
+ 40906 multiletter control sequences out of 15000+600000
  416379 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 81i,20n,89p,2641b,4723s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,20n,89p,2641b,4733s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Finger-Knuckle.xdv (22 pages, 723868 bytes).
+Output written on Finger-Knuckle.xdv (25 pages, 709224 bytes).

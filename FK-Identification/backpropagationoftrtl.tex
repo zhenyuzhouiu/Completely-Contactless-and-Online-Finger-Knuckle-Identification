@@ -15,7 +15,7 @@ In generally, the RSIL is still a variant of triple loss, so that the RSIL can b
 	\label{Tripletloss}
 \end{equation}
 
-In order to adapt to tasks with different degrees of rotation and translation, and balance performance and speed, we set translation and rotation parameter as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{s_w,s_h,\theta}(T_1, T_2)$ after shift and rotation in the range $-S_W{\leq}s_w{\leq}S_W, -S_H{\leq}s_h{\leq}S_H, {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal rotate and shift distance (MRSD). Meanwhile, the distance $D_{s_w,s_h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is shifted $s_w$ pixel along x-axis and $s_h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
+In order to adapt to tasks with different degrees of rotation and translation, and balance performance and speed, we set translation and rotation parameter as a hyperparameter. The $L(T_1, T_2)$ will get the minimal distance of two templates $D_{s_w,s_h,\theta}(T_1, T_2)$ after shift and rotation in the range $-S_W{\leq}s_w{\leq}S_W, -S_H{\leq}s_h{\leq}S_H,\\ {-\Theta}{\leq}\theta{\leq}{\Theta}$, called minimal rotate and shift distance (MRSD). Meanwhile, the distance $D_{s_w,s_h,\theta}(T_1, T_2)$ calculates the pixel-wise MSE value when template $T_1$ is shifted $s_w$ pixel along x-axis and $s_h$ pixel along y-axis and rotated $\theta$ angle in the Equation \ref{Distance}.
 \begin{equation}
 	\begin{aligned}
 		L(T_1, T_2) = \mathop{min}\limits_{-S_W{\leq}s_w{\leq}S_W, -S_H{\leq}s_h{\leq}S_H, {-\Theta}{\leq}\theta{\leq}{\Theta}}{D_{s_w,s_h,\theta}(T_1, T_2)}
@@ -64,7 +64,8 @@ $p()$ is the interpolation method along the x-axis, $q()$ is the interpolation m
 \end{equation}
 
 
-As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($sw_{ap}$, $sh_{ap}$) pixels, $T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]$, can get the minimal $D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(sw_{an}, sh_{an}, \theta_{an})$, $T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]$, the $(T_a, T_n)$ pair can get the minimal $D_{sw_{an},sh_{an},\theta_{an}}(T_a, T_n)$, therefore, the partial derivatives of RSIL with respect to $T_i^p$ and $T_i^n$ are showed as below.
+As for the $(T_a, T_p)$ pair, we can assume when the $T_a$ is rotated angle of $\theta_{ap}$ and shifted with ($sw_{ap}$, $sh_{ap}$) pixels, $T_{i}^{a(sw_{ap},sh_{ap},\theta_{ap})}[x,y]$, can get the minimal $D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$, then $L(T_a, T_p) = D_{sw_{ap},sh_{ap},\theta_{ap}}(T_a, T_p)$. Meanwhile, with the $(sw_{an}, sh_{an}, \theta_{an})$, $T_{i}^{a(sw_{an},sh_{an},\theta_{an})}[x,y]$, the $(T_a, T_n)$ pair can get the minimal \\
+$D_{sw_{an},sh_{an},\theta_{an}}(T_a, T_n)$, therefore, the partial derivatives of RSIL with respect to $T_i^p$ and $T_i^n$ are showed as below.
 
 \begin{equation}
 	\begin{aligned}
