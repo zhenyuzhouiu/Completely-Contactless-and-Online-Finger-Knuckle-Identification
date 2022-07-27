@@ -1157,9 +1157,9 @@ INPUT ./FK-Identification/onlinefingerknuckleidentification.tex
 INPUT FK-Identification/onlinefingerknuckleidentification.tex
 INPUT ./FK-Identification/onlinefingerknuckleidentification.tex
 INPUT FK-Identification/onlinefingerknuckleidentification.tex
-INPUT ./Figures/five-parameter-definition.png
-INPUT ./Figures/five-parameter-definition.png
-INPUT Figures/five-parameter-definition.png
+INPUT ./Figures/five-parameter-definition-finger.png
+INPUT ./Figures/five-parameter-definition-finger.png
+INPUT Figures/five-parameter-definition-finger.png
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/Program Files/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
